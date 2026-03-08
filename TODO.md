@@ -157,30 +157,30 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ### Home Page
 
-- [ ] `src/routes/_marketing/index.tsx` — home page composing sections:
-  - [ ] `src/components/home/HeroSection.tsx`
-  - [ ] `src/components/home/FeatureSection.tsx`
-  - [ ] `src/components/home/StaticSection.tsx` (stats/numbers)
-  - [ ] `src/components/home/IntegrateSection.tsx`
-  - [ ] `src/components/home/ContentSection.tsx`
-  - [ ] `src/components/home/LogoCloud.tsx`
-  - [ ] `src/components/home/PriceSection.tsx`
-  - [ ] `src/components/home/PricingCard.tsx`
-  - [ ] `src/components/home/Testimonials.tsx`
-  - [ ] `src/components/home/FaqSection.tsx`
-  - [ ] `src/components/home/CallToAction.tsx`
+- [x] `src/routes/_marketing/index.tsx` — home page composing sections:
+  - [x] `src/components/home/HeroSection.tsx`
+  - [x] `src/components/home/FeatureSection.tsx`
+  - [x] `src/components/home/StaticSection.tsx` (stats/numbers)
+  - [x] `src/components/home/IntegrateSection.tsx`
+  - [x] `src/components/home/ContentSection.tsx`
+  - [x] `src/components/home/LogoCloud.tsx`
+  - [x] `src/components/home/PriceSection.tsx`
+  - [x] `src/components/home/PricingCard.tsx`
+  - [x] `src/components/home/Testimonials.tsx`
+  - [x] `src/components/home/FaqSection.tsx`
+  - [x] `src/components/home/CallToAction.tsx`
 
 ### Other Marketing Pages
 
-- [ ] `src/routes/_marketing/about.tsx` — about page
-- [ ] `src/routes/_marketing/contact.tsx` — contact page with form
-- [ ] `src/routes/_marketing/pay-success.tsx` — payment success page
+- [x] `src/routes/_marketing/about.tsx` — about page
+- [x] `src/routes/_marketing/contact.tsx` — contact page with form
+- [x] `src/routes/_marketing/pay-success.tsx` — payment success page
 - [ ] `src/routes/_marketing/legal/$slug.tsx` — legal pages (cookie/privacy/terms from MDX)
 
 ### Contact
 
-- [ ] `src/components/contact/ContactFormCard.tsx` — contact form with validation
-- [ ] `src/routes/api/contact.ts` — contact form submission API (sends email via Resend)
+- [x] `src/components/contact/ContactFormCard.tsx` — contact form with validation
+- [x] `src/routes/api/contact.ts` — contact form submission API (sends email via Resend)
 
 ## Step 9. Blog System
 
@@ -325,7 +325,7 @@ Already configured via `components.json`. Install as needed:
 
 ## Step 18. Hooks
 
-- [ ] `src/hooks/use-mobile.ts` — mobile viewport detection hook (can reuse from Next.js)
+- [x] `src/hooks/use-mobile.ts` — mobile viewport detection hook (can reuse from Next.js)
 
 ## Step 19. Cleanup & Polish
 

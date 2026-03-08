@@ -134,6 +134,34 @@
 			"backHome": "返回首页"
 		}
 	},
+	"faq": {
+		"whatIsSoarStarter": {
+			"question": "什么是 SoarStarter？",
+			"answer": "SoarStarter 是一个基于 TanStack Start、React、Tailwind CSS 和 shadcn/ui 构建的生产就绪 SaaS 模板。它开箱即用地提供认证、支付、仪表盘、国际化等功能。"
+		},
+		"techStack": {
+			"question": "使用了什么技术栈？",
+			"answer": "SoarStarter 使用 TanStack Start（全栈 SSR React）、Better Auth、Drizzle ORM、PostgreSQL、Creem 支付、Resend 邮件、Tailwind CSS v4 和 shadcn/ui 组件构建。"
+		},
+		"customization": {
+			"question": "可定制性如何？",
+			"answer": "每个方面都可以定制。代码库使用清晰的架构模式、类型安全的配置和模块化组件。您可以轻松替换任何提供商或添加新功能。"
+		},
+		"support": {
+			"question": "提供什么样的支持？",
+			"answer": "免费用户可通过 GitHub Discussions 获得社区支持。专业版和终身版用户可获得优先支持，响应更快，并可直接联系团队。"
+		},
+		"updates": {
+			"question": "能获得未来的更新吗？",
+			"answer": "专业版订阅者在订阅期间可获得更新。终身版用户永久获得所有未来更新，包括新功能、改进和安全补丁。"
+		}
+	},
+	"cta": {
+		"heading": "准备好启动你的 SaaS 了吗？",
+		"description": "使用 SoarStarter 开始构建你的下一个项目。通过我们的生产就绪模板节省数月的开发时间。",
+		"getStarted": "开始使用",
+		"contactUs": "联系我们"
+	},
 	"auth": {
 		"logIn": "登录",
 		"signUp": "注册",

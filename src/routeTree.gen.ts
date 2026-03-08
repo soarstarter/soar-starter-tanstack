@@ -10,8 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AuthRouteImport } from './routes/auth'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as MarketingRouteImport } from './routes/_marketing'
+import { Route as DashboardRouteImport } from './routes/_dashboard'
+import { Route as MarketingIndexRouteImport } from './routes/_marketing/index'
 import { Route as DemoBetterAuthRouteImport } from './routes/demo/better-auth'
 import { Route as AuthResetPasswordRouteImport } from './routes/auth/reset-password'
 import { Route as AuthRegisterSuccessRouteImport } from './routes/auth/register-success'
@@ -19,22 +20,38 @@ import { Route as AuthRegisterRouteImport } from './routes/auth/register'
 import { Route as AuthLoginRouteImport } from './routes/auth/login'
 import { Route as AuthForgotPasswordRouteImport } from './routes/auth/forgot-password'
 import { Route as AuthConfirmRouteImport } from './routes/auth/confirm'
+import { Route as ApiContactRouteImport } from './routes/api/contact'
+import { Route as MarketingPaySuccessRouteImport } from './routes/_marketing/pay-success'
+import { Route as MarketingContactRouteImport } from './routes/_marketing/contact'
+import { Route as MarketingAboutRouteImport } from './routes/_marketing/about'
+import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard/dashboard/index'
+import { Route as ApiUserSubscriptionRouteImport } from './routes/api/user/subscription'
+import { Route as ApiUserSettingsRouteImport } from './routes/api/user/settings'
+import { Route as ApiUserProfileRouteImport } from './routes/api/user/profile'
+import { Route as ApiUserBillingRouteImport } from './routes/api/user/billing'
+import { Route as ApiPaymentQueryRouteImport } from './routes/api/payment/query'
+import { Route as ApiPaymentCreateRouteImport } from './routes/api/payment/create'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as ApiAdminUsersRouteImport } from './routes/api/admin/users'
+import { Route as ApiPaymentNotifyCreemRouteImport } from './routes/api/payment/notify/creem'
 
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const MarketingRoute = MarketingRouteImport.update({
+  id: '/_marketing',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/_dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketingIndexRoute = MarketingIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => MarketingRoute,
 } as any)
 const DemoBetterAuthRoute = DemoBetterAuthRouteImport.update({
   id: '/demo/better-auth',
@@ -71,16 +88,84 @@ const AuthConfirmRoute = AuthConfirmRouteImport.update({
   path: '/confirm',
   getParentRoute: () => AuthRoute,
 } as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketingPaySuccessRoute = MarketingPaySuccessRouteImport.update({
+  id: '/pay-success',
+  path: '/pay-success',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingContactRoute = MarketingContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingAboutRoute = MarketingAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const DashboardDashboardIndexRoute = DashboardDashboardIndexRouteImport.update({
+  id: '/dashboard/',
+  path: '/dashboard/',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const ApiUserSubscriptionRoute = ApiUserSubscriptionRouteImport.update({
+  id: '/api/user/subscription',
+  path: '/api/user/subscription',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiUserSettingsRoute = ApiUserSettingsRouteImport.update({
+  id: '/api/user/settings',
+  path: '/api/user/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiUserProfileRoute = ApiUserProfileRouteImport.update({
+  id: '/api/user/profile',
+  path: '/api/user/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiUserBillingRoute = ApiUserBillingRouteImport.update({
+  id: '/api/user/billing',
+  path: '/api/user/billing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPaymentQueryRoute = ApiPaymentQueryRouteImport.update({
+  id: '/api/payment/query',
+  path: '/api/payment/query',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPaymentCreateRoute = ApiPaymentCreateRouteImport.update({
+  id: '/api/payment/create',
+  path: '/api/payment/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAdminUsersRoute = ApiAdminUsersRouteImport.update({
+  id: '/api/admin/users',
+  path: '/api/admin/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPaymentNotifyCreemRoute = ApiPaymentNotifyCreemRouteImport.update({
+  id: '/api/payment/notify/creem',
+  path: '/api/payment/notify/creem',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/': typeof MarketingIndexRoute
   '/auth': typeof AuthRouteWithChildren
+  '/about': typeof MarketingAboutRoute
+  '/contact': typeof MarketingContactRoute
+  '/pay-success': typeof MarketingPaySuccessRoute
+  '/api/contact': typeof ApiContactRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
   '/auth/login': typeof AuthLoginRoute
@@ -88,12 +173,24 @@ export interface FileRoutesByFullPath {
   '/auth/register-success': typeof AuthRegisterSuccessRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
   '/demo/better-auth': typeof DemoBetterAuthRoute
+  '/api/admin/users': typeof ApiAdminUsersRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/payment/create': typeof ApiPaymentCreateRoute
+  '/api/payment/query': typeof ApiPaymentQueryRoute
+  '/api/user/billing': typeof ApiUserBillingRoute
+  '/api/user/profile': typeof ApiUserProfileRoute
+  '/api/user/settings': typeof ApiUserSettingsRoute
+  '/api/user/subscription': typeof ApiUserSubscriptionRoute
+  '/dashboard/': typeof DashboardDashboardIndexRoute
+  '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/': typeof MarketingIndexRoute
   '/auth': typeof AuthRouteWithChildren
+  '/about': typeof MarketingAboutRoute
+  '/contact': typeof MarketingContactRoute
+  '/pay-success': typeof MarketingPaySuccessRoute
+  '/api/contact': typeof ApiContactRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
   '/auth/login': typeof AuthLoginRoute
@@ -101,13 +198,26 @@ export interface FileRoutesByTo {
   '/auth/register-success': typeof AuthRegisterSuccessRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
   '/demo/better-auth': typeof DemoBetterAuthRoute
+  '/api/admin/users': typeof ApiAdminUsersRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/payment/create': typeof ApiPaymentCreateRoute
+  '/api/payment/query': typeof ApiPaymentQueryRoute
+  '/api/user/billing': typeof ApiUserBillingRoute
+  '/api/user/profile': typeof ApiUserProfileRoute
+  '/api/user/settings': typeof ApiUserSettingsRoute
+  '/api/user/subscription': typeof ApiUserSubscriptionRoute
+  '/dashboard': typeof DashboardDashboardIndexRoute
+  '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/_dashboard': typeof DashboardRouteWithChildren
+  '/_marketing': typeof MarketingRouteWithChildren
   '/auth': typeof AuthRouteWithChildren
+  '/_marketing/about': typeof MarketingAboutRoute
+  '/_marketing/contact': typeof MarketingContactRoute
+  '/_marketing/pay-success': typeof MarketingPaySuccessRoute
+  '/api/contact': typeof ApiContactRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
   '/auth/login': typeof AuthLoginRoute
@@ -115,14 +225,27 @@ export interface FileRoutesById {
   '/auth/register-success': typeof AuthRegisterSuccessRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
   '/demo/better-auth': typeof DemoBetterAuthRoute
+  '/_marketing/': typeof MarketingIndexRoute
+  '/api/admin/users': typeof ApiAdminUsersRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/payment/create': typeof ApiPaymentCreateRoute
+  '/api/payment/query': typeof ApiPaymentQueryRoute
+  '/api/user/billing': typeof ApiUserBillingRoute
+  '/api/user/profile': typeof ApiUserProfileRoute
+  '/api/user/settings': typeof ApiUserSettingsRoute
+  '/api/user/subscription': typeof ApiUserSubscriptionRoute
+  '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
+  '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
     | '/auth'
+    | '/about'
+    | '/contact'
+    | '/pay-success'
+    | '/api/contact'
     | '/auth/confirm'
     | '/auth/forgot-password'
     | '/auth/login'
@@ -130,12 +253,24 @@ export interface FileRouteTypes {
     | '/auth/register-success'
     | '/auth/reset-password'
     | '/demo/better-auth'
+    | '/api/admin/users'
     | '/api/auth/$'
+    | '/api/payment/create'
+    | '/api/payment/query'
+    | '/api/user/billing'
+    | '/api/user/profile'
+    | '/api/user/settings'
+    | '/api/user/subscription'
+    | '/dashboard/'
+    | '/api/payment/notify/creem'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about'
     | '/auth'
+    | '/about'
+    | '/contact'
+    | '/pay-success'
+    | '/api/contact'
     | '/auth/confirm'
     | '/auth/forgot-password'
     | '/auth/login'
@@ -143,12 +278,25 @@ export interface FileRouteTypes {
     | '/auth/register-success'
     | '/auth/reset-password'
     | '/demo/better-auth'
+    | '/api/admin/users'
     | '/api/auth/$'
+    | '/api/payment/create'
+    | '/api/payment/query'
+    | '/api/user/billing'
+    | '/api/user/profile'
+    | '/api/user/settings'
+    | '/api/user/subscription'
+    | '/dashboard'
+    | '/api/payment/notify/creem'
   id:
     | '__root__'
-    | '/'
-    | '/about'
+    | '/_dashboard'
+    | '/_marketing'
     | '/auth'
+    | '/_marketing/about'
+    | '/_marketing/contact'
+    | '/_marketing/pay-success'
+    | '/api/contact'
     | '/auth/confirm'
     | '/auth/forgot-password'
     | '/auth/login'
@@ -156,15 +304,34 @@ export interface FileRouteTypes {
     | '/auth/register-success'
     | '/auth/reset-password'
     | '/demo/better-auth'
+    | '/_marketing/'
+    | '/api/admin/users'
     | '/api/auth/$'
+    | '/api/payment/create'
+    | '/api/payment/query'
+    | '/api/user/billing'
+    | '/api/user/profile'
+    | '/api/user/settings'
+    | '/api/user/subscription'
+    | '/_dashboard/dashboard/'
+    | '/api/payment/notify/creem'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  DashboardRoute: typeof DashboardRouteWithChildren
+  MarketingRoute: typeof MarketingRouteWithChildren
   AuthRoute: typeof AuthRouteWithChildren
+  ApiContactRoute: typeof ApiContactRoute
   DemoBetterAuthRoute: typeof DemoBetterAuthRoute
+  ApiAdminUsersRoute: typeof ApiAdminUsersRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
+  ApiPaymentCreateRoute: typeof ApiPaymentCreateRoute
+  ApiPaymentQueryRoute: typeof ApiPaymentQueryRoute
+  ApiUserBillingRoute: typeof ApiUserBillingRoute
+  ApiUserProfileRoute: typeof ApiUserProfileRoute
+  ApiUserSettingsRoute: typeof ApiUserSettingsRoute
+  ApiUserSubscriptionRoute: typeof ApiUserSubscriptionRoute
+  ApiPaymentNotifyCreemRoute: typeof ApiPaymentNotifyCreemRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -176,19 +343,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/_marketing': {
+      id: '/_marketing'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof MarketingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
+    '/_dashboard': {
+      id: '/_dashboard'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_marketing/': {
+      id: '/_marketing/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof MarketingIndexRouteImport
+      parentRoute: typeof MarketingRoute
     }
     '/demo/better-auth': {
       id: '/demo/better-auth'
@@ -239,6 +413,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthConfirmRouteImport
       parentRoute: typeof AuthRoute
     }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_marketing/pay-success': {
+      id: '/_marketing/pay-success'
+      path: '/pay-success'
+      fullPath: '/pay-success'
+      preLoaderRoute: typeof MarketingPaySuccessRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/contact': {
+      id: '/_marketing/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof MarketingContactRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/about': {
+      id: '/_marketing/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof MarketingAboutRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_dashboard/dashboard/': {
+      id: '/_dashboard/dashboard/'
+      path: '/dashboard'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof DashboardDashboardIndexRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/api/user/subscription': {
+      id: '/api/user/subscription'
+      path: '/api/user/subscription'
+      fullPath: '/api/user/subscription'
+      preLoaderRoute: typeof ApiUserSubscriptionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/user/settings': {
+      id: '/api/user/settings'
+      path: '/api/user/settings'
+      fullPath: '/api/user/settings'
+      preLoaderRoute: typeof ApiUserSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/user/profile': {
+      id: '/api/user/profile'
+      path: '/api/user/profile'
+      fullPath: '/api/user/profile'
+      preLoaderRoute: typeof ApiUserProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/user/billing': {
+      id: '/api/user/billing'
+      path: '/api/user/billing'
+      fullPath: '/api/user/billing'
+      preLoaderRoute: typeof ApiUserBillingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/payment/query': {
+      id: '/api/payment/query'
+      path: '/api/payment/query'
+      fullPath: '/api/payment/query'
+      preLoaderRoute: typeof ApiPaymentQueryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/payment/create': {
+      id: '/api/payment/create'
+      path: '/api/payment/create'
+      fullPath: '/api/payment/create'
+      preLoaderRoute: typeof ApiPaymentCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/auth/$': {
       id: '/api/auth/$'
       path: '/api/auth/$'
@@ -246,8 +497,52 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAuthSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/admin/users': {
+      id: '/api/admin/users'
+      path: '/api/admin/users'
+      fullPath: '/api/admin/users'
+      preLoaderRoute: typeof ApiAdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/payment/notify/creem': {
+      id: '/api/payment/notify/creem'
+      path: '/api/payment/notify/creem'
+      fullPath: '/api/payment/notify/creem'
+      preLoaderRoute: typeof ApiPaymentNotifyCreemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
+
+interface DashboardRouteChildren {
+  DashboardDashboardIndexRoute: typeof DashboardDashboardIndexRoute
+}
+
+const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardDashboardIndexRoute: DashboardDashboardIndexRoute,
+}
+
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
+
+interface MarketingRouteChildren {
+  MarketingAboutRoute: typeof MarketingAboutRoute
+  MarketingContactRoute: typeof MarketingContactRoute
+  MarketingPaySuccessRoute: typeof MarketingPaySuccessRoute
+  MarketingIndexRoute: typeof MarketingIndexRoute
+}
+
+const MarketingRouteChildren: MarketingRouteChildren = {
+  MarketingAboutRoute: MarketingAboutRoute,
+  MarketingContactRoute: MarketingContactRoute,
+  MarketingPaySuccessRoute: MarketingPaySuccessRoute,
+  MarketingIndexRoute: MarketingIndexRoute,
+}
+
+const MarketingRouteWithChildren = MarketingRoute._addFileChildren(
+  MarketingRouteChildren,
+)
 
 interface AuthRouteChildren {
   AuthConfirmRoute: typeof AuthConfirmRoute
@@ -270,11 +565,20 @@ const AuthRouteChildren: AuthRouteChildren = {
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  DashboardRoute: DashboardRouteWithChildren,
+  MarketingRoute: MarketingRouteWithChildren,
   AuthRoute: AuthRouteWithChildren,
+  ApiContactRoute: ApiContactRoute,
   DemoBetterAuthRoute: DemoBetterAuthRoute,
+  ApiAdminUsersRoute: ApiAdminUsersRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
+  ApiPaymentCreateRoute: ApiPaymentCreateRoute,
+  ApiPaymentQueryRoute: ApiPaymentQueryRoute,
+  ApiUserBillingRoute: ApiUserBillingRoute,
+  ApiUserProfileRoute: ApiUserProfileRoute,
+  ApiUserSettingsRoute: ApiUserSettingsRoute,
+  ApiUserSubscriptionRoute: ApiUserSubscriptionRoute,
+  ApiPaymentNotifyCreemRoute: ApiPaymentNotifyCreemRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

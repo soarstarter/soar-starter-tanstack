@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { signIn } from "#/lib/auth-client";
 import { Button } from "#/components/ui/button";
 import { Routes } from "#/config/route-config";
+import { signIn } from "#/lib/auth-client";
 
 function GitHubIcon(props: React.SVGProps<SVGSVGElement>) {
 	return (

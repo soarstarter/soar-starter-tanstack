@@ -47,7 +47,9 @@ export const subscription = pgTable(
 			.references(() => user.id, { onDelete: "cascade" })
 			.unique(),
 		productId: text("product_id").notNull(),
-		planInterval: planIntervalEnum("plan_interval").notNull().default("one_time"),
+		planInterval: planIntervalEnum("plan_interval")
+			.notNull()
+			.default("one_time"),
 		provider: providerEnum("provider").notNull().default("creem"),
 		customerId: text("customer_id"),
 		subscriptionId: text("subscription_id"),

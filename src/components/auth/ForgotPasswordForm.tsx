@@ -1,11 +1,9 @@
-import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { authClient } from "#/lib/auth-client";
 import { Button } from "#/components/ui/button";
-import { Input } from "#/components/ui/input";
 import {
 	Form,
 	FormControl,
@@ -14,7 +12,9 @@ import {
 	FormLabel,
 	FormMessage,
 } from "#/components/ui/form";
+import { Input } from "#/components/ui/input";
 import { Routes } from "#/config/route-config";
+import { authClient } from "#/lib/auth-client";
 
 const forgotPasswordSchema = z.object({
 	email: z.string().email("Please enter a valid email address"),

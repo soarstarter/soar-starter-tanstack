@@ -1,5 +1,4 @@
-import { Outlet, createFileRoute } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "#/components/ui/button";
 

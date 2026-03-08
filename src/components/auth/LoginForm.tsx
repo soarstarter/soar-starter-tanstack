@@ -1,13 +1,11 @@
-import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Link, useNavigate } from "@tanstack/react-router";
+import { Eye, EyeOff } from "lucide-react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Eye, EyeOff } from "lucide-react";
-import { signIn } from "#/lib/auth-client";
 import { OAuthButtons } from "#/components/auth/OAuthButtons";
 import { Button } from "#/components/ui/button";
-import { Input } from "#/components/ui/input";
 import {
 	Form,
 	FormControl,
@@ -16,7 +14,9 @@ import {
 	FormLabel,
 	FormMessage,
 } from "#/components/ui/form";
+import { Input } from "#/components/ui/input";
 import { Routes } from "#/config/route-config";
+import { signIn } from "#/lib/auth-client";
 
 const loginSchema = z.object({
 	email: z.string().email("Please enter a valid email address"),

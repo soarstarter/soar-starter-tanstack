@@ -17,7 +17,8 @@ export function getPricePlans(): Record<string, PricePlan> {
 		free: {
 			id: "free",
 			name: "Free",
-			description: "For evaluating the starter and building your first project.",
+			description:
+				"For evaluating the starter and building your first project.",
 			prices: [],
 			isFree: true,
 			isLifetime: false,
@@ -34,7 +35,8 @@ export function getPricePlans(): Record<string, PricePlan> {
 		pro: {
 			id: "pro",
 			name: "Pro",
-			description: "For teams that need subscriptions, automation, and higher limits.",
+			description:
+				"For teams that need subscriptions, automation, and higher limits.",
 			prices: [
 				{
 					type: "subscription",
@@ -67,7 +69,8 @@ export function getPricePlans(): Record<string, PricePlan> {
 		lifetime: {
 			id: "lifetime",
 			name: "Lifetime",
-			description: "One-time purchase for all core features and future template updates.",
+			description:
+				"One-time purchase for all core features and future template updates.",
 			prices: [
 				{
 					type: "one_time",

@@ -134,6 +134,34 @@
 			"backHome": "Back to Home"
 		}
 	},
+	"faq": {
+		"whatIsSoarStarter": {
+			"question": "What is SoarStarter?",
+			"answer": "SoarStarter is a production-ready SaaS template built with TanStack Start, React, Tailwind CSS, and shadcn/ui. It provides authentication, payments, dashboards, i18n, and more out of the box."
+		},
+		"techStack": {
+			"question": "What tech stack does it use?",
+			"answer": "SoarStarter is built with TanStack Start (full-stack SSR React), Better Auth, Drizzle ORM, PostgreSQL, Creem payments, Resend email, Tailwind CSS v4, and shadcn/ui components."
+		},
+		"customization": {
+			"question": "How customizable is it?",
+			"answer": "Every aspect is customizable. The codebase uses clean architecture patterns, type-safe configurations, and modular components. You can swap out any provider or add new features easily."
+		},
+		"support": {
+			"question": "What kind of support is available?",
+			"answer": "Free users get community support via GitHub Discussions. Pro and Lifetime users get priority support with faster response times and direct access to the team."
+		},
+		"updates": {
+			"question": "Do I get future updates?",
+			"answer": "Pro subscribers receive updates throughout their subscription. Lifetime plan holders get all future updates forever, including new features, improvements, and security patches."
+		}
+	},
+	"cta": {
+		"heading": "Ready to launch your SaaS?",
+		"description": "Start building your next project with SoarStarter. Save months of development time with our production-ready template.",
+		"getStarted": "Get Started",
+		"contactUs": "Contact Us"
+	},
 	"auth": {
 		"logIn": "Log in",
 		"signUp": "Sign up",

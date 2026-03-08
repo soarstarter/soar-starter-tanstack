@@ -7,7 +7,7 @@ Reference project: `D:\project\webstorm\soar-next-cc` (Next.js SaaS starter)
 This project aims to build a production-ready SaaS starter template powered by **TanStack Start** (full-stack SSR React framework), mirroring the feature set of an existing **Next.js SaaS starter** (`soar-next-cc`). The Next.js version is a complete template with authentication, payments, dashboards, AI features, blog/docs, i18n, and marketing pages. This TanStack project starts from a base scaffold (TanStack Start + Better Auth + Tailwind CSS v4 + shadcn/ui) and needs to be built out to feature parity.
 
 **Core principle:** Since both frameworks use React, most UI components, hooks, and client-side libraries can be directly reused. The main migration work is in framework-specific areas — routing (file-based layouts, route groups, middleware), server-side APIs (Next.js route handlers → TanStack server handlers), data loading patterns, and meta/head management. Some Next.js-specific packages (e.g. `next-intl`, `next-themes`) need TanStack-compatible alternatives.
-
+、
 ### Tech Stack
 
 | Layer | Next.js Project | TanStack Project |
@@ -59,42 +59,38 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ## Step 3. Authentication (Better Auth — enhanced)
 
-- [ ] Upgrade `src/lib/auth.ts` to full config:
-  - [ ] Add drizzle adapter with pg provider
-  - [ ] Enable email verification with Resend emails
-  - [ ] Add reset password flow with email
-  - [ ] Add social providers (GitHub, Google)
-  - [ ] Add account linking
-  - [ ] Add admin plugin
-- [ ] Upgrade `src/lib/auth-client.ts` — add `adminClient` plugin, export `signIn`, `signUp`, `signOut`, `useSession`
-- [ ] Auth API route already exists at `src/routes/api/auth/$.ts` — verify it works with enhanced config
+- [x] Upgrade `src/lib/auth.ts` to full config:
+  - [x] Add drizzle adapter with pg provider
+  - [x] Enable email verification with Resend emails
+  - [x] Add reset password flow with email
+  - [x] Add social providers (GitHub, Google)
+  - [x] Add account linking
+  - [x] Add admin plugin
+- [x] Upgrade `src/lib/auth-client.ts` — add `adminClient` plugin, export `signIn`, `signUp`, `signOut`, `useSession`
+- [x] Auth API route already exists at `src/routes/api/auth/$.ts` — verify it works with enhanced config
 
 ### Auth Pages (under `src/routes/auth/`)
 
-- [ ] Create auth layout route (`src/routes/auth.tsx` or `src/routes/_auth.tsx`) — centered layout with back button
-- [ ] `src/routes/auth/login.tsx` — login form (email/password + OAuth buttons)
-- [ ] `src/routes/auth/register.tsx` — register form
-- [ ] `src/routes/auth/register-success.tsx` — registration success page
-- [ ] `src/routes/auth/forgot-password.tsx` — forgot password form
-- [ ] `src/routes/auth/reset-password.tsx` — reset password form
-- [ ] `src/routes/auth/confirm.tsx` — email confirmation page
+- [x] Create auth layout route (`src/routes/auth.tsx`) — centered layout with back button
+- [x] `src/routes/auth/login.tsx` — login form (email/password + OAuth buttons)
+- [x] `src/routes/auth/register.tsx` — register form
+- [x] `src/routes/auth/register-success.tsx` — registration success page
+- [x] `src/routes/auth/forgot-password.tsx` — forgot password form
+- [x] `src/routes/auth/reset-password.tsx` — reset password form (with `validateSearch` for token)
+- [x] `src/routes/auth/confirm.tsx` — email confirmation page
 
 ### Auth Components
 
-- [ ] `src/components/auth/LoginForm.tsx`
-- [ ] `src/components/auth/RegisterForm.tsx`
-- [ ] `src/components/auth/ForgotPasswordForm.tsx`
-- [ ] `src/components/auth/ResetPasswordForm.tsx`
-- [ ] `src/components/auth/OAuthButtons.tsx` (GitHub, Google)
-- [ ] `src/components/auth/LoginFormDialog.tsx` (modal login)
+- [x] `src/components/auth/LoginForm.tsx`
+- [x] `src/components/auth/RegisterForm.tsx`
+- [x] `src/components/auth/ForgotPasswordForm.tsx`
+- [x] `src/components/auth/ResetPasswordForm.tsx`
+- [x] `src/components/auth/OAuthButtons.tsx` (GitHub, Google)
+- [x] `src/components/auth/LoginFormDialog.tsx` (modal login)
 
 ### Auth Middleware / Route Protection
 
-- [ ] **[NEEDS RESEARCH]** Implement route protection for `/dashboard`, `/admin`, `/setting`, `/account` paths
-  - In Next.js this uses `middleware.ts`; TanStack Start uses `beforeLoad` on route definitions or a server middleware approach
-  - Option A: use `beforeLoad` in each protected route layout to check session cookie
-  - Option B: use Nitro server middleware for cookie-based redirect
-  - Decide and implement
+- [x] Implement route protection via `src/lib/auth-guard.ts` — client-side cookie check with `redirect()`, used in `beforeLoad` of protected layout routes
 
 ## Step 4. Email System
 

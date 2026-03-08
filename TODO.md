@@ -29,7 +29,7 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ---
 
-## 1. Project Foundation & Config
+## Step 1. Project Foundation & Config
 
 - [ ] Add shared types (`MenuItem`, `NestedMenuItem`, `WebsiteConfig`, `MailConfig`, `SocialConfig`, etc.) → `src/types/index.ts`
 - [ ] Create centralized config files:
@@ -47,7 +47,7 @@ This project aims to build a production-ready SaaS starter template powered by *
   - Creem product IDs for pricing plans
   - `IS_DEMO` flag
 
-## 2. Database
+## Step 2. Database
 
 - [ ] Install `drizzle-orm` and `pg` (PostgreSQL driver)
 - [ ] Install `drizzle-kit` as devDependency
@@ -57,7 +57,7 @@ This project aims to build a production-ready SaaS starter template powered by *
 - [ ] Add `drizzle.config.ts` for migrations
 - [ ] Add `db:migrate` and `db:push` scripts to `package.json`
 
-## 3. Authentication (Better Auth — enhanced)
+## Step 3. Authentication (Better Auth — enhanced)
 
 - [ ] Upgrade `src/lib/auth.ts` to full config:
   - [ ] Add drizzle adapter with pg provider
@@ -96,7 +96,7 @@ This project aims to build a production-ready SaaS starter template powered by *
   - Option B: use Nitro server middleware for cookie-based redirect
   - Decide and implement
 
-## 4. Email System
+## Step 4. Email System
 
 - [ ] Install `resend` and `@react-email/components`
 - [ ] Create email service — `src/lib/email/index.ts` (Resend integration)
@@ -108,7 +108,7 @@ This project aims to build a production-ready SaaS starter template powered by *
   - [ ] `src/lib/email/templates/contact-message.tsx`
   - [ ] `src/lib/email/templates/subscribe-newsletter.tsx`
 
-## 5. Payment System (Creem)
+## Step 5. Payment System (Creem)
 
 - [ ] Install `creem` SDK
 - [ ] Create payment lib — `src/lib/payment/creem.ts` (checkout creation, webhook handling)
@@ -125,7 +125,7 @@ This project aims to build a production-ready SaaS starter template powered by *
 - [ ] Admin API routes:
   - [ ] `src/routes/api/admin/users.ts`
 
-## 6. Internationalization (i18n)
+## Step 6. Internationalization (i18n)
 
 - [ ] **[NEEDS RESEARCH]** Choose i18n solution for TanStack Start
   - Next.js project uses `next-intl` with `[locale]` segment routing + JSON message files
@@ -139,7 +139,7 @@ This project aims to build a production-ready SaaS starter template powered by *
 - [ ] Implement locale routing (if URL-based)
 - [ ] Create `LanguageToggle` component
 
-## 7. Layout System
+## Step 7. Layout System
 
 ### Marketing Layout
 
@@ -162,7 +162,7 @@ This project aims to build a production-ready SaaS starter template powered by *
 - [ ] `src/components/layout/user/DashboardSideUser.tsx` — user avatar + info in sidebar
 - [ ] `src/components/layout/user/DashboardSideContent.tsx` — sidebar nav content
 
-## 8. Marketing Pages (under marketing layout)
+## Step 8. Marketing Pages (under marketing layout)
 
 ### Home Page
 
@@ -191,7 +191,7 @@ This project aims to build a production-ready SaaS starter template powered by *
 - [ ] `src/components/contact/ContactFormCard.tsx` — contact form with validation
 - [ ] `src/routes/api/contact.ts` — contact form submission API (sends email via Resend)
 
-## 9. Blog System
+## Step 9. Blog System
 
 - [ ] **[NEEDS RESEARCH]** Set up fumadocs with TanStack Start
   - fumadocs has a TanStack Start adapter — need to verify setup steps
@@ -207,7 +207,7 @@ This project aims to build a production-ready SaaS starter template powered by *
   - [ ] `src/components/blog/BlogPagination.tsx`
   - [ ] `src/components/blog/BlogToc.tsx` (table of contents)
 
-## 10. Documentation System
+## Step 10. Documentation System
 
 - [ ] **[NEEDS RESEARCH]** Set up fumadocs docs with TanStack Start
   - Need fumadocs TanStack adapter for docs (similar to blog)
@@ -221,7 +221,7 @@ This project aims to build a production-ready SaaS starter template powered by *
   - [ ] Docs layout route with sidebar navigation
   - [ ] `src/routes/_docs/docs/$slug.tsx` — doc page (catch-all slug)
 
-## 11. Dashboard Pages (under dashboard layout)
+## Step 11. Dashboard Pages (under dashboard layout)
 
 - [ ] `src/routes/_dashboard/dashboard/index.tsx` — dashboard home (charts, stats cards)
 - [ ] Dashboard components:
@@ -245,7 +245,7 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 - [ ] `src/routes/_dashboard/admin/users.tsx` — user management table (admin only)
 
-## 12. AI Features
+## Step 12. AI Features
 
 - [ ] Install `ai` (Vercel AI SDK) and `@ai-sdk/openai`
 - [ ] Create AI lib modules:
@@ -272,12 +272,12 @@ This project aims to build a production-ready SaaS starter template powered by *
   - [ ] `src/components/ai-elements/` — shared UI (message, prompt-input, conversation, attachments, reasoning, shimmer, sources)
 - [ ] Install chat UI dependencies: `@ai-sdk/react`, `react-markdown`, `remark-gfm`, `streamdown` + plugins, `use-stick-to-bottom`
 
-## 13. Storage
+## Step 13. Storage
 
 - [ ] `src/routes/api/storage/upload-image.ts` — image upload API route
 - [ ] **[NEEDS RESEARCH]** Decide storage provider (S3, Cloudflare R2, etc.) — check what Next.js project uses
 
-## 14. UI Components & Libraries
+## Step 14. UI Components & Libraries
 
 ### shadcn/ui Components to Install
 
@@ -311,12 +311,12 @@ Already configured via `components.json`. Install as needed:
 - [ ] `src/components/common/LanguageToggle.tsx`
 - [ ] `src/components/theme-provider.tsx` — **[NEEDS RESEARCH]** TanStack Start equivalent of `next-themes`; current project uses inline script approach — may use a context-based provider instead
 
-## 15. Form Handling
+## Step 15. Form Handling
 
 - [ ] Install `react-hook-form`, `@hookform/resolvers`, `zod`
 - [ ] shadcn `form` component uses react-hook-form — install it for all forms (auth, contact, settings)
 
-## 16. Legal Content
+## Step 16. Legal Content
 
 - [ ] Create `content/legal/` directory with MDX files:
   - [ ] `cookie-policy.mdx`
@@ -325,18 +325,18 @@ Already configured via `components.json`. Install as needed:
 - [ ] Set up fumadocs collection for legal content
 - [ ] Dynamic legal page route: `src/routes/_marketing/legal/$slug.tsx`
 
-## 17. SEO & Metadata
+## Step 17. SEO & Metadata
 
 - [ ] **[NEEDS RESEARCH]** TanStack Start head/meta management
   - Currently uses `head()` in route definitions — extend for per-page SEO
   - Open Graph, Twitter cards, canonical URLs
   - Sitemap generation (Next.js uses `next-sitemap` or app router metadata)
 
-## 18. Hooks
+## Step 18. Hooks
 
 - [ ] `src/hooks/use-mobile.ts` — mobile viewport detection hook (can reuse from Next.js)
 
-## 19. Cleanup & Polish
+## Step 19. Cleanup & Polish
 
 - [ ] Remove demo files (`about.tsx`, `demo/better-auth.tsx`, demo content in `index.tsx`)
 - [ ] Update `__root.tsx` — replace demo Header/Footer with new AppHeader/AppFooter via layout routes
@@ -362,21 +362,21 @@ Already configured via `components.json`. Install as needed:
 
 ## Recommended Implementation Order
 
-1. **Foundation** — types, configs, env vars (Section 1)
-2. **Database** — drizzle + schemas (Section 2)
-3. **Auth (enhanced)** — full Better Auth + pages (Section 3)
-4. **Email** — Resend integration (Section 4)
-5. **UI components** — install shadcn components + motion (Section 14)
-6. **Layouts** — marketing + dashboard layouts (Section 7)
-7. **Marketing pages** — home, about, contact (Section 8)
-8. **Forms** — react-hook-form + zod (Section 15)
-9. **Payment** — Creem integration (Section 5)
-10. **Dashboard pages** — dashboard, settings, admin (Section 11)
-11. **Blog** — fumadocs blog (Section 9)
-12. **Docs** — fumadocs docs (Section 10)
-13. **Legal** — MDX legal pages (Section 16)
-14. **i18n** — internationalization (Section 6)
-15. **AI features** — chat, image, audio, video (Section 12)
-16. **Storage** — file upload (Section 13)
-17. **SEO** — metadata, sitemap (Section 17)
-18. **Cleanup** — remove demos, final polish (Section 19)
+1. **Foundation** — types, configs, env vars (Step 1)
+2. **Database** — drizzle + schemas (Step 2)
+3. **Auth (enhanced)** — full Better Auth + pages (Step 3)
+4. **Email** — Resend integration (Step 4)
+5. **UI components** — install shadcn components + motion (Step 14)
+6. **Layouts** — marketing + dashboard layouts (Step 7)
+7. **Marketing pages** — home, about, contact (Step 8)
+8. **Forms** — react-hook-form + zod (Step 15)
+9. **Payment** — Creem integration (Step 5)
+10. **Dashboard pages** — dashboard, settings, admin (Step 11)
+11. **Blog** — fumadocs blog (Step 9)
+12. **Docs** — fumadocs docs (Step 10)
+13. **Legal** — MDX legal pages (Step 16)
+14. **i18n** — internationalization (Step 6)
+15. **AI features** — chat, image, audio, video (Step 12)
+16. **Storage** — file upload (Step 13)
+17. **SEO** — metadata, sitemap (Step 17)
+18. **Cleanup** — remove demos, final polish (Step 19)

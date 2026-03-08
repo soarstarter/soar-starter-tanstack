@@ -1,0 +1,175 @@
+{
+	"common": {
+		"appName": "SoarStarter",
+		"appNameDemo": "SoarStarter 演示",
+		"tagline": "使用 React 和 TanStack Start 更快地启动现代 SaaS",
+		"copyright": "© {{year}} SoarStarter 保留所有权利。",
+		"back": "返回",
+		"learnMore": "了解更多",
+		"getStarted": "开始使用",
+		"signUp": "注册",
+		"logIn": "登录",
+		"contactUs": "联系我们"
+	},
+	"menu": {
+		"features": "功能",
+		"pricing": "定价",
+		"blog": "博客",
+		"docs": "文档",
+		"aiTools": "AI 工具",
+		"aiChat": "AI 聊天",
+		"aiImage": "AI 图像",
+		"aiVideo": "AI 视频",
+		"aiAudio": "AI 音频",
+		"toggleMenu": "切换菜单"
+	},
+	"hero": {
+		"badge": "数天上线，而非数月",
+		"title": "使用现代技术栈更快地交付你的 SaaS",
+		"description": "一个基于 TanStack Start、React、Tailwind CSS 和 shadcn/ui 构建的生产就绪 SaaS 模板。认证、支付、仪表盘等功能一应俱全。",
+		"getStarted": "开始使用",
+		"learnMore": "了解更多"
+	},
+	"features": {
+		"heading": "AI 的基础设施",
+		"description": "Lyra 正在发展为不仅仅是模型。它支持整个 API 和平台，帮助开发者和企业进行创新。",
+		"databaseVisualization": "数据库可视化",
+		"advancedAuthentication": "高级认证",
+		"identityManagement": "身份管理",
+		"analyticsDashboard": "分析仪表盘",
+		"featureDescription": "Lyra 正在发展为不仅仅是模型。它支持整个 API 和平台，帮助开发者和企业进行创新。"
+	},
+	"pricing": {
+		"heading": "定价",
+		"description": "选择最适合您的方案。",
+		"monthly": "月付",
+		"yearly": "年付",
+		"popular": "热门",
+		"currentPlan": "当前方案",
+		"yourCurrentPlan": "您的当前方案",
+		"getStartedFree": "免费开始",
+		"getLifetimeAccess": "获取终身访问",
+		"getStarted": "开始使用",
+		"processing": "处理中...",
+		"notAvailable": "不可用",
+		"oneTime": "一次性",
+		"perMonth": "/月",
+		"perYear": "/年",
+		"free": {
+			"name": "免费版",
+			"description": "适合个人使用的基础功能"
+		},
+		"pro": {
+			"name": "专业版",
+			"description": "面向专业人士的高级功能"
+		},
+		"lifetime": {
+			"name": "终身版",
+			"description": "一次性付费的高级功能"
+		},
+		"feature": {
+			"upTo3Projects": "最多 3 个项目",
+			"1GBStorage": "1 GB 存储空间",
+			"basicAnalytics": "基础分析",
+			"communitySupport": "社区支持",
+			"customDomains": "自定义域名",
+			"customBranding": "自定义品牌",
+			"lifetimeUpdates": "终身更新",
+			"unlimitedProjects": "无限项目",
+			"10GBStorage": "10 GB 存储空间",
+			"advancedAnalytics": "高级分析",
+			"prioritySupport": "优先支持",
+			"allProFeatures": "所有专业版功能",
+			"100GBStorage": "100 GB 存储空间",
+			"dedicatedSupport": "专属支持",
+			"enterpriseSecurity": "企业级安全",
+			"advancedIntegrations": "高级集成"
+		}
+	},
+	"footer": {
+		"product": "产品",
+		"resources": "资源",
+		"company": "公司",
+		"legal": "法律",
+		"features": "功能",
+		"pricing": "定价",
+		"faq": "常见问题",
+		"blog": "博客",
+		"docs": "文档",
+		"about": "关于",
+		"contact": "联系",
+		"cookiePolicy": "Cookie 政策",
+		"privacyPolicy": "隐私政策",
+		"termsOfService": "服务条款"
+	},
+	"about": {
+		"title": "SoarStarter",
+		"subtitle": "全栈开发者与开源爱好者",
+		"description": "SoarStarter 是一个基于 TanStack Start、React、Tailwind CSS 和 shadcn/ui 构建的生产就绪 SaaS 模板。它提供了快速启动 SaaS 产品所需的一切。",
+		"contactUs": "联系我们"
+	},
+	"contact": {
+		"title": "联系我们",
+		"description": "与我们取得联系。我们很乐意听到您的声音！"
+	},
+	"blog": {
+		"title": "博客",
+		"description": "最新文章和教程",
+		"all": "全部",
+		"noPosts": "暂无文章",
+		"noPostsAll": "目前还没有博客文章。",
+		"noPostsCategory": "在 {{category}} 分类下没有找到文章。",
+		"backToList": "返回博客",
+		"publishedAt": "发布于",
+		"unknownAuthor": "未知作者",
+		"categories": "分类",
+		"tableOfContents": "本页目录"
+	},
+	"payment": {
+		"success": {
+			"title": "支付成功！",
+			"description": "感谢您的购买。您的付款已成功处理。",
+			"orderLabel": "订单号",
+			"viewOrders": "前往仪表盘",
+			"backHome": "返回首页"
+		}
+	},
+	"auth": {
+		"logIn": "登录",
+		"signUp": "注册",
+		"logOut": "退出登录"
+	},
+	"mail": {
+		"metadata": {
+			"name": "SoarStarter"
+		},
+		"common": {
+			"team": "此致，{{name}} 团队",
+			"copyright": "© {{year}} {{name}}。保留所有权利。"
+		},
+		"forgotPassword": {
+			"subject": "重置您的密码",
+			"title": "{{name}}，您好，",
+			"body": "我们收到了重置您密码的请求。请点击下方按钮设置新密码。",
+			"resetPassword": "重置密码"
+		},
+		"verifyEmail": {
+			"subject": "验证您的邮箱地址",
+			"title": "{{name}}，您好，",
+			"body": "欢迎！请点击下方按钮确认您的邮箱地址。",
+			"confirmEmail": "确认邮箱"
+		},
+		"contactMessage": {
+			"subject": "联系：{{subject}}",
+			"name": "姓名：{{name}}",
+			"email": "邮箱：{{email}}",
+			"subjectLabel": "主题：{{subject}}",
+			"message": "消息：{{message}}"
+		},
+		"subscribeNewsletter": {
+			"subject": "欢迎订阅我们的通讯",
+			"title": "{{name}}，您好，",
+			"body": "感谢您订阅我们的通讯！您将直接在收件箱中收到最新的更新、提示和新闻。"
+		}
+	}
+}

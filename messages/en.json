@@ -1,0 +1,175 @@
+{
+	"common": {
+		"appName": "SoarStarter",
+		"appNameDemo": "SoarStarter Demo",
+		"tagline": "Launch modern SaaS faster with React & TanStack Start",
+		"copyright": "© {{year}} SoarStarter All Rights Reserved.",
+		"back": "Back",
+		"learnMore": "Learn More",
+		"getStarted": "Get Started",
+		"signUp": "Sign Up",
+		"logIn": "Log in",
+		"contactUs": "Contact Us"
+	},
+	"menu": {
+		"features": "Features",
+		"pricing": "Pricing",
+		"blog": "Blog",
+		"docs": "Docs",
+		"aiTools": "AI Tools",
+		"aiChat": "AI Chat",
+		"aiImage": "AI Image",
+		"aiVideo": "AI Video",
+		"aiAudio": "AI Audio",
+		"toggleMenu": "Toggle menu"
+	},
+	"hero": {
+		"badge": "Launch in days, not months",
+		"title": "Ship your SaaS faster with modern stack",
+		"description": "A production-ready SaaS template built with TanStack Start, React, Tailwind CSS, and shadcn/ui. Authentication, payments, dashboard, and more — all included.",
+		"getStarted": "Get Started",
+		"learnMore": "Learn More"
+	},
+	"features": {
+		"heading": "The foundation for AI",
+		"description": "Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.",
+		"databaseVisualization": "Database Visualization",
+		"advancedAuthentication": "Advanced Authentication",
+		"identityManagement": "Identity Management",
+		"analyticsDashboard": "Analytics Dashboard",
+		"featureDescription": "Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate."
+	},
+	"pricing": {
+		"heading": "Pricing",
+		"description": "Choose the plan that works best for you.",
+		"monthly": "Monthly",
+		"yearly": "Yearly",
+		"popular": "Popular",
+		"currentPlan": "Current Plan",
+		"yourCurrentPlan": "Your Current Plan",
+		"getStartedFree": "Get Started For Free",
+		"getLifetimeAccess": "Get Lifetime Access",
+		"getStarted": "Get Started",
+		"processing": "Processing...",
+		"notAvailable": "Not Available",
+		"oneTime": "one-time",
+		"perMonth": "/month",
+		"perYear": "/year",
+		"free": {
+			"name": "Free",
+			"description": "Basic features for personal use"
+		},
+		"pro": {
+			"name": "Pro",
+			"description": "Advanced features for professionals"
+		},
+		"lifetime": {
+			"name": "Lifetime",
+			"description": "Premium features with one-time payment"
+		},
+		"feature": {
+			"upTo3Projects": "Up to 3 projects",
+			"1GBStorage": "1 GB storage",
+			"basicAnalytics": "Basic analytics",
+			"communitySupport": "Community support",
+			"customDomains": "Custom domains",
+			"customBranding": "Custom branding",
+			"lifetimeUpdates": "Lifetime updates",
+			"unlimitedProjects": "Unlimited projects",
+			"10GBStorage": "10 GB storage",
+			"advancedAnalytics": "Advanced analytics",
+			"prioritySupport": "Priority support",
+			"allProFeatures": "All Pro features",
+			"100GBStorage": "100 GB storage",
+			"dedicatedSupport": "Dedicated support",
+			"enterpriseSecurity": "Enterprise-grade security",
+			"advancedIntegrations": "Advanced integrations"
+		}
+	},
+	"footer": {
+		"product": "Product",
+		"resources": "Resources",
+		"company": "Company",
+		"legal": "Legal",
+		"features": "Features",
+		"pricing": "Pricing",
+		"faq": "FAQ",
+		"blog": "Blog",
+		"docs": "Docs",
+		"about": "About",
+		"contact": "Contact",
+		"cookiePolicy": "Cookie Policy",
+		"privacyPolicy": "Privacy Policy",
+		"termsOfService": "Terms of Service"
+	},
+	"about": {
+		"title": "SoarStarter",
+		"subtitle": "Full-stack developer & open source enthusiast",
+		"description": "SoarStarter is a production-ready SaaS template built with TanStack Start, React, Tailwind CSS, and shadcn/ui. It provides everything you need to launch your SaaS product quickly.",
+		"contactUs": "Contact Us"
+	},
+	"contact": {
+		"title": "Contact",
+		"description": "Get in touch with us. We'd love to hear from you!"
+	},
+	"blog": {
+		"title": "Blog",
+		"description": "Latest articles and tutorials",
+		"all": "All",
+		"noPosts": "No Posts Found",
+		"noPostsAll": "There are no blog posts yet.",
+		"noPostsCategory": "No posts found in {{category}}.",
+		"backToList": "Back to Blog",
+		"publishedAt": "Published",
+		"unknownAuthor": "Unknown Author",
+		"categories": "Categories",
+		"tableOfContents": "On this page"
+	},
+	"payment": {
+		"success": {
+			"title": "Payment Successful!",
+			"description": "Thank you for your purchase. Your payment has been processed successfully.",
+			"orderLabel": "Order ID",
+			"viewOrders": "Go to Dashboard",
+			"backHome": "Back to Home"
+		}
+	},
+	"auth": {
+		"logIn": "Log in",
+		"signUp": "Sign up",
+		"logOut": "Log out"
+	},
+	"mail": {
+		"metadata": {
+			"name": "SoarStarter"
+		},
+		"common": {
+			"team": "Best regards, The {{name}} Team",
+			"copyright": "© {{year}} {{name}}. All rights reserved."
+		},
+		"forgotPassword": {
+			"subject": "Reset your password",
+			"title": "Hi {{name}},",
+			"body": "We received a request to reset your password. Click the button below to choose a new password.",
+			"resetPassword": "Reset Password"
+		},
+		"verifyEmail": {
+			"subject": "Verify your email address",
+			"title": "Hi {{name}},",
+			"body": "Welcome! Please confirm your email address by clicking the button below.",
+			"confirmEmail": "Confirm Email"
+		},
+		"contactMessage": {
+			"subject": "Contact: {{subject}}",
+			"name": "Name: {{name}}",
+			"email": "Email: {{email}}",
+			"subjectLabel": "Subject: {{subject}}",
+			"message": "Message: {{message}}"
+		},
+		"subscribeNewsletter": {
+			"subject": "Welcome to our newsletter",
+			"title": "Hi {{name}},",
+			"body": "Thank you for subscribing to our newsletter! You'll receive the latest updates, tips, and news directly in your inbox."
+		}
+	}
+}

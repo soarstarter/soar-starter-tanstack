@@ -123,17 +123,14 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ## Step 6. Internationalization (i18n)
 
-- [ ] **[NEEDS RESEARCH]** Choose i18n solution for TanStack Start
-  - Next.js project uses `next-intl` with `[locale]` segment routing + JSON message files
-  - Options for TanStack Start:
-    - `react-i18next` / `i18next` — most popular React i18n (no built-in routing)
-    - `@tanstack/react-router` locale param route — manual `$locale` segment
-    - `typesafe-i18n` — type-safe alternative
-  - Need to decide: locale in URL path vs cookie/header based
-- [ ] Create message files (`messages/en.json`, `messages/zh.json`) — can reuse from Next.js project
-- [ ] Set up i18n provider and hook
-- [ ] Implement locale routing (if URL-based)
-- [ ] Create `LanguageToggle` component
+- [x] **[RESOLVED]** Choose i18n solution for TanStack Start
+  - Chose `i18next` + `react-i18next` + `i18next-browser-languagedetector`
+  - Cookie/localStorage-based locale detection (no URL segment routing)
+  - Simpler than URL-based approach, avoids restructuring all routes
+- [x] Create message files (`messages/en.json`, `messages/zh.json`) — adapted from Next.js project
+- [x] Set up i18n provider and hook — `src/i18n/index.ts` with side-effect import in root route
+- [x] Locale detection via cookie/localStorage/navigator (no URL routing needed)
+- [x] Create `LanguageToggle` component — `src/components/common/LanguageToggle.tsx`
 
 ## Step 7. Layout System
 

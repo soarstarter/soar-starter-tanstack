@@ -106,20 +106,20 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ## Step 5. Payment System (Creem)
 
-- [ ] Install `creem` SDK
-- [ ] Create payment lib — `src/lib/payment/creem.ts` (checkout creation, webhook handling)
-- [ ] Create order number generator — `src/lib/payment/order-no.ts`
-- [ ] API routes (using TanStack Start server route handlers):
-  - [ ] `src/routes/api/payment/create.ts` — create checkout
-  - [ ] `src/routes/api/payment/notify/creem.ts` — webhook handler
-  - [ ] `src/routes/api/payment/query.ts` — query payment status
-- [ ] User API routes:
-  - [ ] `src/routes/api/user/billing.ts`
-  - [ ] `src/routes/api/user/subscription.ts`
-  - [ ] `src/routes/api/user/profile.ts`
-  - [ ] `src/routes/api/user/settings.ts`
-- [ ] Admin API routes:
-  - [ ] `src/routes/api/admin/users.ts`
+- [x] Install `creem` SDK
+- [x] Create payment lib — `src/lib/payment/creem.ts` (checkout creation, webhook handling)
+- [x] Create order number generator — `src/lib/payment/order-no.ts`
+- [x] API routes (using TanStack Start server route handlers):
+  - [x] `src/routes/api/payment/create.ts` — create checkout
+  - [x] `src/routes/api/payment/notify/creem.ts` — webhook handler
+  - [x] `src/routes/api/payment/query.ts` — query payment status
+- [x] User API routes:
+  - [x] `src/routes/api/user/billing.ts`
+  - [x] `src/routes/api/user/subscription.ts`
+  - [x] `src/routes/api/user/profile.ts`
+  - [x] `src/routes/api/user/settings.ts`
+- [x] Admin API routes:
+  - [x] `src/routes/api/admin/users.ts`
 
 ## Step 6. Internationalization (i18n)
 

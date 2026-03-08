@@ -94,15 +94,15 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ## Step 4. Email System
 
-- [ ] Install `resend` and `@react-email/components`
-- [ ] Create email service — `src/lib/email/index.ts` (Resend integration)
-- [ ] Create email templates:
-  - [ ] `src/lib/email/templates/email-layout.tsx` — base layout
-  - [ ] `src/lib/email/templates/email-button.tsx` — CTA button component
-  - [ ] `src/lib/email/templates/verify-email.tsx`
-  - [ ] `src/lib/email/templates/forgot-password.tsx`
-  - [ ] `src/lib/email/templates/contact-message.tsx`
-  - [ ] `src/lib/email/templates/subscribe-newsletter.tsx`
+- [x] Install `resend` and `@react-email/components`
+- [x] Create email service — `src/lib/email/index.ts` (Resend integration)
+- [x] Create email templates:
+  - [x] `src/lib/email/templates/email-layout.tsx` — base layout
+  - [x] `src/lib/email/templates/email-button.tsx` — CTA button component
+  - [x] `src/lib/email/templates/verify-email.tsx`
+  - [x] `src/lib/email/templates/forgot-password.tsx`
+  - [x] `src/lib/email/templates/contact-message.tsx`
+  - [x] `src/lib/email/templates/subscribe-newsletter.tsx`
 
 ## Step 5. Payment System (Creem)
 

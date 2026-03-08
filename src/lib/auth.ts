@@ -4,6 +4,9 @@ import { admin } from "better-auth/plugins";
 import { tanstackStartCookies } from "better-auth/tanstack-start";
 import { db } from "#/lib/db";
 import * as authSchema from "#/lib/db/schema/auth";
+import { sendEmail } from "#/lib/email";
+import { ForgotPassword } from "#/lib/email/templates/forgot-password";
+import { VerifyEmail } from "#/lib/email/templates/verify-email";
 
 export const auth = betterAuth({
 	database: drizzleAdapter(db, {
@@ -16,15 +19,21 @@ export const auth = betterAuth({
 		enabled: true,
 		requireEmailVerification: true,
 		sendResetPassword: async ({ user, url }) => {
-			// TODO: integrate with email service (Step 4)
-			console.log(`[Auth] Reset password for ${user.email}: ${url}`);
+			await sendEmail({
+				to: user.email,
+				subject: "Reset your password",
+				react: ForgotPassword({ url, name: user.name }),
+			});
 		},
 	},
 	emailVerification: {
 		sendOnSignUp: true,
 		sendVerificationEmail: async ({ user, url }) => {
-			// TODO: integrate with email service (Step 4)
-			console.log(`[Auth] Verify email for ${user.email}: ${url}`);
+			await sendEmail({
+				to: user.email,
+				subject: "Verify your email address",
+				react: VerifyEmail({ url, name: user.name }),
+			});
 		},
 	},
 	socialProviders: {

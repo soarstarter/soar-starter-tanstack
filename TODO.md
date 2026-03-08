@@ -31,15 +31,15 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ## Step 1. Project Foundation & Config
 
-- [ ] Add shared types (`MenuItem`, `NestedMenuItem`, `WebsiteConfig`, `MailConfig`, `SocialConfig`, etc.) → `src/types/index.ts`
-- [ ] Create centralized config files:
-  - [ ] `src/config/website-config.ts` — site metadata, mail, social links
-  - [ ] `src/config/route-config.ts` — routes enum
-  - [ ] `src/config/social-config.ts` — social media links
-  - [ ] `src/config/footer-config.ts` — footer link groups
-  - [ ] `src/config/price-config.ts` — pricing plans (free/pro/lifetime)
-  - [ ] `src/config/user-sidebar-config.ts` — dashboard sidebar nav
-- [ ] Set up environment variables (`.env.local` / `.env.example`):
+- [x] Add shared types (`MenuItem`, `NestedMenuItem`, `WebsiteConfig`, `MailConfig`, `SocialConfig`, etc.) → `src/types/index.ts`
+- [x] Create centralized config files:
+  - [x] `src/config/website-config.ts` — site metadata, mail, social links
+  - [x] `src/config/route-config.ts` — routes enum
+  - [x] `src/config/social-config.ts` — social media links
+  - [x] `src/config/footer-config.ts` — footer link groups
+  - [x] `src/config/price-config.ts` — pricing plans (free/pro/lifetime)
+  - [x] `src/config/user-sidebar-config.ts` — dashboard sidebar nav
+- [x] Set up environment variables (`.env.local` / `.env.example`):
   - `DATABASE_URL`, `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`
   - `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`
   - `RESEND_API_KEY`

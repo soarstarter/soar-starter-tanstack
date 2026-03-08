@@ -1,0 +1,27 @@
+export enum Routes {
+	Root = "/",
+
+	FAQ = "/#faq",
+	Features = "/#features",
+	Pricing = "/#pricing",
+	Blog = "/blog",
+	Docs = "/docs",
+	About = "/about",
+	Contact = "/contact",
+	Waitlist = "/waitlist",
+	Changelog = "/changelog",
+	Roadmap = "/roadmap",
+	CookiePolicy = "/legal/cookie-policy",
+	PrivacyPolicy = "/legal/privacy-policy",
+	TermsOfService = "/legal/terms-of-service",
+
+	AuthLogin = "/auth/login",
+	AuthRegister = "/auth/register",
+	AuthForgotPassword = "/auth/forgot-password",
+	AuthResetPassword = "/auth/reset-password",
+	AuthConfirm = "/auth/confirm",
+	AuthRegisterSuccess = "/auth/register-success",
+
+	Dashboard = "/dashboard",
+	PaySuccess = "/pay-success",
+}

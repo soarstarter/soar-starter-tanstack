@@ -136,24 +136,22 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ### Marketing Layout
 
-- [ ] Create marketing layout route (equivalent to Next.js `(marketing)/layout.tsx`)
-  - TanStack Router: use a pathless layout route like `src/routes/_marketing.tsx`
-  - Includes `AppHeader` + main + `AppFooter`
-- [ ] `src/components/layout/app/AppHeader.tsx` — site header with nav, auth status, mobile menu
-- [ ] `src/components/layout/app/AppNavMenu.tsx` — desktop navigation menu
-- [ ] `src/components/layout/app/AppMobileMenu.tsx` — mobile hamburger menu
-- [ ] `src/components/layout/app/AppFooter.tsx` — site footer with link groups
-- [ ] `src/components/layout/app/UserPopover.tsx` — logged-in user dropdown
+- [x] Create marketing layout route (`src/routes/_marketing.tsx`) — pathless layout with `AppHeader` + main + `AppFooter`
+- [x] `src/components/layout/app/AppHeader.tsx` — site header with nav, auth status, mobile menu
+- [x] `src/components/layout/app/AppNavMenu.tsx` — desktop navigation menu
+- [x] `src/components/layout/app/AppMobileMenu.tsx` — mobile hamburger menu
+- [x] `src/components/layout/app/AppFooter.tsx` — site footer with link groups
+- [x] `src/components/layout/app/UserPopover.tsx` — logged-in user dropdown
 
 ### Dashboard Layout
 
-- [ ] Create dashboard layout route (`src/routes/_dashboard.tsx`) — sidebar + header with breadcrumb
-- [ ] Install shadcn/ui components needed: `sidebar`, `breadcrumb`, `separator`, `sheet`
-- [ ] `src/components/layout/user/DashboardSidebar.tsx` — collapsible sidebar with nav groups
-- [ ] `src/components/layout/user/DashboardBreadcrumb.tsx` — auto breadcrumb from route
-- [ ] `src/components/layout/user/DashboardSideHeader.tsx` — sidebar header (logo/brand)
-- [ ] `src/components/layout/user/DashboardSideUser.tsx` — user avatar + info in sidebar
-- [ ] `src/components/layout/user/DashboardSideContent.tsx` — sidebar nav content
+- [x] Create dashboard layout route (`src/routes/_dashboard.tsx`) — sidebar + header with breadcrumb, auth-protected
+- [x] Install shadcn/ui components needed: `sidebar`, `breadcrumb`, `separator`, `sheet`, `navigation-menu`, `collapsible`, `avatar`, `dropdown-menu`, `tooltip`, `skeleton`
+- [x] `src/components/layout/user/DashboardSidebar.tsx` — collapsible sidebar with nav groups
+- [x] `src/components/layout/user/DashboardBreadcrumb.tsx` — auto breadcrumb from route
+- [x] `src/components/layout/user/DashboardSideHeader.tsx` — sidebar header (logo/brand)
+- [x] `src/components/layout/user/DashboardSideUser.tsx` — user avatar + info in sidebar
+- [x] `src/components/layout/user/DashboardSideContent.tsx` — sidebar nav content
 
 ## Step 8. Marketing Pages (under marketing layout)
 

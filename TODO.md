@@ -49,13 +49,13 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ## Step 2. Database
 
-- [ ] Install `drizzle-orm` and `pg` (PostgreSQL driver)
-- [ ] Install `drizzle-kit` as devDependency
-- [ ] Create DB connection — `src/lib/db/index.ts` (drizzle + pg Pool)
-- [ ] Create auth schema — `src/lib/db/schema/auth.ts` (Better Auth tables)
-- [ ] Create payment schema — `src/lib/db/schema/payment.ts` (subscription, payment tables with enums: provider, plan_interval, subscription_status, order_status)
-- [ ] Add `drizzle.config.ts` for migrations
-- [ ] Add `db:migrate` and `db:push` scripts to `package.json`
+- [x] Install `drizzle-orm` and `pg` (PostgreSQL driver)
+- [x] Install `drizzle-kit` as devDependency
+- [x] Create DB connection — `src/lib/db/index.ts` (drizzle + pg Pool)
+- [x] Create auth schema — `src/lib/db/schema/auth.ts` (Better Auth tables)
+- [x] Create payment schema — `src/lib/db/schema/payment.ts` (subscription, payment tables with enums: provider, plan_interval, subscription_status, order_status)
+- [x] Add `drizzle.config.ts` for migrations
+- [x] Add `db:migrate` and `db:push` scripts to `package.json`
 
 ## Step 3. Authentication (Better Auth — enhanced)
 

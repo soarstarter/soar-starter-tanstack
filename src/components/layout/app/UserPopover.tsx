@@ -1,4 +1,4 @@
-import { Link, useRouter } from "@tanstack/react-router";
+import { useRouter } from "@tanstack/react-router";
 import { CreditCard, LogOut, Settings2, User } from "lucide-react";
 import {
 	Popover,
@@ -6,6 +6,7 @@ import {
 	PopoverTrigger,
 } from "#/components/ui/popover";
 import { Separator } from "#/components/ui/separator";
+import { LocaleLink, useLocaleRouter } from "#/i18n/routing";
 import { signOut } from "#/lib/auth-client";
 
 interface UserPopoverProps {
@@ -17,10 +18,11 @@ interface UserPopoverProps {
 
 export function UserPopover({ user }: UserPopoverProps) {
 	const router = useRouter();
+	const localeRouter = useLocaleRouter();
 
 	const handleLogout = async () => {
 		await signOut();
-		router.navigate({ to: "/" });
+		void localeRouter.push("/");
 	};
 
 	return (
@@ -48,20 +50,20 @@ export function UserPopover({ user }: UserPopoverProps) {
 					</div>
 				</div>
 				<Separator />
-				<Link
-					to="/setting/billing"
+				<LocaleLink
+					href="/setting/billing"
 					className="flex cursor-pointer items-center space-x-2.5 p-2 hover:bg-accent hover:text-accent-foreground"
 				>
 					<CreditCard className="size-4 shrink-0" />
 					<span className="text-sm">Billing</span>
-				</Link>
-				<Link
-					to="/setting/profile"
+				</LocaleLink>
+				<LocaleLink
+					href="/setting/profile"
 					className="flex cursor-pointer items-center space-x-2.5 p-2 hover:bg-accent hover:text-accent-foreground"
 				>
 					<Settings2 className="size-4 shrink-0" />
 					<span className="text-sm">Settings</span>
-				</Link>
+				</LocaleLink>
 				<Separator />
 				<button
 					type="button"

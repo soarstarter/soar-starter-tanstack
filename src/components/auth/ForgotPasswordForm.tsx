@@ -1,5 +1,4 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -14,6 +13,11 @@ import {
 } from "#/components/ui/form";
 import { Input } from "#/components/ui/input";
 import { Routes } from "#/config/route-config";
+import {
+	LocaleLink,
+	localizePath,
+	useCurrentLocale,
+} from "#/i18n/routing";
 import { authClient } from "#/lib/auth-client";
 
 const forgotPasswordSchema = z.object({
@@ -23,6 +27,7 @@ const forgotPasswordSchema = z.object({
 type ForgotPasswordFormValues = z.infer<typeof forgotPasswordSchema>;
 
 export function ForgotPasswordForm() {
+	const locale = useCurrentLocale();
 	const [error, setError] = useState<string | null>(null);
 	const [success, setSuccess] = useState(false);
 	const [loading, setLoading] = useState(false);
@@ -39,7 +44,7 @@ export function ForgotPasswordForm() {
 		setLoading(true);
 		const { error: authError } = await authClient.requestPasswordReset({
 			email: values.email,
-			redirectTo: Routes.AuthResetPassword,
+			redirectTo: localizePath(Routes.AuthResetPassword, locale),
 		});
 		setLoading(false);
 
@@ -59,7 +64,7 @@ export function ForgotPasswordForm() {
 					link.
 				</p>
 				<Button variant="outline" asChild>
-					<Link to={Routes.AuthLogin}>Back to login</Link>
+					<LocaleLink href={Routes.AuthLogin}>Back to login</LocaleLink>
 				</Button>
 			</div>
 		);
@@ -105,12 +110,12 @@ export function ForgotPasswordForm() {
 
 			<p className="text-center text-sm text-muted-foreground">
 				Remember your password?{" "}
-				<Link
-					to={Routes.AuthLogin}
+				<LocaleLink
+					href={Routes.AuthLogin}
 					className="underline underline-offset-4 hover:text-primary"
 				>
 					Sign in
-				</Link>
+				</LocaleLink>
 			</p>
 		</div>
 	);

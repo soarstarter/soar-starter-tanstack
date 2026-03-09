@@ -1,4 +1,4 @@
-import { Link, useLocation } from "@tanstack/react-router";
+import { useLocation } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import {
 	SidebarGroup,
@@ -9,14 +9,17 @@ import {
 	SidebarMenuItem,
 } from "#/components/ui/sidebar";
 import { getUserSidebarLinks } from "#/config/user-sidebar-config";
+import { LocaleLink, useLocalePath } from "#/i18n/routing";
 
 export function DashboardSideContent() {
 	const { pathname } = useLocation();
 	const sidebarLinks = getUserSidebarLinks();
+	const localePath = useLocalePath();
 
 	const isActive = (href: string | undefined): boolean => {
 		if (!href) return false;
-		return pathname === href || pathname.startsWith(`${href}/`);
+		const localizedHref = localePath(href);
+		return pathname === localizedHref || pathname.startsWith(`${localizedHref}/`);
 	};
 
 	return (
@@ -33,12 +36,12 @@ export function DashboardSideContent() {
 											asChild
 											isActive={isActive(subItem.href)}
 										>
-											<Link to={subItem.href || ""}>
+											<LocaleLink href={subItem.href || ""}>
 												{subItem.icon as ReactNode}
 												<span className="truncate text-sm font-medium">
 													{subItem.title}
 												</span>
-											</Link>
+											</LocaleLink>
 										</SidebarMenuButton>
 									</SidebarMenuItem>
 								))}
@@ -50,12 +53,12 @@ export function DashboardSideContent() {
 						<SidebarMenu className="pl-2">
 							<SidebarMenuItem>
 								<SidebarMenuButton asChild isActive={isActive(item.href)}>
-									<Link to={item.href || ""}>
+									<LocaleLink href={item.href || ""}>
 										{item.icon as ReactNode}
 										<span className="truncate text-sm font-medium">
 											{item.title}
 										</span>
-									</Link>
+									</LocaleLink>
 								</SidebarMenuButton>
 							</SidebarMenuItem>
 						</SidebarMenu>

@@ -1,8 +1,9 @@
-import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "#/components/ui/button";
+import { LocaleLink } from "#/i18n/routing";
 
-export const Route = createFileRoute("/auth")({
+export const Route = createFileRoute("/{-$locale}/auth")({
 	component: AuthLayout,
 });
 
@@ -15,10 +16,10 @@ function AuthLayout() {
 				className="absolute top-4 left-4"
 				asChild
 			>
-				<Link to="/">
+				<LocaleLink href="/">
 					<ArrowLeft className="size-4" />
 					<span className="sr-only">Back</span>
-				</Link>
+				</LocaleLink>
 			</Button>
 			<div className="w-full max-w-sm">
 				<Outlet />

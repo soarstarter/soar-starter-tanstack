@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { ChevronRight, Menu } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -16,23 +15,26 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "#/components/ui/sheet";
+import { Routes } from "#/config/route-config";
+import { LocaleLink, useLocalePath } from "#/i18n/routing";
 
 export function AppMobileMenu() {
 	const [open, setOpen] = useState(false);
 	const { t } = useTranslation();
+	const localePath = useLocalePath();
 
 	const menuItems = [
-		{ label: t("menu.features"), href: "/#features" },
-		{ label: t("menu.pricing"), href: "/#pricing" },
-		{ label: t("menu.blog"), href: "/blog" },
-		{ label: t("menu.docs"), href: "/docs" },
+		{ label: t("menu.features"), href: localePath(Routes.Features) },
+		{ label: t("menu.pricing"), href: localePath(Routes.Pricing) },
+		{ label: t("menu.blog"), href: localePath(Routes.Blog) },
+		{ label: t("menu.docs"), href: localePath(Routes.Docs) },
 		{
 			label: t("menu.aiTools"),
 			sub: [
-				{ label: t("menu.aiChat"), href: "/ai/chat" },
-				{ label: t("menu.aiImage"), href: "/ai/image" },
-				{ label: t("menu.aiVideo"), href: "/ai/video" },
-				{ label: t("menu.aiAudio"), href: "/ai/audio" },
+				{ label: t("menu.aiChat"), href: localePath("/ai/chat") },
+				{ label: t("menu.aiImage"), href: localePath("/ai/image") },
+				{ label: t("menu.aiVideo"), href: localePath("/ai/video") },
+				{ label: t("menu.aiAudio"), href: localePath("/ai/audio") },
 			],
 		},
 	];
@@ -50,14 +52,20 @@ export function AppMobileMenu() {
 				<div className="flex flex-col gap-4 pt-6">
 					<div className="flex flex-col gap-2">
 						<Button variant="outline" className="w-full" asChild>
-							<Link to="/auth/login" onClick={() => setOpen(false)}>
+							<LocaleLink
+								href={Routes.AuthLogin}
+								onClick={() => setOpen(false)}
+							>
 								{t("common.logIn")}
-							</Link>
+							</LocaleLink>
 						</Button>
 						<Button className="w-full" asChild>
-							<Link to="/auth/register" onClick={() => setOpen(false)}>
+							<LocaleLink
+								href={Routes.AuthRegister}
+								onClick={() => setOpen(false)}
+							>
 								{t("common.signUp")}
-							</Link>
+							</LocaleLink>
 						</Button>
 					</div>
 					<ul className="space-y-1">
@@ -72,13 +80,13 @@ export function AppMobileMenu() {
 								</li>
 							) : (
 								<li key={item.label}>
-									<Link
-										to={"href" in item ? item.href : ""}
+									<LocaleLink
+										href={"href" in item ? item.href : ""}
 										className="flex h-9 w-full items-center rounded-md px-2 text-base text-muted-foreground transition-colors hover:text-foreground"
 										onClick={() => setOpen(false)}
 									>
 										{item.label}
-									</Link>
+									</LocaleLink>
 								</li>
 							),
 						)}
@@ -118,13 +126,13 @@ function CollapsibleMenuItem({
 				<ul>
 					{sub.map((subItem) => (
 						<li key={subItem.label}>
-							<Link
-								to={subItem.href}
+							<LocaleLink
+								href={subItem.href}
 								className="flex h-9 w-full items-center rounded-md px-2 text-base text-muted-foreground transition-colors hover:text-foreground"
 								onClick={onNavigate}
 							>
 								{subItem.label}
-							</Link>
+							</LocaleLink>
 						</li>
 					))}
 				</ul>

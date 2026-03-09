@@ -11,7 +11,7 @@ import {
 } from "#/components/ui/sidebar";
 import { requireAuth } from "#/lib/auth-guard";
 
-export const Route = createFileRoute("/_dashboard")({
+export const Route = createFileRoute("/{-$locale}/_dashboard")({
 	beforeLoad: requireAuth,
 	component: DashboardLayout,
 });

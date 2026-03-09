@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "#/components/ui/button";
 import { Routes } from "#/config/route-config";
+import { localizePath, useCurrentLocale } from "#/i18n/routing";
 import { signIn } from "#/lib/auth-client";
 
 function GitHubIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -39,12 +40,13 @@ function GoogleIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export function OAuthButtons() {
 	const [loading, setLoading] = useState<"github" | "google" | null>(null);
+	const locale = useCurrentLocale();
 
 	const handleOAuth = async (provider: "github" | "google") => {
 		setLoading(provider);
 		await signIn.social({
 			provider,
-			callbackURL: Routes.Dashboard,
+			callbackURL: localizePath(Routes.Dashboard, locale),
 		});
 	};
 

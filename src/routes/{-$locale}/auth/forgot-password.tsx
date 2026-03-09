@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ForgotPasswordForm } from "#/components/auth/ForgotPasswordForm";
 
-export const Route = createFileRoute("/auth/forgot-password")({
+export const Route = createFileRoute("/{-$locale}/auth/forgot-password")({
 	head: () => ({
 		meta: [{ title: "Forgot Password" }],
 	}),

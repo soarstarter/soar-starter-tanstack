@@ -1,8 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { Button } from "#/components/ui/button";
+import { LocaleLink } from "#/i18n/routing";
 
-export const Route = createFileRoute("/_marketing/about")({
+export const Route = createFileRoute("/{-$locale}/_marketing/about")({
 	component: AboutPage,
 });
 
@@ -20,7 +21,7 @@ function AboutPage() {
 				</p>
 				<p className="mb-8 text-muted-foreground">{t("about.description")}</p>
 				<Button asChild>
-					<Link to="/contact">{t("about.contactUs")}</Link>
+					<LocaleLink href="/contact">{t("about.contactUs")}</LocaleLink>
 				</Button>
 			</div>
 		</section>

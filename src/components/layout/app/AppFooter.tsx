@@ -1,9 +1,9 @@
-import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { Logo } from "#/components/Logo";
 import ThemeToggle from "#/components/ThemeToggle";
 import { footerLinkGroups } from "#/config/footer-config";
 import { getSocialLinks } from "#/config/social-config";
+import { LocaleLink } from "#/i18n/routing";
 
 export function AppFooter() {
 	const { t } = useTranslation();
@@ -60,13 +60,13 @@ export function AppFooter() {
 								{section.items?.map((item) => (
 									<li key={item.title}>
 										{item.href && (
-											<Link
-												to={item.href}
+											<LocaleLink
+												href={item.href}
 												target={item.external ? "_blank" : undefined}
 												className="text-sm text-muted-foreground hover:text-primary"
 											>
 												{item.title}
-											</Link>
+											</LocaleLink>
 										)}
 									</li>
 								))}

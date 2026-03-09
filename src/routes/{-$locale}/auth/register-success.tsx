@@ -1,9 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "#/components/ui/button";
 import { Routes } from "#/config/route-config";
+import { LocaleLink } from "#/i18n/routing";
 
-export const Route = createFileRoute("/auth/register-success")({
+export const Route = createFileRoute("/{-$locale}/auth/register-success")({
 	head: () => ({
 		meta: [{ title: "Registration Successful" }],
 	}),
@@ -20,7 +21,7 @@ function RegisterSuccessPage() {
 				email address to complete registration.
 			</p>
 			<Button asChild>
-				<Link to={Routes.AuthLogin}>Go to login</Link>
+				<LocaleLink href={Routes.AuthLogin}>Go to login</LocaleLink>
 			</Button>
 		</div>
 	);

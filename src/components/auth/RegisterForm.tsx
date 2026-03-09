@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -15,6 +15,11 @@ import {
 } from "#/components/ui/form";
 import { Input } from "#/components/ui/input";
 import { Routes } from "#/config/route-config";
+import {
+	LocaleLink,
+	localizePath,
+	useCurrentLocale,
+} from "#/i18n/routing";
 import { signUp } from "#/lib/auth-client";
 
 const registerSchema = z.object({
@@ -27,6 +32,7 @@ type RegisterFormValues = z.infer<typeof registerSchema>;
 
 export function RegisterForm() {
 	const navigate = useNavigate();
+	const locale = useCurrentLocale();
 	const [error, setError] = useState<string | null>(null);
 	const [loading, setLoading] = useState(false);
 
@@ -53,7 +59,7 @@ export function RegisterForm() {
 			setError(authError.message ?? "Registration failed. Please try again.");
 			return;
 		}
-		navigate({ to: Routes.AuthRegisterSuccess });
+		void navigate({ href: localizePath(Routes.AuthRegisterSuccess, locale) });
 	};
 
 	return (
@@ -140,12 +146,12 @@ export function RegisterForm() {
 
 			<p className="text-center text-sm text-muted-foreground">
 				Already have an account?{" "}
-				<Link
-					to={Routes.AuthLogin}
+				<LocaleLink
+					href={Routes.AuthLogin}
 					className="underline underline-offset-4 hover:text-primary"
 				>
 					Sign in
-				</Link>
+				</LocaleLink>
 			</p>
 		</div>
 	);

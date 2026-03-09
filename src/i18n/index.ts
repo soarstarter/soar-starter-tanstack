@@ -1,5 +1,4 @@
 import i18n from "i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import en from "../../messages/en.json";
 import zh from "../../messages/zh.json";
@@ -13,10 +12,22 @@ export const localeLabels: Record<Locale, string> = {
 	zh: "中文",
 };
 
+function detectInitialLocale(): Locale {
+	if (typeof window === "undefined") {
+		return defaultLocale;
+	}
+
+	const firstSegment = window.location.pathname.split("/").filter(Boolean)[0];
+
+	return supportedLocales.includes(firstSegment as Locale)
+		? (firstSegment as Locale)
+		: defaultLocale;
+}
+
 i18n
-	.use(LanguageDetector)
 	.use(initReactI18next)
 	.init({
+		lng: detectInitialLocale(),
 		resources: {
 			en: { translation: en },
 			zh: { translation: zh },
@@ -25,11 +36,6 @@ i18n
 		supportedLngs: supportedLocales,
 		interpolation: {
 			escapeValue: false,
-		},
-		detection: {
-			order: ["cookie", "localStorage", "navigator"],
-			caches: ["cookie", "localStorage"],
-			cookieOptions: { path: "/", sameSite: "lax" },
 		},
 	});
 

@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -16,6 +16,11 @@ import {
 } from "#/components/ui/form";
 import { Input } from "#/components/ui/input";
 import { Routes } from "#/config/route-config";
+import {
+	LocaleLink,
+	localizePath,
+	useCurrentLocale,
+} from "#/i18n/routing";
 import { signIn } from "#/lib/auth-client";
 
 const loginSchema = z.object({
@@ -27,6 +32,7 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
 	const navigate = useNavigate();
+	const locale = useCurrentLocale();
 	const [showPassword, setShowPassword] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	const [loading, setLoading] = useState(false);
@@ -52,7 +58,7 @@ export function LoginForm() {
 			setError(authError.message ?? "Login failed. Please try again.");
 			return;
 		}
-		navigate({ to: Routes.Dashboard });
+		void navigate({ href: localizePath(Routes.Dashboard, locale) });
 	};
 
 	return (
@@ -92,12 +98,12 @@ export function LoginForm() {
 							<FormItem>
 								<div className="flex items-center justify-between">
 									<FormLabel>Password</FormLabel>
-									<Link
-										to={Routes.AuthForgotPassword}
+									<LocaleLink
+										href={Routes.AuthForgotPassword}
 										className="text-xs text-muted-foreground underline-offset-4 hover:underline"
 									>
 										Forgot password?
-									</Link>
+									</LocaleLink>
 								</div>
 								<FormControl>
 									<div className="relative">
@@ -147,12 +153,12 @@ export function LoginForm() {
 
 			<p className="text-center text-sm text-muted-foreground">
 				Don&apos;t have an account?{" "}
-				<Link
-					to={Routes.AuthRegister}
+				<LocaleLink
+					href={Routes.AuthRegister}
 					className="underline underline-offset-4 hover:text-primary"
 				>
 					Sign up
-				</Link>
+				</LocaleLink>
 			</p>
 		</div>
 	);

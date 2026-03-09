@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link, useSearch } from "@tanstack/react-router";
+import { useSearch } from "@tanstack/react-router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -14,6 +14,7 @@ import {
 } from "#/components/ui/form";
 import { Input } from "#/components/ui/input";
 import { Routes } from "#/config/route-config";
+import { LocaleLink } from "#/i18n/routing";
 import { authClient } from "#/lib/auth-client";
 
 const resetPasswordSchema = z
@@ -28,7 +29,7 @@ const resetPasswordSchema = z
 
 type ResetPasswordFormValues = z.infer<typeof resetPasswordSchema>;
 
-export function ResetPasswordForm() {
+	export function ResetPasswordForm() {
 	const { token } = useSearch({ strict: false }) as { token?: string };
 	const [error, setError] = useState<string | null>(null);
 	const [success, setSuccess] = useState(false);
@@ -50,7 +51,9 @@ export function ResetPasswordForm() {
 					This password reset link is invalid or has expired.
 				</p>
 				<Button variant="outline" asChild>
-					<Link to={Routes.AuthForgotPassword}>Request a new link</Link>
+					<LocaleLink href={Routes.AuthForgotPassword}>
+						Request a new link
+					</LocaleLink>
 				</Button>
 			</div>
 		);
@@ -64,7 +67,7 @@ export function ResetPasswordForm() {
 					Your password has been reset successfully. You can now sign in.
 				</p>
 				<Button asChild>
-					<Link to={Routes.AuthLogin}>Sign in</Link>
+					<LocaleLink href={Routes.AuthLogin}>Sign in</LocaleLink>
 				</Button>
 			</div>
 		);

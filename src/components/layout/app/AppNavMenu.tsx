@@ -1,4 +1,4 @@
-import { Link, useLocation } from "@tanstack/react-router";
+import { useLocation } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import {
 	NavigationMenu,
@@ -8,23 +8,26 @@ import {
 	NavigationMenuList,
 	NavigationMenuTrigger,
 } from "#/components/ui/navigation-menu";
+import { Routes } from "#/config/route-config";
+import { LocaleLink, useLocalePath } from "#/i18n/routing";
 
 export function AppNavMenu() {
 	const { pathname } = useLocation();
 	const { t } = useTranslation();
+	const localePath = useLocalePath();
 
 	const menuItems = [
-		{ name: t("menu.features"), href: "/#features" },
-		{ name: t("menu.pricing"), href: "/#pricing" },
-		{ name: t("menu.blog"), href: "/blog" },
-		{ name: t("menu.docs"), href: "/docs" },
+		{ name: t("menu.features"), href: localePath(Routes.Features) },
+		{ name: t("menu.pricing"), href: localePath(Routes.Pricing) },
+		{ name: t("menu.blog"), href: localePath(Routes.Blog) },
+		{ name: t("menu.docs"), href: localePath(Routes.Docs) },
 	];
 
 	const aiToolsItems = [
-		{ name: t("menu.aiChat"), href: "/ai/chat" },
-		{ name: t("menu.aiImage"), href: "/ai/image" },
-		{ name: t("menu.aiVideo"), href: "/ai/video" },
-		{ name: t("menu.aiAudio"), href: "/ai/audio" },
+		{ name: t("menu.aiChat"), href: localePath("/ai/chat") },
+		{ name: t("menu.aiImage"), href: localePath("/ai/image") },
+		{ name: t("menu.aiVideo"), href: localePath("/ai/video") },
+		{ name: t("menu.aiAudio"), href: localePath("/ai/audio") },
 	];
 
 	const isActive = (href: string) => {
@@ -40,13 +43,13 @@ export function AppNavMenu() {
 				<NavigationMenuList className="flex items-center gap-1">
 					{menuItems.map((item) => (
 						<NavigationMenuItem key={item.name}>
-							<NavigationMenuLink asChild active={isActive(item.href)}>
-								<Link
-									to={item.href}
+								<NavigationMenuLink asChild active={isActive(item.href)}>
+								<LocaleLink
+									href={item.href}
 									className="flex h-9 items-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
 								>
 									{item.name}
-								</Link>
+								</LocaleLink>
 							</NavigationMenuLink>
 						</NavigationMenuItem>
 					))}
@@ -57,14 +60,14 @@ export function AppNavMenu() {
 								{aiToolsItems.map((item) => (
 									<li key={item.name}>
 										<NavigationMenuLink asChild>
-											<Link
-												to={item.href}
+											<LocaleLink
+												href={item.href}
 												className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
 											>
 												<div className="text-sm font-medium leading-none">
 													{item.name}
 												</div>
-											</Link>
+											</LocaleLink>
 										</NavigationMenuLink>
 									</li>
 								))}

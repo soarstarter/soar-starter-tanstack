@@ -10,7 +10,7 @@ import { PriceSection } from "#/components/home/PriceSection";
 import { StaticSection } from "#/components/home/StaticSection";
 import { Testimonials } from "#/components/home/Testimonials";
 
-export const Route = createFileRoute("/_marketing/")({
+export const Route = createFileRoute("/{-$locale}/_marketing/")({
 	component: HomePage,
 });
 

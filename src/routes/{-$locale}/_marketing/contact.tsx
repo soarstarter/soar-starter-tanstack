@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContactFormCard } from "#/components/contact/ContactFormCard";
 
-export const Route = createFileRoute("/_marketing/contact")({
+export const Route = createFileRoute("/{-$locale}/_marketing/contact")({
 	component: ContactPage,
 });
 

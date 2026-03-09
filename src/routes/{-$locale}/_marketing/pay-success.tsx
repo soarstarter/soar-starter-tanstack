@@ -1,9 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { CheckCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "#/components/ui/button";
+import { LocaleLink } from "#/i18n/routing";
 
-export const Route = createFileRoute("/_marketing/pay-success")({
+export const Route = createFileRoute("/{-$locale}/_marketing/pay-success")({
 	component: PaySuccessPage,
 	validateSearch: (search: Record<string, unknown>) => ({
 		orderId: (search.orderId as string) || "",
@@ -31,10 +32,14 @@ function PaySuccessPage() {
 				)}
 				<div className="flex flex-wrap justify-center gap-4">
 					<Button asChild>
-						<Link to="/dashboard">{t("payment.success.viewOrders")}</Link>
+						<LocaleLink href="/dashboard">
+							{t("payment.success.viewOrders")}
+						</LocaleLink>
 					</Button>
 					<Button variant="outline" asChild>
-						<Link to="/">{t("payment.success.backHome")}</Link>
+						<LocaleLink href="/">
+							{t("payment.success.backHome")}
+						</LocaleLink>
 					</Button>
 				</div>
 			</div>

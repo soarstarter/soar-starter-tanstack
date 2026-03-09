@@ -2,7 +2,7 @@ import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { AppFooter } from "#/components/layout/app/AppFooter";
 import { AppHeader } from "#/components/layout/app/AppHeader";
 
-export const Route = createFileRoute("/_marketing")({
+export const Route = createFileRoute("/{-$locale}/_marketing")({
 	component: MarketingLayout,
 });
 

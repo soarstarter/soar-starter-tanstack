@@ -5,14 +5,17 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from "#/components/ui/popover";
+import { useCurrentLocale, useLocaleRouter } from "#/i18n/routing";
 import { type Locale, localeLabels, supportedLocales } from "#/i18n";
 
 export function LanguageToggle() {
 	const { i18n } = useTranslation();
-	const currentLocale = i18n.language;
+	const currentLocale = useCurrentLocale();
+	const localeRouter = useLocaleRouter();
 
 	function switchLocale(newLocale: Locale) {
-		i18n.changeLanguage(newLocale);
+		void i18n.changeLanguage(newLocale);
+		void localeRouter.replace("/", { locale: newLocale });
 	}
 
 	return (

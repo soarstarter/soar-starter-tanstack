@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LoginFormDialog } from "#/components/auth/LoginFormDialog";
@@ -9,6 +8,7 @@ import { UserPopover } from "#/components/layout/app/UserPopover";
 import ThemeToggle from "#/components/ThemeToggle";
 import { Button } from "#/components/ui/button";
 import { Routes } from "#/config/route-config";
+import { LocaleLink } from "#/i18n/routing";
 import { useSession } from "#/lib/auth-client";
 
 export function AppHeader() {
@@ -36,11 +36,11 @@ export function AppHeader() {
 				{/* Desktop navigation */}
 				<nav className="hidden items-center justify-between lg:flex">
 					<div className="flex items-center">
-						<Link to="/" className="flex items-center space-x-2">
+						<LocaleLink href="/" className="flex items-center space-x-2">
 							<span className="text-xl font-semibold">
 								{t("common.appNameDemo")}
 							</span>
-						</Link>
+						</LocaleLink>
 					</div>
 					<AppNavMenu />
 					<div className="flex items-center gap-x-3">
@@ -55,7 +55,9 @@ export function AppHeader() {
 							<>
 								<LoginFormDialog />
 								<Button size="sm" asChild>
-									<Link to={Routes.AuthRegister}>{t("common.signUp")}</Link>
+									<LocaleLink href={Routes.AuthRegister}>
+										{t("common.signUp")}
+									</LocaleLink>
 								</Button>
 							</>
 						)}
@@ -69,9 +71,9 @@ export function AppHeader() {
 				</nav>
 				{/* Mobile navigation */}
 				<div className="flex items-center justify-between lg:hidden">
-					<Link to="/" className="flex items-center gap-2">
+					<LocaleLink href="/" className="flex items-center gap-2">
 						<span className="text-xl font-semibold">{t("common.appName")}</span>
-					</Link>
+					</LocaleLink>
 					<AppMobileMenu />
 				</div>
 			</div>

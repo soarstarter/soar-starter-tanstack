@@ -1,9 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { MailCheck } from "lucide-react";
 import { Button } from "#/components/ui/button";
 import { Routes } from "#/config/route-config";
+import { LocaleLink } from "#/i18n/routing";
 
-export const Route = createFileRoute("/auth/confirm")({
+export const Route = createFileRoute("/{-$locale}/auth/confirm")({
 	head: () => ({
 		meta: [{ title: "Confirm Email" }],
 	}),
@@ -20,7 +21,7 @@ function ConfirmPage() {
 				verify your account.
 			</p>
 			<Button variant="outline" asChild>
-				<Link to={Routes.AuthLogin}>Back to login</Link>
+				<LocaleLink href={Routes.AuthLogin}>Back to login</LocaleLink>
 			</Button>
 		</div>
 	);

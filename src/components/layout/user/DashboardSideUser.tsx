@@ -22,12 +22,14 @@ import {
 	SidebarMenuItem,
 	useSidebar,
 } from "#/components/ui/sidebar";
+import { useLocaleRouter } from "#/i18n/routing";
 import { signOut, useSession } from "#/lib/auth-client";
 
 export function DashboardSideUser() {
 	const { isMobile } = useSidebar();
 	const { data: session } = useSession();
 	const router = useRouter();
+	const localeRouter = useLocaleRouter();
 
 	const user = {
 		name: session?.user?.name ?? "User",
@@ -38,7 +40,7 @@ export function DashboardSideUser() {
 
 	const handleLogout = async () => {
 		await signOut();
-		router.navigate({ to: "/" });
+		void localeRouter.push("/");
 	};
 
 	return (

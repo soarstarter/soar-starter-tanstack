@@ -9,22 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AuthRouteImport } from './routes/auth'
-import { Route as MarketingRouteImport } from './routes/_marketing'
-import { Route as DashboardRouteImport } from './routes/_dashboard'
-import { Route as MarketingIndexRouteImport } from './routes/_marketing/index'
-import { Route as DemoBetterAuthRouteImport } from './routes/demo/better-auth'
-import { Route as AuthResetPasswordRouteImport } from './routes/auth/reset-password'
-import { Route as AuthRegisterSuccessRouteImport } from './routes/auth/register-success'
-import { Route as AuthRegisterRouteImport } from './routes/auth/register'
-import { Route as AuthLoginRouteImport } from './routes/auth/login'
-import { Route as AuthForgotPasswordRouteImport } from './routes/auth/forgot-password'
-import { Route as AuthConfirmRouteImport } from './routes/auth/confirm'
+import { Route as Char123LocaleChar125RouteImport } from './routes/{-$locale}'
+import { Route as Char123LocaleChar125AuthRouteImport } from './routes/{-$locale}/auth'
+import { Route as Char123LocaleChar125MarketingRouteImport } from './routes/{-$locale}/_marketing'
+import { Route as Char123LocaleChar125DashboardRouteImport } from './routes/{-$locale}/_dashboard'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
-import { Route as MarketingPaySuccessRouteImport } from './routes/_marketing/pay-success'
-import { Route as MarketingContactRouteImport } from './routes/_marketing/contact'
-import { Route as MarketingAboutRouteImport } from './routes/_marketing/about'
-import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard/dashboard/index'
+import { Route as Char123LocaleChar125MarketingIndexRouteImport } from './routes/{-$locale}/_marketing/index'
+import { Route as Char123LocaleChar125DemoBetterAuthRouteImport } from './routes/{-$locale}/demo/better-auth'
+import { Route as Char123LocaleChar125AuthResetPasswordRouteImport } from './routes/{-$locale}/auth/reset-password'
+import { Route as Char123LocaleChar125AuthRegisterSuccessRouteImport } from './routes/{-$locale}/auth/register-success'
+import { Route as Char123LocaleChar125AuthRegisterRouteImport } from './routes/{-$locale}/auth/register'
+import { Route as Char123LocaleChar125AuthLoginRouteImport } from './routes/{-$locale}/auth/login'
+import { Route as Char123LocaleChar125AuthForgotPasswordRouteImport } from './routes/{-$locale}/auth/forgot-password'
+import { Route as Char123LocaleChar125AuthConfirmRouteImport } from './routes/{-$locale}/auth/confirm'
+import { Route as Char123LocaleChar125MarketingPaySuccessRouteImport } from './routes/{-$locale}/_marketing/pay-success'
+import { Route as Char123LocaleChar125MarketingContactRouteImport } from './routes/{-$locale}/_marketing/contact'
+import { Route as Char123LocaleChar125MarketingAboutRouteImport } from './routes/{-$locale}/_marketing/about'
 import { Route as ApiUserSubscriptionRouteImport } from './routes/api/user/subscription'
 import { Route as ApiUserSettingsRouteImport } from './routes/api/user/settings'
 import { Route as ApiUserProfileRouteImport } from './routes/api/user/profile'
@@ -33,86 +33,101 @@ import { Route as ApiPaymentQueryRouteImport } from './routes/api/payment/query'
 import { Route as ApiPaymentCreateRouteImport } from './routes/api/payment/create'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as ApiAdminUsersRouteImport } from './routes/api/admin/users'
+import { Route as Char123LocaleChar125DashboardDashboardIndexRouteImport } from './routes/{-$locale}/_dashboard/dashboard/index'
 import { Route as ApiPaymentNotifyCreemRouteImport } from './routes/api/payment/notify/creem'
 
-const AuthRoute = AuthRouteImport.update({
-  id: '/auth',
-  path: '/auth',
+const Char123LocaleChar125Route = Char123LocaleChar125RouteImport.update({
+  id: '/{-$locale}',
+  path: '/{-$locale}',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MarketingRoute = MarketingRouteImport.update({
-  id: '/_marketing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/_dashboard',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MarketingIndexRoute = MarketingIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => MarketingRoute,
-} as any)
-const DemoBetterAuthRoute = DemoBetterAuthRouteImport.update({
-  id: '/demo/better-auth',
-  path: '/demo/better-auth',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthResetPasswordRoute = AuthResetPasswordRouteImport.update({
-  id: '/reset-password',
-  path: '/reset-password',
-  getParentRoute: () => AuthRoute,
-} as any)
-const AuthRegisterSuccessRoute = AuthRegisterSuccessRouteImport.update({
-  id: '/register-success',
-  path: '/register-success',
-  getParentRoute: () => AuthRoute,
-} as any)
-const AuthRegisterRoute = AuthRegisterRouteImport.update({
-  id: '/register',
-  path: '/register',
-  getParentRoute: () => AuthRoute,
-} as any)
-const AuthLoginRoute = AuthLoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => AuthRoute,
-} as any)
-const AuthForgotPasswordRoute = AuthForgotPasswordRouteImport.update({
-  id: '/forgot-password',
-  path: '/forgot-password',
-  getParentRoute: () => AuthRoute,
-} as any)
-const AuthConfirmRoute = AuthConfirmRouteImport.update({
-  id: '/confirm',
-  path: '/confirm',
-  getParentRoute: () => AuthRoute,
-} as any)
+const Char123LocaleChar125AuthRoute =
+  Char123LocaleChar125AuthRouteImport.update({
+    id: '/auth',
+    path: '/auth',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125MarketingRoute =
+  Char123LocaleChar125MarketingRouteImport.update({
+    id: '/_marketing',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125DashboardRoute =
+  Char123LocaleChar125DashboardRouteImport.update({
+    id: '/_dashboard',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
 const ApiContactRoute = ApiContactRouteImport.update({
   id: '/api/contact',
   path: '/api/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MarketingPaySuccessRoute = MarketingPaySuccessRouteImport.update({
-  id: '/pay-success',
-  path: '/pay-success',
-  getParentRoute: () => MarketingRoute,
-} as any)
-const MarketingContactRoute = MarketingContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => MarketingRoute,
-} as any)
-const MarketingAboutRoute = MarketingAboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => MarketingRoute,
-} as any)
-const DashboardDashboardIndexRoute = DashboardDashboardIndexRouteImport.update({
-  id: '/dashboard/',
-  path: '/dashboard/',
-  getParentRoute: () => DashboardRoute,
-} as any)
+const Char123LocaleChar125MarketingIndexRoute =
+  Char123LocaleChar125MarketingIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => Char123LocaleChar125MarketingRoute,
+  } as any)
+const Char123LocaleChar125DemoBetterAuthRoute =
+  Char123LocaleChar125DemoBetterAuthRouteImport.update({
+    id: '/demo/better-auth',
+    path: '/demo/better-auth',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125AuthResetPasswordRoute =
+  Char123LocaleChar125AuthResetPasswordRouteImport.update({
+    id: '/reset-password',
+    path: '/reset-password',
+    getParentRoute: () => Char123LocaleChar125AuthRoute,
+  } as any)
+const Char123LocaleChar125AuthRegisterSuccessRoute =
+  Char123LocaleChar125AuthRegisterSuccessRouteImport.update({
+    id: '/register-success',
+    path: '/register-success',
+    getParentRoute: () => Char123LocaleChar125AuthRoute,
+  } as any)
+const Char123LocaleChar125AuthRegisterRoute =
+  Char123LocaleChar125AuthRegisterRouteImport.update({
+    id: '/register',
+    path: '/register',
+    getParentRoute: () => Char123LocaleChar125AuthRoute,
+  } as any)
+const Char123LocaleChar125AuthLoginRoute =
+  Char123LocaleChar125AuthLoginRouteImport.update({
+    id: '/login',
+    path: '/login',
+    getParentRoute: () => Char123LocaleChar125AuthRoute,
+  } as any)
+const Char123LocaleChar125AuthForgotPasswordRoute =
+  Char123LocaleChar125AuthForgotPasswordRouteImport.update({
+    id: '/forgot-password',
+    path: '/forgot-password',
+    getParentRoute: () => Char123LocaleChar125AuthRoute,
+  } as any)
+const Char123LocaleChar125AuthConfirmRoute =
+  Char123LocaleChar125AuthConfirmRouteImport.update({
+    id: '/confirm',
+    path: '/confirm',
+    getParentRoute: () => Char123LocaleChar125AuthRoute,
+  } as any)
+const Char123LocaleChar125MarketingPaySuccessRoute =
+  Char123LocaleChar125MarketingPaySuccessRouteImport.update({
+    id: '/pay-success',
+    path: '/pay-success',
+    getParentRoute: () => Char123LocaleChar125MarketingRoute,
+  } as any)
+const Char123LocaleChar125MarketingContactRoute =
+  Char123LocaleChar125MarketingContactRouteImport.update({
+    id: '/contact',
+    path: '/contact',
+    getParentRoute: () => Char123LocaleChar125MarketingRoute,
+  } as any)
+const Char123LocaleChar125MarketingAboutRoute =
+  Char123LocaleChar125MarketingAboutRouteImport.update({
+    id: '/about',
+    path: '/about',
+    getParentRoute: () => Char123LocaleChar125MarketingRoute,
+  } as any)
 const ApiUserSubscriptionRoute = ApiUserSubscriptionRouteImport.update({
   id: '/api/user/subscription',
   path: '/api/user/subscription',
@@ -153,6 +168,12 @@ const ApiAdminUsersRoute = ApiAdminUsersRouteImport.update({
   path: '/api/admin/users',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Char123LocaleChar125DashboardDashboardIndexRoute =
+  Char123LocaleChar125DashboardDashboardIndexRouteImport.update({
+    id: '/dashboard/',
+    path: '/dashboard/',
+    getParentRoute: () => Char123LocaleChar125DashboardRoute,
+  } as any)
 const ApiPaymentNotifyCreemRoute = ApiPaymentNotifyCreemRouteImport.update({
   id: '/api/payment/notify/creem',
   path: '/api/payment/notify/creem',
@@ -160,19 +181,9 @@ const ApiPaymentNotifyCreemRoute = ApiPaymentNotifyCreemRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof MarketingIndexRoute
-  '/auth': typeof AuthRouteWithChildren
-  '/about': typeof MarketingAboutRoute
-  '/contact': typeof MarketingContactRoute
-  '/pay-success': typeof MarketingPaySuccessRoute
+  '/{-$locale}': typeof Char123LocaleChar125MarketingRouteWithChildren
   '/api/contact': typeof ApiContactRoute
-  '/auth/confirm': typeof AuthConfirmRoute
-  '/auth/forgot-password': typeof AuthForgotPasswordRoute
-  '/auth/login': typeof AuthLoginRoute
-  '/auth/register': typeof AuthRegisterRoute
-  '/auth/register-success': typeof AuthRegisterSuccessRoute
-  '/auth/reset-password': typeof AuthResetPasswordRoute
-  '/demo/better-auth': typeof DemoBetterAuthRoute
+  '/{-$locale}/auth': typeof Char123LocaleChar125AuthRouteWithChildren
   '/api/admin/users': typeof ApiAdminUsersRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/payment/create': typeof ApiPaymentCreateRoute
@@ -181,23 +192,24 @@ export interface FileRoutesByFullPath {
   '/api/user/profile': typeof ApiUserProfileRoute
   '/api/user/settings': typeof ApiUserSettingsRoute
   '/api/user/subscription': typeof ApiUserSubscriptionRoute
-  '/dashboard/': typeof DashboardDashboardIndexRoute
+  '/{-$locale}/about': typeof Char123LocaleChar125MarketingAboutRoute
+  '/{-$locale}/contact': typeof Char123LocaleChar125MarketingContactRoute
+  '/{-$locale}/pay-success': typeof Char123LocaleChar125MarketingPaySuccessRoute
+  '/{-$locale}/auth/confirm': typeof Char123LocaleChar125AuthConfirmRoute
+  '/{-$locale}/auth/forgot-password': typeof Char123LocaleChar125AuthForgotPasswordRoute
+  '/{-$locale}/auth/login': typeof Char123LocaleChar125AuthLoginRoute
+  '/{-$locale}/auth/register': typeof Char123LocaleChar125AuthRegisterRoute
+  '/{-$locale}/auth/register-success': typeof Char123LocaleChar125AuthRegisterSuccessRoute
+  '/{-$locale}/auth/reset-password': typeof Char123LocaleChar125AuthResetPasswordRoute
+  '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
+  '/{-$locale}/': typeof Char123LocaleChar125MarketingIndexRoute
   '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
+  '/{-$locale}/dashboard/': typeof Char123LocaleChar125DashboardDashboardIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof MarketingIndexRoute
-  '/auth': typeof AuthRouteWithChildren
-  '/about': typeof MarketingAboutRoute
-  '/contact': typeof MarketingContactRoute
-  '/pay-success': typeof MarketingPaySuccessRoute
+  '/{-$locale}': typeof Char123LocaleChar125MarketingIndexRoute
   '/api/contact': typeof ApiContactRoute
-  '/auth/confirm': typeof AuthConfirmRoute
-  '/auth/forgot-password': typeof AuthForgotPasswordRoute
-  '/auth/login': typeof AuthLoginRoute
-  '/auth/register': typeof AuthRegisterRoute
-  '/auth/register-success': typeof AuthRegisterSuccessRoute
-  '/auth/reset-password': typeof AuthResetPasswordRoute
-  '/demo/better-auth': typeof DemoBetterAuthRoute
+  '/{-$locale}/auth': typeof Char123LocaleChar125AuthRouteWithChildren
   '/api/admin/users': typeof ApiAdminUsersRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/payment/create': typeof ApiPaymentCreateRoute
@@ -206,26 +218,26 @@ export interface FileRoutesByTo {
   '/api/user/profile': typeof ApiUserProfileRoute
   '/api/user/settings': typeof ApiUserSettingsRoute
   '/api/user/subscription': typeof ApiUserSubscriptionRoute
-  '/dashboard': typeof DashboardDashboardIndexRoute
+  '/{-$locale}/about': typeof Char123LocaleChar125MarketingAboutRoute
+  '/{-$locale}/contact': typeof Char123LocaleChar125MarketingContactRoute
+  '/{-$locale}/pay-success': typeof Char123LocaleChar125MarketingPaySuccessRoute
+  '/{-$locale}/auth/confirm': typeof Char123LocaleChar125AuthConfirmRoute
+  '/{-$locale}/auth/forgot-password': typeof Char123LocaleChar125AuthForgotPasswordRoute
+  '/{-$locale}/auth/login': typeof Char123LocaleChar125AuthLoginRoute
+  '/{-$locale}/auth/register': typeof Char123LocaleChar125AuthRegisterRoute
+  '/{-$locale}/auth/register-success': typeof Char123LocaleChar125AuthRegisterSuccessRoute
+  '/{-$locale}/auth/reset-password': typeof Char123LocaleChar125AuthResetPasswordRoute
+  '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
   '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
+  '/{-$locale}/dashboard': typeof Char123LocaleChar125DashboardDashboardIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/_dashboard': typeof DashboardRouteWithChildren
-  '/_marketing': typeof MarketingRouteWithChildren
-  '/auth': typeof AuthRouteWithChildren
-  '/_marketing/about': typeof MarketingAboutRoute
-  '/_marketing/contact': typeof MarketingContactRoute
-  '/_marketing/pay-success': typeof MarketingPaySuccessRoute
+  '/{-$locale}': typeof Char123LocaleChar125RouteWithChildren
   '/api/contact': typeof ApiContactRoute
-  '/auth/confirm': typeof AuthConfirmRoute
-  '/auth/forgot-password': typeof AuthForgotPasswordRoute
-  '/auth/login': typeof AuthLoginRoute
-  '/auth/register': typeof AuthRegisterRoute
-  '/auth/register-success': typeof AuthRegisterSuccessRoute
-  '/auth/reset-password': typeof AuthResetPasswordRoute
-  '/demo/better-auth': typeof DemoBetterAuthRoute
-  '/_marketing/': typeof MarketingIndexRoute
+  '/{-$locale}/_dashboard': typeof Char123LocaleChar125DashboardRouteWithChildren
+  '/{-$locale}/_marketing': typeof Char123LocaleChar125MarketingRouteWithChildren
+  '/{-$locale}/auth': typeof Char123LocaleChar125AuthRouteWithChildren
   '/api/admin/users': typeof ApiAdminUsersRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/payment/create': typeof ApiPaymentCreateRoute
@@ -234,25 +246,26 @@ export interface FileRoutesById {
   '/api/user/profile': typeof ApiUserProfileRoute
   '/api/user/settings': typeof ApiUserSettingsRoute
   '/api/user/subscription': typeof ApiUserSubscriptionRoute
-  '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
+  '/{-$locale}/_marketing/about': typeof Char123LocaleChar125MarketingAboutRoute
+  '/{-$locale}/_marketing/contact': typeof Char123LocaleChar125MarketingContactRoute
+  '/{-$locale}/_marketing/pay-success': typeof Char123LocaleChar125MarketingPaySuccessRoute
+  '/{-$locale}/auth/confirm': typeof Char123LocaleChar125AuthConfirmRoute
+  '/{-$locale}/auth/forgot-password': typeof Char123LocaleChar125AuthForgotPasswordRoute
+  '/{-$locale}/auth/login': typeof Char123LocaleChar125AuthLoginRoute
+  '/{-$locale}/auth/register': typeof Char123LocaleChar125AuthRegisterRoute
+  '/{-$locale}/auth/register-success': typeof Char123LocaleChar125AuthRegisterSuccessRoute
+  '/{-$locale}/auth/reset-password': typeof Char123LocaleChar125AuthResetPasswordRoute
+  '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
+  '/{-$locale}/_marketing/': typeof Char123LocaleChar125MarketingIndexRoute
   '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
+  '/{-$locale}/_dashboard/dashboard/': typeof Char123LocaleChar125DashboardDashboardIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/auth'
-    | '/about'
-    | '/contact'
-    | '/pay-success'
+    | '/{-$locale}'
     | '/api/contact'
-    | '/auth/confirm'
-    | '/auth/forgot-password'
-    | '/auth/login'
-    | '/auth/register'
-    | '/auth/register-success'
-    | '/auth/reset-password'
-    | '/demo/better-auth'
+    | '/{-$locale}/auth'
     | '/api/admin/users'
     | '/api/auth/$'
     | '/api/payment/create'
@@ -261,23 +274,24 @@ export interface FileRouteTypes {
     | '/api/user/profile'
     | '/api/user/settings'
     | '/api/user/subscription'
-    | '/dashboard/'
+    | '/{-$locale}/about'
+    | '/{-$locale}/contact'
+    | '/{-$locale}/pay-success'
+    | '/{-$locale}/auth/confirm'
+    | '/{-$locale}/auth/forgot-password'
+    | '/{-$locale}/auth/login'
+    | '/{-$locale}/auth/register'
+    | '/{-$locale}/auth/register-success'
+    | '/{-$locale}/auth/reset-password'
+    | '/{-$locale}/demo/better-auth'
+    | '/{-$locale}/'
     | '/api/payment/notify/creem'
+    | '/{-$locale}/dashboard/'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
-    | '/auth'
-    | '/about'
-    | '/contact'
-    | '/pay-success'
+    | '/{-$locale}'
     | '/api/contact'
-    | '/auth/confirm'
-    | '/auth/forgot-password'
-    | '/auth/login'
-    | '/auth/register'
-    | '/auth/register-success'
-    | '/auth/reset-password'
-    | '/demo/better-auth'
+    | '/{-$locale}/auth'
     | '/api/admin/users'
     | '/api/auth/$'
     | '/api/payment/create'
@@ -286,25 +300,25 @@ export interface FileRouteTypes {
     | '/api/user/profile'
     | '/api/user/settings'
     | '/api/user/subscription'
-    | '/dashboard'
+    | '/{-$locale}/about'
+    | '/{-$locale}/contact'
+    | '/{-$locale}/pay-success'
+    | '/{-$locale}/auth/confirm'
+    | '/{-$locale}/auth/forgot-password'
+    | '/{-$locale}/auth/login'
+    | '/{-$locale}/auth/register'
+    | '/{-$locale}/auth/register-success'
+    | '/{-$locale}/auth/reset-password'
+    | '/{-$locale}/demo/better-auth'
     | '/api/payment/notify/creem'
+    | '/{-$locale}/dashboard'
   id:
     | '__root__'
-    | '/_dashboard'
-    | '/_marketing'
-    | '/auth'
-    | '/_marketing/about'
-    | '/_marketing/contact'
-    | '/_marketing/pay-success'
+    | '/{-$locale}'
     | '/api/contact'
-    | '/auth/confirm'
-    | '/auth/forgot-password'
-    | '/auth/login'
-    | '/auth/register'
-    | '/auth/register-success'
-    | '/auth/reset-password'
-    | '/demo/better-auth'
-    | '/_marketing/'
+    | '/{-$locale}/_dashboard'
+    | '/{-$locale}/_marketing'
+    | '/{-$locale}/auth'
     | '/api/admin/users'
     | '/api/auth/$'
     | '/api/payment/create'
@@ -313,16 +327,24 @@ export interface FileRouteTypes {
     | '/api/user/profile'
     | '/api/user/settings'
     | '/api/user/subscription'
-    | '/_dashboard/dashboard/'
+    | '/{-$locale}/_marketing/about'
+    | '/{-$locale}/_marketing/contact'
+    | '/{-$locale}/_marketing/pay-success'
+    | '/{-$locale}/auth/confirm'
+    | '/{-$locale}/auth/forgot-password'
+    | '/{-$locale}/auth/login'
+    | '/{-$locale}/auth/register'
+    | '/{-$locale}/auth/register-success'
+    | '/{-$locale}/auth/reset-password'
+    | '/{-$locale}/demo/better-auth'
+    | '/{-$locale}/_marketing/'
     | '/api/payment/notify/creem'
+    | '/{-$locale}/_dashboard/dashboard/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  DashboardRoute: typeof DashboardRouteWithChildren
-  MarketingRoute: typeof MarketingRouteWithChildren
-  AuthRoute: typeof AuthRouteWithChildren
+  Char123LocaleChar125Route: typeof Char123LocaleChar125RouteWithChildren
   ApiContactRoute: typeof ApiContactRoute
-  DemoBetterAuthRoute: typeof DemoBetterAuthRoute
   ApiAdminUsersRoute: typeof ApiAdminUsersRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiPaymentCreateRoute: typeof ApiPaymentCreateRoute
@@ -336,82 +358,33 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/auth': {
-      id: '/auth'
+    '/{-$locale}': {
+      id: '/{-$locale}'
+      path: '/{-$locale}'
+      fullPath: '/{-$locale}'
+      preLoaderRoute: typeof Char123LocaleChar125RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/{-$locale}/auth': {
+      id: '/{-$locale}/auth'
       path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof AuthRouteImport
-      parentRoute: typeof rootRouteImport
+      fullPath: '/{-$locale}/auth'
+      preLoaderRoute: typeof Char123LocaleChar125AuthRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
     }
-    '/_marketing': {
-      id: '/_marketing'
+    '/{-$locale}/_marketing': {
+      id: '/{-$locale}/_marketing'
       path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof MarketingRouteImport
-      parentRoute: typeof rootRouteImport
+      fullPath: '/{-$locale}'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
     }
-    '/_dashboard': {
-      id: '/_dashboard'
+    '/{-$locale}/_dashboard': {
+      id: '/{-$locale}/_dashboard'
       path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof DashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_marketing/': {
-      id: '/_marketing/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof MarketingIndexRouteImport
-      parentRoute: typeof MarketingRoute
-    }
-    '/demo/better-auth': {
-      id: '/demo/better-auth'
-      path: '/demo/better-auth'
-      fullPath: '/demo/better-auth'
-      preLoaderRoute: typeof DemoBetterAuthRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth/reset-password': {
-      id: '/auth/reset-password'
-      path: '/reset-password'
-      fullPath: '/auth/reset-password'
-      preLoaderRoute: typeof AuthResetPasswordRouteImport
-      parentRoute: typeof AuthRoute
-    }
-    '/auth/register-success': {
-      id: '/auth/register-success'
-      path: '/register-success'
-      fullPath: '/auth/register-success'
-      preLoaderRoute: typeof AuthRegisterSuccessRouteImport
-      parentRoute: typeof AuthRoute
-    }
-    '/auth/register': {
-      id: '/auth/register'
-      path: '/register'
-      fullPath: '/auth/register'
-      preLoaderRoute: typeof AuthRegisterRouteImport
-      parentRoute: typeof AuthRoute
-    }
-    '/auth/login': {
-      id: '/auth/login'
-      path: '/login'
-      fullPath: '/auth/login'
-      preLoaderRoute: typeof AuthLoginRouteImport
-      parentRoute: typeof AuthRoute
-    }
-    '/auth/forgot-password': {
-      id: '/auth/forgot-password'
-      path: '/forgot-password'
-      fullPath: '/auth/forgot-password'
-      preLoaderRoute: typeof AuthForgotPasswordRouteImport
-      parentRoute: typeof AuthRoute
-    }
-    '/auth/confirm': {
-      id: '/auth/confirm'
-      path: '/confirm'
-      fullPath: '/auth/confirm'
-      preLoaderRoute: typeof AuthConfirmRouteImport
-      parentRoute: typeof AuthRoute
+      fullPath: '/{-$locale}'
+      preLoaderRoute: typeof Char123LocaleChar125DashboardRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
     }
     '/api/contact': {
       id: '/api/contact'
@@ -420,33 +393,82 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_marketing/pay-success': {
-      id: '/_marketing/pay-success'
+    '/{-$locale}/_marketing/': {
+      id: '/{-$locale}/_marketing/'
+      path: '/'
+      fullPath: '/{-$locale}/'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingIndexRouteImport
+      parentRoute: typeof Char123LocaleChar125MarketingRoute
+    }
+    '/{-$locale}/demo/better-auth': {
+      id: '/{-$locale}/demo/better-auth'
+      path: '/demo/better-auth'
+      fullPath: '/{-$locale}/demo/better-auth'
+      preLoaderRoute: typeof Char123LocaleChar125DemoBetterAuthRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
+    }
+    '/{-$locale}/auth/reset-password': {
+      id: '/{-$locale}/auth/reset-password'
+      path: '/reset-password'
+      fullPath: '/{-$locale}/auth/reset-password'
+      preLoaderRoute: typeof Char123LocaleChar125AuthResetPasswordRouteImport
+      parentRoute: typeof Char123LocaleChar125AuthRoute
+    }
+    '/{-$locale}/auth/register-success': {
+      id: '/{-$locale}/auth/register-success'
+      path: '/register-success'
+      fullPath: '/{-$locale}/auth/register-success'
+      preLoaderRoute: typeof Char123LocaleChar125AuthRegisterSuccessRouteImport
+      parentRoute: typeof Char123LocaleChar125AuthRoute
+    }
+    '/{-$locale}/auth/register': {
+      id: '/{-$locale}/auth/register'
+      path: '/register'
+      fullPath: '/{-$locale}/auth/register'
+      preLoaderRoute: typeof Char123LocaleChar125AuthRegisterRouteImport
+      parentRoute: typeof Char123LocaleChar125AuthRoute
+    }
+    '/{-$locale}/auth/login': {
+      id: '/{-$locale}/auth/login'
+      path: '/login'
+      fullPath: '/{-$locale}/auth/login'
+      preLoaderRoute: typeof Char123LocaleChar125AuthLoginRouteImport
+      parentRoute: typeof Char123LocaleChar125AuthRoute
+    }
+    '/{-$locale}/auth/forgot-password': {
+      id: '/{-$locale}/auth/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/{-$locale}/auth/forgot-password'
+      preLoaderRoute: typeof Char123LocaleChar125AuthForgotPasswordRouteImport
+      parentRoute: typeof Char123LocaleChar125AuthRoute
+    }
+    '/{-$locale}/auth/confirm': {
+      id: '/{-$locale}/auth/confirm'
+      path: '/confirm'
+      fullPath: '/{-$locale}/auth/confirm'
+      preLoaderRoute: typeof Char123LocaleChar125AuthConfirmRouteImport
+      parentRoute: typeof Char123LocaleChar125AuthRoute
+    }
+    '/{-$locale}/_marketing/pay-success': {
+      id: '/{-$locale}/_marketing/pay-success'
       path: '/pay-success'
-      fullPath: '/pay-success'
-      preLoaderRoute: typeof MarketingPaySuccessRouteImport
-      parentRoute: typeof MarketingRoute
+      fullPath: '/{-$locale}/pay-success'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingPaySuccessRouteImport
+      parentRoute: typeof Char123LocaleChar125MarketingRoute
     }
-    '/_marketing/contact': {
-      id: '/_marketing/contact'
+    '/{-$locale}/_marketing/contact': {
+      id: '/{-$locale}/_marketing/contact'
       path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof MarketingContactRouteImport
-      parentRoute: typeof MarketingRoute
+      fullPath: '/{-$locale}/contact'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingContactRouteImport
+      parentRoute: typeof Char123LocaleChar125MarketingRoute
     }
-    '/_marketing/about': {
-      id: '/_marketing/about'
+    '/{-$locale}/_marketing/about': {
+      id: '/{-$locale}/_marketing/about'
       path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof MarketingAboutRouteImport
-      parentRoute: typeof MarketingRoute
-    }
-    '/_dashboard/dashboard/': {
-      id: '/_dashboard/dashboard/'
-      path: '/dashboard'
-      fullPath: '/dashboard/'
-      preLoaderRoute: typeof DashboardDashboardIndexRouteImport
-      parentRoute: typeof DashboardRoute
+      fullPath: '/{-$locale}/about'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingAboutRouteImport
+      parentRoute: typeof Char123LocaleChar125MarketingRoute
     }
     '/api/user/subscription': {
       id: '/api/user/subscription'
@@ -504,6 +526,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAdminUsersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/{-$locale}/_dashboard/dashboard/': {
+      id: '/{-$locale}/_dashboard/dashboard/'
+      path: '/dashboard'
+      fullPath: '/{-$locale}/dashboard/'
+      preLoaderRoute: typeof Char123LocaleChar125DashboardDashboardIndexRouteImport
+      parentRoute: typeof Char123LocaleChar125DashboardRoute
+    }
     '/api/payment/notify/creem': {
       id: '/api/payment/notify/creem'
       path: '/api/payment/notify/creem'
@@ -514,62 +543,96 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface DashboardRouteChildren {
-  DashboardDashboardIndexRoute: typeof DashboardDashboardIndexRoute
+interface Char123LocaleChar125DashboardRouteChildren {
+  Char123LocaleChar125DashboardDashboardIndexRoute: typeof Char123LocaleChar125DashboardDashboardIndexRoute
 }
 
-const DashboardRouteChildren: DashboardRouteChildren = {
-  DashboardDashboardIndexRoute: DashboardDashboardIndexRoute,
+const Char123LocaleChar125DashboardRouteChildren: Char123LocaleChar125DashboardRouteChildren =
+  {
+    Char123LocaleChar125DashboardDashboardIndexRoute:
+      Char123LocaleChar125DashboardDashboardIndexRoute,
+  }
+
+const Char123LocaleChar125DashboardRouteWithChildren =
+  Char123LocaleChar125DashboardRoute._addFileChildren(
+    Char123LocaleChar125DashboardRouteChildren,
+  )
+
+interface Char123LocaleChar125MarketingRouteChildren {
+  Char123LocaleChar125MarketingAboutRoute: typeof Char123LocaleChar125MarketingAboutRoute
+  Char123LocaleChar125MarketingContactRoute: typeof Char123LocaleChar125MarketingContactRoute
+  Char123LocaleChar125MarketingPaySuccessRoute: typeof Char123LocaleChar125MarketingPaySuccessRoute
+  Char123LocaleChar125MarketingIndexRoute: typeof Char123LocaleChar125MarketingIndexRoute
 }
 
-const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
-  DashboardRouteChildren,
-)
+const Char123LocaleChar125MarketingRouteChildren: Char123LocaleChar125MarketingRouteChildren =
+  {
+    Char123LocaleChar125MarketingAboutRoute:
+      Char123LocaleChar125MarketingAboutRoute,
+    Char123LocaleChar125MarketingContactRoute:
+      Char123LocaleChar125MarketingContactRoute,
+    Char123LocaleChar125MarketingPaySuccessRoute:
+      Char123LocaleChar125MarketingPaySuccessRoute,
+    Char123LocaleChar125MarketingIndexRoute:
+      Char123LocaleChar125MarketingIndexRoute,
+  }
 
-interface MarketingRouteChildren {
-  MarketingAboutRoute: typeof MarketingAboutRoute
-  MarketingContactRoute: typeof MarketingContactRoute
-  MarketingPaySuccessRoute: typeof MarketingPaySuccessRoute
-  MarketingIndexRoute: typeof MarketingIndexRoute
+const Char123LocaleChar125MarketingRouteWithChildren =
+  Char123LocaleChar125MarketingRoute._addFileChildren(
+    Char123LocaleChar125MarketingRouteChildren,
+  )
+
+interface Char123LocaleChar125AuthRouteChildren {
+  Char123LocaleChar125AuthConfirmRoute: typeof Char123LocaleChar125AuthConfirmRoute
+  Char123LocaleChar125AuthForgotPasswordRoute: typeof Char123LocaleChar125AuthForgotPasswordRoute
+  Char123LocaleChar125AuthLoginRoute: typeof Char123LocaleChar125AuthLoginRoute
+  Char123LocaleChar125AuthRegisterRoute: typeof Char123LocaleChar125AuthRegisterRoute
+  Char123LocaleChar125AuthRegisterSuccessRoute: typeof Char123LocaleChar125AuthRegisterSuccessRoute
+  Char123LocaleChar125AuthResetPasswordRoute: typeof Char123LocaleChar125AuthResetPasswordRoute
 }
 
-const MarketingRouteChildren: MarketingRouteChildren = {
-  MarketingAboutRoute: MarketingAboutRoute,
-  MarketingContactRoute: MarketingContactRoute,
-  MarketingPaySuccessRoute: MarketingPaySuccessRoute,
-  MarketingIndexRoute: MarketingIndexRoute,
+const Char123LocaleChar125AuthRouteChildren: Char123LocaleChar125AuthRouteChildren =
+  {
+    Char123LocaleChar125AuthConfirmRoute: Char123LocaleChar125AuthConfirmRoute,
+    Char123LocaleChar125AuthForgotPasswordRoute:
+      Char123LocaleChar125AuthForgotPasswordRoute,
+    Char123LocaleChar125AuthLoginRoute: Char123LocaleChar125AuthLoginRoute,
+    Char123LocaleChar125AuthRegisterRoute:
+      Char123LocaleChar125AuthRegisterRoute,
+    Char123LocaleChar125AuthRegisterSuccessRoute:
+      Char123LocaleChar125AuthRegisterSuccessRoute,
+    Char123LocaleChar125AuthResetPasswordRoute:
+      Char123LocaleChar125AuthResetPasswordRoute,
+  }
+
+const Char123LocaleChar125AuthRouteWithChildren =
+  Char123LocaleChar125AuthRoute._addFileChildren(
+    Char123LocaleChar125AuthRouteChildren,
+  )
+
+interface Char123LocaleChar125RouteChildren {
+  Char123LocaleChar125DashboardRoute: typeof Char123LocaleChar125DashboardRouteWithChildren
+  Char123LocaleChar125MarketingRoute: typeof Char123LocaleChar125MarketingRouteWithChildren
+  Char123LocaleChar125AuthRoute: typeof Char123LocaleChar125AuthRouteWithChildren
+  Char123LocaleChar125DemoBetterAuthRoute: typeof Char123LocaleChar125DemoBetterAuthRoute
 }
 
-const MarketingRouteWithChildren = MarketingRoute._addFileChildren(
-  MarketingRouteChildren,
-)
-
-interface AuthRouteChildren {
-  AuthConfirmRoute: typeof AuthConfirmRoute
-  AuthForgotPasswordRoute: typeof AuthForgotPasswordRoute
-  AuthLoginRoute: typeof AuthLoginRoute
-  AuthRegisterRoute: typeof AuthRegisterRoute
-  AuthRegisterSuccessRoute: typeof AuthRegisterSuccessRoute
-  AuthResetPasswordRoute: typeof AuthResetPasswordRoute
+const Char123LocaleChar125RouteChildren: Char123LocaleChar125RouteChildren = {
+  Char123LocaleChar125DashboardRoute:
+    Char123LocaleChar125DashboardRouteWithChildren,
+  Char123LocaleChar125MarketingRoute:
+    Char123LocaleChar125MarketingRouteWithChildren,
+  Char123LocaleChar125AuthRoute: Char123LocaleChar125AuthRouteWithChildren,
+  Char123LocaleChar125DemoBetterAuthRoute:
+    Char123LocaleChar125DemoBetterAuthRoute,
 }
 
-const AuthRouteChildren: AuthRouteChildren = {
-  AuthConfirmRoute: AuthConfirmRoute,
-  AuthForgotPasswordRoute: AuthForgotPasswordRoute,
-  AuthLoginRoute: AuthLoginRoute,
-  AuthRegisterRoute: AuthRegisterRoute,
-  AuthRegisterSuccessRoute: AuthRegisterSuccessRoute,
-  AuthResetPasswordRoute: AuthResetPasswordRoute,
-}
-
-const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
+const Char123LocaleChar125RouteWithChildren =
+  Char123LocaleChar125Route._addFileChildren(Char123LocaleChar125RouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
-  DashboardRoute: DashboardRouteWithChildren,
-  MarketingRoute: MarketingRouteWithChildren,
-  AuthRoute: AuthRouteWithChildren,
+  Char123LocaleChar125Route: Char123LocaleChar125RouteWithChildren,
   ApiContactRoute: ApiContactRoute,
-  DemoBetterAuthRoute: DemoBetterAuthRoute,
   ApiAdminUsersRoute: ApiAdminUsersRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiPaymentCreateRoute: ApiPaymentCreateRoute,

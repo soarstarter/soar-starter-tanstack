@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { InteractiveGridPattern } from "#/components/motion/backgrounds/interactive-grid-pattern";
 import { Button } from "#/components/ui/button";
 
 export function HeroSection() {
@@ -8,15 +9,15 @@ export function HeroSection() {
 
 	return (
 		<div className="relative isolate overflow-x-hidden px-6 pt-4 lg:px-8">
-			{/* Gradient glow background */}
-			<div
-				aria-hidden
-				className="pointer-events-none absolute inset-0 z-0 flex justify-center"
-			>
-				<div className="h-[32rem] w-[48rem] max-w-[90vw] rounded-full bg-primary/8 blur-[128px] dark:bg-primary/15" />
-			</div>
-
 			<div className="relative">
+				<InteractiveGridPattern
+					width={45}
+					height={45}
+					squares={[24, 24]}
+					className="[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+					squaresClassName="stroke-gray-400/20 dark:stroke-gray-500/15"
+				/>
+
 				<div className="pointer-events-none relative z-10 mx-auto max-w-5xl py-14 sm:py-16 lg:py-20">
 					{/* Badge */}
 					<div className="pointer-events-auto hidden sm:mb-10 sm:flex sm:justify-center">
@@ -62,6 +63,25 @@ export function HeroSection() {
 							</Button>
 						</div>
 					</div>
+				</div>
+			</div>
+
+			<div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-10 md:mt-16">
+				<div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-border/60 bg-muted/40 p-4 shadow-xl shadow-zinc-950/10 ring-1 ring-muted/50 dark:border-white/10 dark:bg-muted/30">
+					<img
+						className="relative hidden rounded-2xl bg-muted/50 dark:block"
+						src="/blocks/music.png"
+						alt="App screen preview"
+						width={1920}
+						height={1080}
+					/>
+					<img
+						className="relative rounded-2xl border border-border/25 dark:hidden"
+						src="/blocks/music-light.png"
+						alt="App screen preview"
+						width={1920}
+						height={1080}
+					/>
 				</div>
 			</div>
 		</div>

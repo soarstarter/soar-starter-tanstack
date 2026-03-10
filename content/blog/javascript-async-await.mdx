@@ -1,0 +1,38 @@
+---
+title: Understanding Async/Await in JavaScript
+description: A guide to asynchronous programming with async/await
+date: 2025-01-09
+author: Author
+tags: [JavaScript, Async, Programming, Tutorial]
+---
+
+# Understanding Async/Await in JavaScript
+
+Async/await makes asynchronous code easier to read and write in JavaScript.
+
+## What is Async/Await?
+
+Async/await is syntactic sugar built on top of Promises, making asynchronous code look synchronous.
+
+## Basic Example
+
+```javascript
+async function fetchData() {
+  try {
+    const response = await fetch('/api/data');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+```
+
+## Benefits
+
+- Cleaner code than callbacks
+- Better error handling
+- Easier to read and maintain
+- Works with try/catch
+
+Async/await simplifies working with asynchronous operations in JavaScript.

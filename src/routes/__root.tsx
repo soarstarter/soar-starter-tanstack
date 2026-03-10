@@ -1,6 +1,7 @@
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { RootProvider } from "fumadocs-ui/provider/tanstack";
 import "#/i18n";
 import appCss from "../styles.css?url";
 
@@ -27,6 +28,7 @@ export const Route = createRootRoute({
 			},
 		],
 	}),
+	errorComponent: RootErrorBoundary,
 	shellComponent: RootDocument,
 });
 
@@ -38,20 +40,39 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				<HeadContent />
 			</head>
 			<body className="font-sans antialiased [overflow-wrap:anywhere] selection:bg-[rgba(79,184,178,0.24)]">
-				{children}
-				<TanStackDevtools
-					config={{
-						position: "bottom-right",
-					}}
-					plugins={[
-						{
-							name: "Tanstack Router",
-							render: <TanStackRouterDevtoolsPanel />,
-						},
-					]}
-				/>
-				<Scripts />
+				<RootProvider>
+					{children}
+					<TanStackDevtools
+						config={{
+							position: "bottom-right",
+						}}
+						plugins={[
+							{
+								name: "Tanstack Router",
+								render: <TanStackRouterDevtoolsPanel />,
+							},
+						]}
+					/>
+					<Scripts />
+				</RootProvider>
 			</body>
 		</html>
+	);
+}
+
+function RootErrorBoundary({ error }: { error: unknown }) {
+	const message =
+		error instanceof Error ? error.message : "An unexpected error occurred.";
+
+	return (
+		<div className="page-wrap flex min-h-[50vh] items-center justify-center py-16">
+			<div className="island-shell max-w-xl rounded-[1.75rem] border border-white/45 px-6 py-8 text-center dark:border-white/10">
+				<p className="island-kicker mb-3">Application Error</p>
+				<h1 className="display-title text-3xl font-bold">Something went wrong</h1>
+				<p className="mt-4 text-sm leading-6 text-muted-foreground">
+					{message}
+				</p>
+			</div>
+		</div>
 	);
 }

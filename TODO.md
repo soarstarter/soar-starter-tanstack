@@ -184,19 +184,19 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ## Step 9. Blog System
 
-- [ ] **[NEEDS RESEARCH]** Set up fumadocs with TanStack Start
-  - fumadocs has a TanStack Start adapter — need to verify setup steps
-  - Reference: fumadocs docs for TanStack integration
-- [ ] Create blog content directory (`content/blog/`) — can copy MDX files from Next.js project
-- [ ] Create blog source/loader — `src/lib/blog.ts` (post listing, pagination, tags, slug lookup)
+- [x] **[RESOLVED]** Set up fumadocs with TanStack Start
+  - Added `fumadocs-mdx` Vite integration and `source.config.ts`
+  - Added `fumadocs-ui` TanStack root provider and styles
+- [x] Create blog content directory (`content/blog/`) — can copy MDX files from Next.js project
+- [x] Create blog source/loader — `src/lib/blog.ts` (post listing, pagination, tags, slug lookup)
 - [ ] Blog routes:
-  - [ ] `src/routes/_marketing/blog/index.tsx` — blog listing with tag filter + pagination
-  - [ ] `src/routes/_marketing/blog/$slug.tsx` — individual blog post
-- [ ] Blog components:
-  - [ ] `src/components/blog/BlogCard.tsx`
-  - [ ] `src/components/blog/BlogFilter.tsx` (tag filter)
-  - [ ] `src/components/blog/BlogPagination.tsx`
-  - [ ] `src/components/blog/BlogToc.tsx` (table of contents)
+  - [x] `src/routes/_marketing/blog/index.tsx` — blog listing with tag filter + pagination
+  - [x] `src/routes/_marketing/blog/$slug.tsx` — individual blog post
+- [x] Blog components:
+  - [x] `src/components/blog/BlogCard.tsx`
+  - [x] `src/components/blog/BlogFilter.tsx` (tag filter)
+  - [x] `src/components/blog/BlogPagination.tsx`
+  - [x] `src/components/blog/BlogToc.tsx` (table of contents)
 
 ## Step 10. Documentation System
 

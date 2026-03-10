@@ -1,0 +1,63 @@
+---
+title: Content Management with MDX
+description: A detailed guide on using MDX for content-driven websites
+date: 2025-07-18
+author: Author
+tags: [MDX, Content, Tutorial, React]
+---
+
+# Content Management with MDX
+
+MDX is a powerful format that lets you use JSX in your markdown content, perfect for creating content-driven websites.
+
+## What is MDX?
+
+MDX combines the simplicity of Markdown with the power of React components:
+
+- Write content in Markdown with full component support
+- File-based content organization
+- Type-safe content with TypeScript
+- Built-in code highlighting
+
+## Basic Usage
+
+### 1. Install Dependencies
+
+```bash
+pnpm add fumadocs-core fumadocs-ui fumadocs-mdx
+```
+
+### 2. Configure
+
+Create a `source.config.ts` at the project root:
+
+```typescript
+import { defineDocs, defineConfig } from "fumadocs-mdx/config";
+
+export const docs = defineDocs({
+  dir: "content/docs",
+});
+
+export default defineConfig();
+```
+
+### 3. Create Content
+
+Create MDX files in the `content/` directory:
+
+```mdx
+---
+title: My Article
+description: Article description
+---
+
+# Article Title
+
+Your content here...
+```
+
+## Advanced Features
+
+MDX supports many advanced features including custom components, code highlighting, search, and more.
+
+This is just a simple introduction. Check the official documentation for more features.

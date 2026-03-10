@@ -1,0 +1,37 @@
+---
+title: REST API Design Best Practices
+description: Guidelines for designing clean and maintainable REST APIs
+date: 2025-01-12
+author: Author
+tags: [API, REST, Backend, Web Development]
+---
+
+# REST API Design Best Practices
+
+Designing a good REST API requires following certain principles and conventions.
+
+## Key Principles
+
+- Use proper HTTP methods (GET, POST, PUT, DELETE)
+- Follow RESTful naming conventions
+- Return appropriate status codes
+- Version your API
+
+## Example Endpoint Structure
+
+```
+GET    /api/users          # List all users
+GET    /api/users/:id      # Get specific user
+POST   /api/users          # Create new user
+PUT    /api/users/:id      # Update user
+DELETE /api/users/:id      # Delete user
+```
+
+## Best Practices
+
+- Use nouns, not verbs in URLs
+- Keep URLs simple and intuitive
+- Provide clear error messages
+- Document your API thoroughly
+
+Follow these practices to build APIs that are easy to use and maintain.

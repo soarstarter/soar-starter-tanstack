@@ -33,7 +33,9 @@ import { Route as ApiPaymentQueryRouteImport } from './routes/api/payment/query'
 import { Route as ApiPaymentCreateRouteImport } from './routes/api/payment/create'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as ApiAdminUsersRouteImport } from './routes/api/admin/users'
+import { Route as Char123LocaleChar125MarketingBlogIndexRouteImport } from './routes/{-$locale}/_marketing/blog/index'
 import { Route as Char123LocaleChar125DashboardDashboardIndexRouteImport } from './routes/{-$locale}/_dashboard/dashboard/index'
+import { Route as Char123LocaleChar125MarketingBlogSlugRouteImport } from './routes/{-$locale}/_marketing/blog/$slug'
 import { Route as ApiPaymentNotifyCreemRouteImport } from './routes/api/payment/notify/creem'
 
 const Char123LocaleChar125Route = Char123LocaleChar125RouteImport.update({
@@ -168,11 +170,23 @@ const ApiAdminUsersRoute = ApiAdminUsersRouteImport.update({
   path: '/api/admin/users',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Char123LocaleChar125MarketingBlogIndexRoute =
+  Char123LocaleChar125MarketingBlogIndexRouteImport.update({
+    id: '/blog/',
+    path: '/blog/',
+    getParentRoute: () => Char123LocaleChar125MarketingRoute,
+  } as any)
 const Char123LocaleChar125DashboardDashboardIndexRoute =
   Char123LocaleChar125DashboardDashboardIndexRouteImport.update({
     id: '/dashboard/',
     path: '/dashboard/',
     getParentRoute: () => Char123LocaleChar125DashboardRoute,
+  } as any)
+const Char123LocaleChar125MarketingBlogSlugRoute =
+  Char123LocaleChar125MarketingBlogSlugRouteImport.update({
+    id: '/blog/$slug',
+    path: '/blog/$slug',
+    getParentRoute: () => Char123LocaleChar125MarketingRoute,
   } as any)
 const ApiPaymentNotifyCreemRoute = ApiPaymentNotifyCreemRouteImport.update({
   id: '/api/payment/notify/creem',
@@ -204,7 +218,9 @@ export interface FileRoutesByFullPath {
   '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
   '/{-$locale}/': typeof Char123LocaleChar125MarketingIndexRoute
   '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
+  '/{-$locale}/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
   '/{-$locale}/dashboard/': typeof Char123LocaleChar125DashboardDashboardIndexRoute
+  '/{-$locale}/blog/': typeof Char123LocaleChar125MarketingBlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/{-$locale}': typeof Char123LocaleChar125MarketingIndexRoute
@@ -229,7 +245,9 @@ export interface FileRoutesByTo {
   '/{-$locale}/auth/reset-password': typeof Char123LocaleChar125AuthResetPasswordRoute
   '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
   '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
+  '/{-$locale}/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
   '/{-$locale}/dashboard': typeof Char123LocaleChar125DashboardDashboardIndexRoute
+  '/{-$locale}/blog': typeof Char123LocaleChar125MarketingBlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -258,7 +276,9 @@ export interface FileRoutesById {
   '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
   '/{-$locale}/_marketing/': typeof Char123LocaleChar125MarketingIndexRoute
   '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
+  '/{-$locale}/_marketing/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
   '/{-$locale}/_dashboard/dashboard/': typeof Char123LocaleChar125DashboardDashboardIndexRoute
+  '/{-$locale}/_marketing/blog/': typeof Char123LocaleChar125MarketingBlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -286,7 +306,9 @@ export interface FileRouteTypes {
     | '/{-$locale}/demo/better-auth'
     | '/{-$locale}/'
     | '/api/payment/notify/creem'
+    | '/{-$locale}/blog/$slug'
     | '/{-$locale}/dashboard/'
+    | '/{-$locale}/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/{-$locale}'
@@ -311,7 +333,9 @@ export interface FileRouteTypes {
     | '/{-$locale}/auth/reset-password'
     | '/{-$locale}/demo/better-auth'
     | '/api/payment/notify/creem'
+    | '/{-$locale}/blog/$slug'
     | '/{-$locale}/dashboard'
+    | '/{-$locale}/blog'
   id:
     | '__root__'
     | '/{-$locale}'
@@ -339,7 +363,9 @@ export interface FileRouteTypes {
     | '/{-$locale}/demo/better-auth'
     | '/{-$locale}/_marketing/'
     | '/api/payment/notify/creem'
+    | '/{-$locale}/_marketing/blog/$slug'
     | '/{-$locale}/_dashboard/dashboard/'
+    | '/{-$locale}/_marketing/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -526,12 +552,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAdminUsersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/{-$locale}/_marketing/blog/': {
+      id: '/{-$locale}/_marketing/blog/'
+      path: '/blog'
+      fullPath: '/{-$locale}/blog/'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingBlogIndexRouteImport
+      parentRoute: typeof Char123LocaleChar125MarketingRoute
+    }
     '/{-$locale}/_dashboard/dashboard/': {
       id: '/{-$locale}/_dashboard/dashboard/'
       path: '/dashboard'
       fullPath: '/{-$locale}/dashboard/'
       preLoaderRoute: typeof Char123LocaleChar125DashboardDashboardIndexRouteImport
       parentRoute: typeof Char123LocaleChar125DashboardRoute
+    }
+    '/{-$locale}/_marketing/blog/$slug': {
+      id: '/{-$locale}/_marketing/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/{-$locale}/blog/$slug'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingBlogSlugRouteImport
+      parentRoute: typeof Char123LocaleChar125MarketingRoute
     }
     '/api/payment/notify/creem': {
       id: '/api/payment/notify/creem'
@@ -563,6 +603,8 @@ interface Char123LocaleChar125MarketingRouteChildren {
   Char123LocaleChar125MarketingContactRoute: typeof Char123LocaleChar125MarketingContactRoute
   Char123LocaleChar125MarketingPaySuccessRoute: typeof Char123LocaleChar125MarketingPaySuccessRoute
   Char123LocaleChar125MarketingIndexRoute: typeof Char123LocaleChar125MarketingIndexRoute
+  Char123LocaleChar125MarketingBlogSlugRoute: typeof Char123LocaleChar125MarketingBlogSlugRoute
+  Char123LocaleChar125MarketingBlogIndexRoute: typeof Char123LocaleChar125MarketingBlogIndexRoute
 }
 
 const Char123LocaleChar125MarketingRouteChildren: Char123LocaleChar125MarketingRouteChildren =
@@ -575,6 +617,10 @@ const Char123LocaleChar125MarketingRouteChildren: Char123LocaleChar125MarketingR
       Char123LocaleChar125MarketingPaySuccessRoute,
     Char123LocaleChar125MarketingIndexRoute:
       Char123LocaleChar125MarketingIndexRoute,
+    Char123LocaleChar125MarketingBlogSlugRoute:
+      Char123LocaleChar125MarketingBlogSlugRoute,
+    Char123LocaleChar125MarketingBlogIndexRoute:
+      Char123LocaleChar125MarketingBlogIndexRoute,
   }
 
 const Char123LocaleChar125MarketingRouteWithChildren =

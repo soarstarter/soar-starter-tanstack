@@ -19,7 +19,9 @@ export function DashboardSideContent() {
 	const isActive = (href: string | undefined): boolean => {
 		if (!href) return false;
 		const localizedHref = localePath(href);
-		return pathname === localizedHref || pathname.startsWith(`${localizedHref}/`);
+		return (
+			pathname === localizedHref || pathname.startsWith(`${localizedHref}/`)
+		);
 	};
 
 	return (
@@ -36,7 +38,7 @@ export function DashboardSideContent() {
 											asChild
 											isActive={isActive(subItem.href)}
 										>
-											<LocaleLink href={subItem.href || ""}>
+											<LocaleLink href={subItem.href || ""} preload={false}>
 												{subItem.icon as ReactNode}
 												<span className="truncate text-sm font-medium">
 													{subItem.title}
@@ -53,7 +55,7 @@ export function DashboardSideContent() {
 						<SidebarMenu className="pl-2">
 							<SidebarMenuItem>
 								<SidebarMenuButton asChild isActive={isActive(item.href)}>
-									<LocaleLink href={item.href || ""}>
+									<LocaleLink href={item.href || ""} preload={false}>
 										{item.icon as ReactNode}
 										<span className="truncate text-sm font-medium">
 											{item.title}

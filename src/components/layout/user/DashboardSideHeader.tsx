@@ -11,7 +11,7 @@ export function DashboardSideHeader() {
 		<SidebarMenu>
 			<SidebarMenuItem>
 				<SidebarMenuButton asChild>
-					<Link to="/">
+					<Link to="/" preload={false}>
 						<Logo />
 						<span className="truncate text-base font-semibold">
 							SoarStarter

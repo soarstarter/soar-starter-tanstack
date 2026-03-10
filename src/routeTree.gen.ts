@@ -39,6 +39,12 @@ import { Route as Char123LocaleChar125DashboardDashboardIndexRouteImport } from 
 import { Route as Char123LocaleChar125MarketingBlogSlugRouteImport } from './routes/{-$locale}/_marketing/blog/$slug'
 import { Route as Char123LocaleChar125DocsDocsSplatRouteImport } from './routes/{-$locale}/_docs/docs/$'
 import { Route as ApiPaymentNotifyCreemRouteImport } from './routes/api/payment/notify/creem'
+import { Route as Char123LocaleChar125DashboardSettingSecurityIndexRouteImport } from './routes/{-$locale}/_dashboard/setting/security/index'
+import { Route as Char123LocaleChar125DashboardSettingProfileIndexRouteImport } from './routes/{-$locale}/_dashboard/setting/profile/index'
+import { Route as Char123LocaleChar125DashboardSettingBillingIndexRouteImport } from './routes/{-$locale}/_dashboard/setting/billing/index'
+import { Route as Char123LocaleChar125DashboardAdminUsersIndexRouteImport } from './routes/{-$locale}/_dashboard/admin/users/index'
+import { Route as Char123LocaleChar125DashboardAccountSubscriptionIndexRouteImport } from './routes/{-$locale}/_dashboard/account/subscription/index'
+import { Route as Char123LocaleChar125DashboardAccountOrderIndexRouteImport } from './routes/{-$locale}/_dashboard/account/order/index'
 
 const Char123LocaleChar125Route = Char123LocaleChar125RouteImport.update({
   id: '/{-$locale}',
@@ -206,6 +212,42 @@ const ApiPaymentNotifyCreemRoute = ApiPaymentNotifyCreemRouteImport.update({
   path: '/api/payment/notify/creem',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Char123LocaleChar125DashboardSettingSecurityIndexRoute =
+  Char123LocaleChar125DashboardSettingSecurityIndexRouteImport.update({
+    id: '/setting/security/',
+    path: '/setting/security/',
+    getParentRoute: () => Char123LocaleChar125DashboardRoute,
+  } as any)
+const Char123LocaleChar125DashboardSettingProfileIndexRoute =
+  Char123LocaleChar125DashboardSettingProfileIndexRouteImport.update({
+    id: '/setting/profile/',
+    path: '/setting/profile/',
+    getParentRoute: () => Char123LocaleChar125DashboardRoute,
+  } as any)
+const Char123LocaleChar125DashboardSettingBillingIndexRoute =
+  Char123LocaleChar125DashboardSettingBillingIndexRouteImport.update({
+    id: '/setting/billing/',
+    path: '/setting/billing/',
+    getParentRoute: () => Char123LocaleChar125DashboardRoute,
+  } as any)
+const Char123LocaleChar125DashboardAdminUsersIndexRoute =
+  Char123LocaleChar125DashboardAdminUsersIndexRouteImport.update({
+    id: '/admin/users/',
+    path: '/admin/users/',
+    getParentRoute: () => Char123LocaleChar125DashboardRoute,
+  } as any)
+const Char123LocaleChar125DashboardAccountSubscriptionIndexRoute =
+  Char123LocaleChar125DashboardAccountSubscriptionIndexRouteImport.update({
+    id: '/account/subscription/',
+    path: '/account/subscription/',
+    getParentRoute: () => Char123LocaleChar125DashboardRoute,
+  } as any)
+const Char123LocaleChar125DashboardAccountOrderIndexRoute =
+  Char123LocaleChar125DashboardAccountOrderIndexRouteImport.update({
+    id: '/account/order/',
+    path: '/account/order/',
+    getParentRoute: () => Char123LocaleChar125DashboardRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/{-$locale}': typeof Char123LocaleChar125MarketingRouteWithChildren
@@ -235,6 +277,12 @@ export interface FileRoutesByFullPath {
   '/{-$locale}/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
   '/{-$locale}/dashboard/': typeof Char123LocaleChar125DashboardDashboardIndexRoute
   '/{-$locale}/blog/': typeof Char123LocaleChar125MarketingBlogIndexRoute
+  '/{-$locale}/account/order/': typeof Char123LocaleChar125DashboardAccountOrderIndexRoute
+  '/{-$locale}/account/subscription/': typeof Char123LocaleChar125DashboardAccountSubscriptionIndexRoute
+  '/{-$locale}/admin/users/': typeof Char123LocaleChar125DashboardAdminUsersIndexRoute
+  '/{-$locale}/setting/billing/': typeof Char123LocaleChar125DashboardSettingBillingIndexRoute
+  '/{-$locale}/setting/profile/': typeof Char123LocaleChar125DashboardSettingProfileIndexRoute
+  '/{-$locale}/setting/security/': typeof Char123LocaleChar125DashboardSettingSecurityIndexRoute
 }
 export interface FileRoutesByTo {
   '/{-$locale}': typeof Char123LocaleChar125MarketingIndexRoute
@@ -263,6 +311,12 @@ export interface FileRoutesByTo {
   '/{-$locale}/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
   '/{-$locale}/dashboard': typeof Char123LocaleChar125DashboardDashboardIndexRoute
   '/{-$locale}/blog': typeof Char123LocaleChar125MarketingBlogIndexRoute
+  '/{-$locale}/account/order': typeof Char123LocaleChar125DashboardAccountOrderIndexRoute
+  '/{-$locale}/account/subscription': typeof Char123LocaleChar125DashboardAccountSubscriptionIndexRoute
+  '/{-$locale}/admin/users': typeof Char123LocaleChar125DashboardAdminUsersIndexRoute
+  '/{-$locale}/setting/billing': typeof Char123LocaleChar125DashboardSettingBillingIndexRoute
+  '/{-$locale}/setting/profile': typeof Char123LocaleChar125DashboardSettingProfileIndexRoute
+  '/{-$locale}/setting/security': typeof Char123LocaleChar125DashboardSettingSecurityIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -296,6 +350,12 @@ export interface FileRoutesById {
   '/{-$locale}/_marketing/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
   '/{-$locale}/_dashboard/dashboard/': typeof Char123LocaleChar125DashboardDashboardIndexRoute
   '/{-$locale}/_marketing/blog/': typeof Char123LocaleChar125MarketingBlogIndexRoute
+  '/{-$locale}/_dashboard/account/order/': typeof Char123LocaleChar125DashboardAccountOrderIndexRoute
+  '/{-$locale}/_dashboard/account/subscription/': typeof Char123LocaleChar125DashboardAccountSubscriptionIndexRoute
+  '/{-$locale}/_dashboard/admin/users/': typeof Char123LocaleChar125DashboardAdminUsersIndexRoute
+  '/{-$locale}/_dashboard/setting/billing/': typeof Char123LocaleChar125DashboardSettingBillingIndexRoute
+  '/{-$locale}/_dashboard/setting/profile/': typeof Char123LocaleChar125DashboardSettingProfileIndexRoute
+  '/{-$locale}/_dashboard/setting/security/': typeof Char123LocaleChar125DashboardSettingSecurityIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -327,6 +387,12 @@ export interface FileRouteTypes {
     | '/{-$locale}/blog/$slug'
     | '/{-$locale}/dashboard/'
     | '/{-$locale}/blog/'
+    | '/{-$locale}/account/order/'
+    | '/{-$locale}/account/subscription/'
+    | '/{-$locale}/admin/users/'
+    | '/{-$locale}/setting/billing/'
+    | '/{-$locale}/setting/profile/'
+    | '/{-$locale}/setting/security/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/{-$locale}'
@@ -355,6 +421,12 @@ export interface FileRouteTypes {
     | '/{-$locale}/blog/$slug'
     | '/{-$locale}/dashboard'
     | '/{-$locale}/blog'
+    | '/{-$locale}/account/order'
+    | '/{-$locale}/account/subscription'
+    | '/{-$locale}/admin/users'
+    | '/{-$locale}/setting/billing'
+    | '/{-$locale}/setting/profile'
+    | '/{-$locale}/setting/security'
   id:
     | '__root__'
     | '/{-$locale}'
@@ -387,6 +459,12 @@ export interface FileRouteTypes {
     | '/{-$locale}/_marketing/blog/$slug'
     | '/{-$locale}/_dashboard/dashboard/'
     | '/{-$locale}/_marketing/blog/'
+    | '/{-$locale}/_dashboard/account/order/'
+    | '/{-$locale}/_dashboard/account/subscription/'
+    | '/{-$locale}/_dashboard/admin/users/'
+    | '/{-$locale}/_dashboard/setting/billing/'
+    | '/{-$locale}/_dashboard/setting/profile/'
+    | '/{-$locale}/_dashboard/setting/security/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -615,17 +693,77 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPaymentNotifyCreemRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/{-$locale}/_dashboard/setting/security/': {
+      id: '/{-$locale}/_dashboard/setting/security/'
+      path: '/setting/security'
+      fullPath: '/{-$locale}/setting/security/'
+      preLoaderRoute: typeof Char123LocaleChar125DashboardSettingSecurityIndexRouteImport
+      parentRoute: typeof Char123LocaleChar125DashboardRoute
+    }
+    '/{-$locale}/_dashboard/setting/profile/': {
+      id: '/{-$locale}/_dashboard/setting/profile/'
+      path: '/setting/profile'
+      fullPath: '/{-$locale}/setting/profile/'
+      preLoaderRoute: typeof Char123LocaleChar125DashboardSettingProfileIndexRouteImport
+      parentRoute: typeof Char123LocaleChar125DashboardRoute
+    }
+    '/{-$locale}/_dashboard/setting/billing/': {
+      id: '/{-$locale}/_dashboard/setting/billing/'
+      path: '/setting/billing'
+      fullPath: '/{-$locale}/setting/billing/'
+      preLoaderRoute: typeof Char123LocaleChar125DashboardSettingBillingIndexRouteImport
+      parentRoute: typeof Char123LocaleChar125DashboardRoute
+    }
+    '/{-$locale}/_dashboard/admin/users/': {
+      id: '/{-$locale}/_dashboard/admin/users/'
+      path: '/admin/users'
+      fullPath: '/{-$locale}/admin/users/'
+      preLoaderRoute: typeof Char123LocaleChar125DashboardAdminUsersIndexRouteImport
+      parentRoute: typeof Char123LocaleChar125DashboardRoute
+    }
+    '/{-$locale}/_dashboard/account/subscription/': {
+      id: '/{-$locale}/_dashboard/account/subscription/'
+      path: '/account/subscription'
+      fullPath: '/{-$locale}/account/subscription/'
+      preLoaderRoute: typeof Char123LocaleChar125DashboardAccountSubscriptionIndexRouteImport
+      parentRoute: typeof Char123LocaleChar125DashboardRoute
+    }
+    '/{-$locale}/_dashboard/account/order/': {
+      id: '/{-$locale}/_dashboard/account/order/'
+      path: '/account/order'
+      fullPath: '/{-$locale}/account/order/'
+      preLoaderRoute: typeof Char123LocaleChar125DashboardAccountOrderIndexRouteImport
+      parentRoute: typeof Char123LocaleChar125DashboardRoute
+    }
   }
 }
 
 interface Char123LocaleChar125DashboardRouteChildren {
   Char123LocaleChar125DashboardDashboardIndexRoute: typeof Char123LocaleChar125DashboardDashboardIndexRoute
+  Char123LocaleChar125DashboardAccountOrderIndexRoute: typeof Char123LocaleChar125DashboardAccountOrderIndexRoute
+  Char123LocaleChar125DashboardAccountSubscriptionIndexRoute: typeof Char123LocaleChar125DashboardAccountSubscriptionIndexRoute
+  Char123LocaleChar125DashboardAdminUsersIndexRoute: typeof Char123LocaleChar125DashboardAdminUsersIndexRoute
+  Char123LocaleChar125DashboardSettingBillingIndexRoute: typeof Char123LocaleChar125DashboardSettingBillingIndexRoute
+  Char123LocaleChar125DashboardSettingProfileIndexRoute: typeof Char123LocaleChar125DashboardSettingProfileIndexRoute
+  Char123LocaleChar125DashboardSettingSecurityIndexRoute: typeof Char123LocaleChar125DashboardSettingSecurityIndexRoute
 }
 
 const Char123LocaleChar125DashboardRouteChildren: Char123LocaleChar125DashboardRouteChildren =
   {
     Char123LocaleChar125DashboardDashboardIndexRoute:
       Char123LocaleChar125DashboardDashboardIndexRoute,
+    Char123LocaleChar125DashboardAccountOrderIndexRoute:
+      Char123LocaleChar125DashboardAccountOrderIndexRoute,
+    Char123LocaleChar125DashboardAccountSubscriptionIndexRoute:
+      Char123LocaleChar125DashboardAccountSubscriptionIndexRoute,
+    Char123LocaleChar125DashboardAdminUsersIndexRoute:
+      Char123LocaleChar125DashboardAdminUsersIndexRoute,
+    Char123LocaleChar125DashboardSettingBillingIndexRoute:
+      Char123LocaleChar125DashboardSettingBillingIndexRoute,
+    Char123LocaleChar125DashboardSettingProfileIndexRoute:
+      Char123LocaleChar125DashboardSettingProfileIndexRoute,
+    Char123LocaleChar125DashboardSettingSecurityIndexRoute:
+      Char123LocaleChar125DashboardSettingSecurityIndexRoute,
   }
 
 const Char123LocaleChar125DashboardRouteWithChildren =

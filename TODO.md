@@ -214,27 +214,27 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ## Step 11. Dashboard Pages (under dashboard layout)
 
-- [ ] `src/routes/_dashboard/dashboard/index.tsx` — dashboard home (charts, stats cards)
-- [ ] Dashboard components:
-  - [ ] `src/components/dashboard/SectionCards.tsx` — stat cards
-  - [ ] `src/components/dashboard/ChartAreaInteractive.tsx` — interactive area chart (recharts)
-  - [ ] `src/components/dashboard/DataTable.tsx` — data table component
-  - [ ] Install `recharts` and `@tanstack/react-table`
+- [x] `src/routes/_dashboard/dashboard/index.tsx` — dashboard home (charts, stats cards)
+- [x] Dashboard components:
+  - [x] `src/components/dashboard/SectionCards.tsx` — stat cards
+  - [x] `src/components/dashboard/ChartAreaInteractive.tsx` — interactive area chart (recharts)
+  - [x] `src/components/dashboard/DataTable.tsx` — data table component
+  - [x] Install `recharts` and `@tanstack/react-table`
 
 ### Account Pages
 
-- [ ] `src/routes/_dashboard/account/order.tsx` — order history
-- [ ] `src/routes/_dashboard/account/subscription.tsx` — subscription management
+- [x] `src/routes/_dashboard/account/order.tsx` — order history
+- [x] `src/routes/_dashboard/account/subscription.tsx` — subscription management
 
 ### Settings Pages
 
-- [ ] `src/routes/_dashboard/setting/profile.tsx` — profile edit (name, avatar, etc.)
-- [ ] `src/routes/_dashboard/setting/security.tsx` — change password, manage sessions
-- [ ] `src/routes/_dashboard/setting/billing.tsx` — billing info, invoices
+- [x] `src/routes/_dashboard/setting/profile.tsx` — profile edit (name, avatar, etc.)
+- [x] `src/routes/_dashboard/setting/security.tsx` — change password, manage sessions
+- [x] `src/routes/_dashboard/setting/billing.tsx` — billing info, invoices
 
 ### Admin Pages
 
-- [ ] `src/routes/_dashboard/admin/users.tsx` — user management table (admin only)
+- [x] `src/routes/_dashboard/admin/users.tsx` — user management table (admin only)
 
 ## Step 12. AI Features
 

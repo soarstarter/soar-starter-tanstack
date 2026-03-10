@@ -1,4 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ChartAreaInteractive } from "#/components/dashboard/ChartAreaInteractive";
+import { DataTable } from "#/components/dashboard/DataTable";
+import { SectionCards } from "#/components/dashboard/SectionCards";
 
 export const Route = createFileRoute("/{-$locale}/_dashboard/dashboard/")({
 	component: DashboardHome,
@@ -6,11 +9,12 @@ export const Route = createFileRoute("/{-$locale}/_dashboard/dashboard/")({
 
 function DashboardHome() {
 	return (
-		<div>
-			<h1 className="text-2xl font-bold">Dashboard</h1>
-			<p className="text-muted-foreground mt-2">
-				Welcome to your dashboard.
-			</p>
+		<div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+			<SectionCards />
+			<div className="grid grid-cols-1 gap-4">
+				<ChartAreaInteractive />
+				<DataTable />
+			</div>
 		</div>
 	);
 }

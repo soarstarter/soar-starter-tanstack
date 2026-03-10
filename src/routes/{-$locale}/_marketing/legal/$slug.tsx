@@ -26,15 +26,21 @@ export const Route = createFileRoute("/{-$locale}/_marketing/legal/$slug")({
 
 		return page;
 	},
-	head: ({ loaderData }) => ({
-		...buildSeoMeta({
-			title: loaderData.title,
-			description: loaderData.description,
-			path: `/legal/${loaderData.slug}`,
-			type: "article",
-			modifiedTime: loaderData.date,
-		}),
-	}),
+	head: ({ loaderData }) =>
+		buildSeoMeta(
+			loaderData
+				? {
+						title: loaderData.title,
+						description: loaderData.description,
+						path: `/legal/${loaderData.slug}`,
+						type: "article",
+						modifiedTime: loaderData.date,
+					}
+				: {
+						title: "Legal",
+						path: "/legal",
+					},
+		),
 	component: LegalPage,
 });
 

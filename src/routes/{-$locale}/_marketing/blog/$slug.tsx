@@ -27,18 +27,24 @@ export const Route = createFileRoute("/{-$locale}/_marketing/blog/$slug")({
 
 		return post;
 	},
-	head: ({ loaderData }) => ({
-		...buildSeoMeta({
-			title: loaderData.title,
-			description: loaderData.description,
-			path: `/blog/${loaderData.slug}`,
-			image: loaderData.image,
-			type: "article",
-			publishedTime: loaderData.date,
-			modifiedTime: loaderData.date,
-			tags: loaderData.tags,
-		}),
-	}),
+	head: ({ loaderData }) =>
+		buildSeoMeta(
+			loaderData
+				? {
+						title: loaderData.title,
+						description: loaderData.description,
+						path: `/blog/${loaderData.slug}`,
+						image: loaderData.image,
+						type: "article",
+						publishedTime: loaderData.date,
+						modifiedTime: loaderData.date,
+						tags: loaderData.tags,
+					}
+				: {
+						title: "Blog",
+						path: "/blog",
+					},
+		),
 	component: BlogPostPage,
 });
 

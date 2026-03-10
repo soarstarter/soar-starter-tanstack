@@ -17,12 +17,12 @@ describe("buildSeoMeta", () => {
 				}),
 				expect.objectContaining({
 					rel: "alternate",
-					hreflang: "en",
+					hrefLang: "en",
 					href: "http://localhost:3000/about",
 				}),
 				expect.objectContaining({
 					rel: "alternate",
-					hreflang: "zh",
+					hrefLang: "zh",
 					href: "http://localhost:3000/zh/about",
 				}),
 			]),

@@ -88,17 +88,24 @@ export const Route = createFileRoute("/{-$locale}/_docs/docs/$")({
 
 		return page;
 	},
-	head: ({ loaderData }) => ({
-		...buildSeoMeta({
-			title: loaderData.title,
-			description: loaderData.description ?? docsCommonConfig.description,
-			path:
-				loaderData.slugs.length > 0
-					? `/docs/${loaderData.slugs.join("/")}`
-					: "/docs",
-			locale: (loaderData.locale as Locale | undefined) ?? defaultLocale,
-		}),
-	}),
+	head: ({ loaderData }) =>
+		buildSeoMeta(
+			loaderData
+				? {
+						title: loaderData.title,
+						description: loaderData.description ?? docsCommonConfig.description,
+						path:
+							loaderData.slugs.length > 0
+								? `/docs/${loaderData.slugs.join("/")}`
+								: "/docs",
+						locale: (loaderData.locale as Locale | undefined) ?? defaultLocale,
+					}
+				: {
+						title: "Documentation",
+						description: docsCommonConfig.description,
+						path: "/docs",
+					},
+		),
 	component: DocsContentPage,
 });
 

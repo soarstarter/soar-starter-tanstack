@@ -97,7 +97,7 @@ export function buildSeoMeta({
 	publishedTime,
 	modifiedTime,
 	tags = [],
-}: BuildSeoInput) {
+}: BuildSeoInput = {}) {
 	const pageTitle = buildTitle(title);
 	const canonicalUrl = buildCanonicalUrl(path, locale);
 	const imageUrl = toAbsoluteUrl(image);
@@ -111,12 +111,12 @@ export function buildSeoMeta({
 			},
 			...supportedLocales.map((supportedLocale) => ({
 				rel: "alternate",
-				hreflang: supportedLocale,
+				hrefLang: supportedLocale,
 				href: buildCanonicalUrl(path, supportedLocale),
 			})),
 			{
 				rel: "alternate",
-				hreflang: "x-default",
+				hrefLang: "x-default",
 				href: buildCanonicalUrl(path, defaultLocale),
 			},
 		],

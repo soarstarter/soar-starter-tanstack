@@ -1,6 +1,10 @@
 import { redirect } from "@tanstack/react-router";
 import { Routes } from "#/config/route-config";
-import { getLocaleFromPath, localizePath, stripLocalePrefix } from "#/i18n/routing";
+import {
+	getLocaleFromPath,
+	localizePath,
+	stripLocalePrefix,
+} from "#/i18n/routing";
 
 const protectedPaths = ["/dashboard", "/admin", "/setting", "/account"];
 
@@ -18,8 +22,7 @@ export function requireAuth({
 	const normalizedPathname = stripLocalePrefix(location.pathname);
 	const isProtected = protectedPaths.some(
 		(path) =>
-			normalizedPathname === path ||
-			normalizedPathname.startsWith(`${path}/`),
+			normalizedPathname === path || normalizedPathname.startsWith(`${path}/`),
 	);
 
 	if (!isProtected) return;
@@ -32,8 +35,14 @@ export function requireAuth({
 			document.cookie.includes("__Secure-better-auth.session_token");
 
 		if (!hasCookie) {
-			const callbackUrl = localizePath(location.pathname, getLocaleFromPath(location.pathname));
-			const loginHref = localizePath(Routes.AuthLogin, getLocaleFromPath(location.pathname));
+			const callbackUrl = localizePath(
+				location.pathname,
+				getLocaleFromPath(location.pathname),
+			);
+			const loginHref = localizePath(
+				Routes.AuthLogin,
+				getLocaleFromPath(location.pathname),
+			);
 			const search = new URLSearchParams({ callbackUrl }).toString();
 
 			throw redirect({

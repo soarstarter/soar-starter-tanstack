@@ -1,4 +1,9 @@
-import { createFileRoute, notFound, Outlet, redirect } from "@tanstack/react-router";
+import {
+	createFileRoute,
+	notFound,
+	Outlet,
+	redirect,
+} from "@tanstack/react-router";
 import { useEffect } from "react";
 import i18n, { defaultLocale } from "#/i18n";
 import { isLocale, localizePath, useCurrentLocale } from "#/i18n/routing";

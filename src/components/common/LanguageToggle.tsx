@@ -5,8 +5,8 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from "#/components/ui/popover";
-import { useCurrentLocale, useLocaleRouter } from "#/i18n/routing";
 import { type Locale, localeLabels, supportedLocales } from "#/i18n";
+import { useCurrentLocale, useLocaleRouter } from "#/i18n/routing";
 
 export function LanguageToggle() {
 	const { i18n } = useTranslation();

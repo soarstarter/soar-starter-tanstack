@@ -13,11 +13,7 @@ import {
 } from "#/components/ui/form";
 import { Input } from "#/components/ui/input";
 import { Routes } from "#/config/route-config";
-import {
-	LocaleLink,
-	localizePath,
-	useCurrentLocale,
-} from "#/i18n/routing";
+import { LocaleLink, localizePath, useCurrentLocale } from "#/i18n/routing";
 import { authClient } from "#/lib/auth-client";
 
 const forgotPasswordSchema = z.object({

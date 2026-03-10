@@ -194,7 +194,8 @@ export function getAllDocsPages(): DocsSitemapPage[] {
 			segments.pop();
 		}
 
-		const docsPath = segments.length > 0 ? `/docs/${segments.join("/")}` : "/docs";
+		const docsPath =
+			segments.length > 0 ? `/docs/${segments.join("/")}` : "/docs";
 
 		return {
 			locale,

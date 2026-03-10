@@ -175,7 +175,7 @@ This project aims to build a production-ready SaaS starter template powered by *
 - [x] `src/routes/_marketing/about.tsx` — about page
 - [x] `src/routes/_marketing/contact.tsx` — contact page with form
 - [x] `src/routes/_marketing/pay-success.tsx` — payment success page
-- [ ] `src/routes/_marketing/legal/$slug.tsx` — legal pages (cookie/privacy/terms from MDX)
+- [x] `src/routes/_marketing/legal/$slug.tsx` — legal pages (cookie/privacy/terms from MDX)
 
 ### Contact
 
@@ -329,11 +329,11 @@ Already configured via `components.json`. Install as needed:
 
 ## Step 19. Cleanup & Polish
 
-- [ ] Remove demo files (`about.tsx`, `demo/better-auth.tsx`, demo content in `index.tsx`)
-- [ ] Update `__root.tsx` — replace demo Header/Footer with new AppHeader/AppFooter via layout routes
-- [ ] Update `CLAUDE.md` with new architecture
-- [ ] Verify all Biome lint/format passes
-- [ ] Test full build (`pnpm build`)
+- [x] Remove demo files (`demo/better-auth.tsx`, old `Header.tsx`, `Footer.tsx`, `integrations/better-auth/`)
+- [x] Update `__root.tsx` — already clean (layout routes handle AppHeader/AppFooter)
+- [x] Update `CLAUDE.md` with new architecture
+- [x] Verify all Biome lint/format passes
+- [x] Test full build (`pnpm build`)
 
 ---
 

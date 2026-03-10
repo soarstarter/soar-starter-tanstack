@@ -29,7 +29,7 @@ const resetPasswordSchema = z
 
 type ResetPasswordFormValues = z.infer<typeof resetPasswordSchema>;
 
-	export function ResetPasswordForm() {
+export function ResetPasswordForm() {
 	const { token } = useSearch({ strict: false }) as { token?: string };
 	const [error, setError] = useState<string | null>(null);
 	const [success, setSuccess] = useState(false);

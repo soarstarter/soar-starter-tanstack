@@ -1,9 +1,5 @@
 import type { TOCItemType } from "fumadocs-core/toc";
-import {
-	isValidElement,
-	type ComponentType,
-	type ReactNode,
-} from "react";
+import { type ComponentType, isValidElement, type ReactNode } from "react";
 import type { Locale } from "#/i18n";
 
 type LegalModule = {

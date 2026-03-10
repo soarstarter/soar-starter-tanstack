@@ -38,7 +38,10 @@ function toAbsoluteUrl(value: string | undefined) {
 	try {
 		return new URL(value).toString();
 	} catch {
-		return new URL(value.replace(/^\//, ""), normalizeSiteUrl(siteUrl)).toString();
+		return new URL(
+			value.replace(/^\//, ""),
+			normalizeSiteUrl(siteUrl),
+		).toString();
 	}
 }
 
@@ -74,7 +77,10 @@ function buildTitle(title: string | undefined) {
 function buildCanonicalUrl(path: string, locale: Locale) {
 	const localizedPath = localizePath(normalizePath(path), locale);
 
-	return new URL(localizedPath.replace(/^\//, ""), normalizeSiteUrl(siteUrl)).toString();
+	return new URL(
+		localizedPath.replace(/^\//, ""),
+		normalizeSiteUrl(siteUrl),
+	).toString();
 }
 
 const siteUrl = websiteConfig.metadata.siteUrl;
@@ -216,7 +222,11 @@ export function buildSeoMeta({
 	};
 }
 
-export function buildSitemapEntry(path: string, locale: Locale, lastModified?: string) {
+export function buildSitemapEntry(
+	path: string,
+	locale: Locale,
+	lastModified?: string,
+) {
 	return {
 		url: buildCanonicalUrl(path, locale),
 		lastModified,

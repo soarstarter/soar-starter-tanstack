@@ -24,19 +24,17 @@ function detectInitialLocale(): Locale {
 		: defaultLocale;
 }
 
-i18n
-	.use(initReactI18next)
-	.init({
-		lng: detectInitialLocale(),
-		resources: {
-			en: { translation: en },
-			zh: { translation: zh },
-		},
-		fallbackLng: defaultLocale,
-		supportedLngs: supportedLocales,
-		interpolation: {
-			escapeValue: false,
-		},
-	});
+i18n.use(initReactI18next).init({
+	lng: detectInitialLocale(),
+	resources: {
+		en: { translation: en },
+		zh: { translation: zh },
+	},
+	fallbackLng: defaultLocale,
+	supportedLngs: supportedLocales,
+	interpolation: {
+		escapeValue: false,
+	},
+});
 
 export default i18n;

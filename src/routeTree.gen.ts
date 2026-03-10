@@ -18,7 +18,6 @@ import { Route as Char123LocaleChar125DashboardRouteImport } from './routes/{-$l
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as Char123LocaleChar125MarketingIndexRouteImport } from './routes/{-$locale}/_marketing/index'
-import { Route as Char123LocaleChar125DemoBetterAuthRouteImport } from './routes/{-$locale}/demo/better-auth'
 import { Route as Char123LocaleChar125AuthResetPasswordRouteImport } from './routes/{-$locale}/auth/reset-password'
 import { Route as Char123LocaleChar125AuthRegisterSuccessRouteImport } from './routes/{-$locale}/auth/register-success'
 import { Route as Char123LocaleChar125AuthRegisterRouteImport } from './routes/{-$locale}/auth/register'
@@ -106,12 +105,6 @@ const Char123LocaleChar125MarketingIndexRoute =
     id: '/',
     path: '/',
     getParentRoute: () => Char123LocaleChar125MarketingRoute,
-  } as any)
-const Char123LocaleChar125DemoBetterAuthRoute =
-  Char123LocaleChar125DemoBetterAuthRouteImport.update({
-    id: '/demo/better-auth',
-    path: '/demo/better-auth',
-    getParentRoute: () => Char123LocaleChar125Route,
   } as any)
 const Char123LocaleChar125AuthResetPasswordRoute =
   Char123LocaleChar125AuthResetPasswordRouteImport.update({
@@ -365,7 +358,6 @@ export interface FileRoutesByFullPath {
   '/{-$locale}/auth/register': typeof Char123LocaleChar125AuthRegisterRoute
   '/{-$locale}/auth/register-success': typeof Char123LocaleChar125AuthRegisterSuccessRoute
   '/{-$locale}/auth/reset-password': typeof Char123LocaleChar125AuthResetPasswordRoute
-  '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
   '/{-$locale}/': typeof Char123LocaleChar125MarketingIndexRoute
   '/api/ai/audio/query': typeof ApiAiAudioQueryRoute
   '/api/ai/image/query': typeof ApiAiImageQueryRoute
@@ -414,7 +406,6 @@ export interface FileRoutesByTo {
   '/{-$locale}/auth/register': typeof Char123LocaleChar125AuthRegisterRoute
   '/{-$locale}/auth/register-success': typeof Char123LocaleChar125AuthRegisterSuccessRoute
   '/{-$locale}/auth/reset-password': typeof Char123LocaleChar125AuthResetPasswordRoute
-  '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
   '/api/ai/audio/query': typeof ApiAiAudioQueryRoute
   '/api/ai/image/query': typeof ApiAiImageQueryRoute
   '/api/ai/video/query': typeof ApiAiVideoQueryRoute
@@ -466,7 +457,6 @@ export interface FileRoutesById {
   '/{-$locale}/auth/register': typeof Char123LocaleChar125AuthRegisterRoute
   '/{-$locale}/auth/register-success': typeof Char123LocaleChar125AuthRegisterSuccessRoute
   '/{-$locale}/auth/reset-password': typeof Char123LocaleChar125AuthResetPasswordRoute
-  '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
   '/{-$locale}/_marketing/': typeof Char123LocaleChar125MarketingIndexRoute
   '/api/ai/audio/query': typeof ApiAiAudioQueryRoute
   '/api/ai/image/query': typeof ApiAiImageQueryRoute
@@ -517,7 +507,6 @@ export interface FileRouteTypes {
     | '/{-$locale}/auth/register'
     | '/{-$locale}/auth/register-success'
     | '/{-$locale}/auth/reset-password'
-    | '/{-$locale}/demo/better-auth'
     | '/{-$locale}/'
     | '/api/ai/audio/query'
     | '/api/ai/image/query'
@@ -566,7 +555,6 @@ export interface FileRouteTypes {
     | '/{-$locale}/auth/register'
     | '/{-$locale}/auth/register-success'
     | '/{-$locale}/auth/reset-password'
-    | '/{-$locale}/demo/better-auth'
     | '/api/ai/audio/query'
     | '/api/ai/image/query'
     | '/api/ai/video/query'
@@ -617,7 +605,6 @@ export interface FileRouteTypes {
     | '/{-$locale}/auth/register'
     | '/{-$locale}/auth/register-success'
     | '/{-$locale}/auth/reset-password'
-    | '/{-$locale}/demo/better-auth'
     | '/{-$locale}/_marketing/'
     | '/api/ai/audio/query'
     | '/api/ai/image/query'
@@ -724,13 +711,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/{-$locale}/'
       preLoaderRoute: typeof Char123LocaleChar125MarketingIndexRouteImport
       parentRoute: typeof Char123LocaleChar125MarketingRoute
-    }
-    '/{-$locale}/demo/better-auth': {
-      id: '/{-$locale}/demo/better-auth'
-      path: '/demo/better-auth'
-      fullPath: '/{-$locale}/demo/better-auth'
-      preLoaderRoute: typeof Char123LocaleChar125DemoBetterAuthRouteImport
-      parentRoute: typeof Char123LocaleChar125Route
     }
     '/{-$locale}/auth/reset-password': {
       id: '/{-$locale}/auth/reset-password'
@@ -1141,7 +1121,6 @@ interface Char123LocaleChar125RouteChildren {
   Char123LocaleChar125DocsRoute: typeof Char123LocaleChar125DocsRouteWithChildren
   Char123LocaleChar125MarketingRoute: typeof Char123LocaleChar125MarketingRouteWithChildren
   Char123LocaleChar125AuthRoute: typeof Char123LocaleChar125AuthRouteWithChildren
-  Char123LocaleChar125DemoBetterAuthRoute: typeof Char123LocaleChar125DemoBetterAuthRoute
 }
 
 const Char123LocaleChar125RouteChildren: Char123LocaleChar125RouteChildren = {
@@ -1151,8 +1130,6 @@ const Char123LocaleChar125RouteChildren: Char123LocaleChar125RouteChildren = {
   Char123LocaleChar125MarketingRoute:
     Char123LocaleChar125MarketingRouteWithChildren,
   Char123LocaleChar125AuthRoute: Char123LocaleChar125AuthRouteWithChildren,
-  Char123LocaleChar125DemoBetterAuthRoute:
-    Char123LocaleChar125DemoBetterAuthRoute,
 }
 
 const Char123LocaleChar125RouteWithChildren =

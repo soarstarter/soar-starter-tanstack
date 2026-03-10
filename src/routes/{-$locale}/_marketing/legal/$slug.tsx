@@ -4,11 +4,7 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import { ArrowLeft, CalendarDays } from "lucide-react";
 import { BlogToc } from "#/components/blog/BlogToc";
 import { LocaleLink, useCurrentLocale } from "#/i18n/routing";
-import {
-	formatLegalDate,
-	getLegalPageBySlug,
-	legalEntries,
-} from "#/lib/legal";
+import { formatLegalDate, getLegalPageBySlug, legalEntries } from "#/lib/legal";
 import { buildSeoMeta } from "#/lib/seo";
 
 const legalContentLoader = createClientLoader(legalEntries, {

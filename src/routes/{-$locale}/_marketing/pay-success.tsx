@@ -37,9 +37,7 @@ function PaySuccessPage() {
 						</LocaleLink>
 					</Button>
 					<Button variant="outline" asChild>
-						<LocaleLink href="/">
-							{t("payment.success.backHome")}
-						</LocaleLink>
+						<LocaleLink href="/">{t("payment.success.backHome")}</LocaleLink>
 					</Button>
 				</div>
 			</div>

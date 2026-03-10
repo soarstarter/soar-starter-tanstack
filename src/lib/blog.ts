@@ -1,9 +1,5 @@
 import type { TOCItemType } from "fumadocs-core/toc";
-import {
-	isValidElement,
-	type ComponentType,
-	type ReactNode,
-} from "react";
+import { type ComponentType, isValidElement, type ReactNode } from "react";
 import type { Locale } from "#/i18n";
 
 const POSTS_PER_PAGE = 6;
@@ -174,10 +170,13 @@ export async function getBlogPageData({
 } = {}): Promise<BlogPageData> {
 	const allPosts = await loadAllBlogPosts();
 	const filteredPosts = tag
-		? allPosts.filter((post) => (post.module.frontmatter.tags ?? []).includes(tag))
+		? allPosts.filter((post) =>
+				(post.module.frontmatter.tags ?? []).includes(tag),
+			)
 		: allPosts;
 	const totalPosts = filteredPosts.length;
-	const totalPages = totalPosts > 0 ? Math.ceil(totalPosts / POSTS_PER_PAGE) : 0;
+	const totalPages =
+		totalPosts > 0 ? Math.ceil(totalPosts / POSTS_PER_PAGE) : 0;
 	const currentPage =
 		totalPages > 0 ? Math.min(Math.max(page ?? 1, 1), totalPages) : 1;
 	const startIndex = (currentPage - 1) * POSTS_PER_PAGE;

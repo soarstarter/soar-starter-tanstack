@@ -13,7 +13,8 @@ function splitPathSuffix(path: string) {
 	const withoutHash = hashIndex >= 0 ? path.slice(0, hashIndex) : path;
 	const queryIndex = withoutHash.indexOf("?");
 	const search = queryIndex >= 0 ? withoutHash.slice(queryIndex) : "";
-	const pathname = queryIndex >= 0 ? withoutHash.slice(0, queryIndex) : withoutHash;
+	const pathname =
+		queryIndex >= 0 ? withoutHash.slice(0, queryIndex) : withoutHash;
 
 	return { pathname, search, hash };
 }

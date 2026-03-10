@@ -304,8 +304,8 @@ Already configured via `components.json`. Install as needed:
 
 ## Step 15. Form Handling
 
-- [ ] Install `react-hook-form`, `@hookform/resolvers`, `zod`
-- [ ] shadcn `form` component uses react-hook-form — install it for all forms (auth, contact, settings)
+- [x] Install `react-hook-form`, `@hookform/resolvers`, `zod`
+- [x] shadcn `form` component uses react-hook-form — install it for all forms (auth, contact, settings)
 
 ## Step 16. Legal Content
 

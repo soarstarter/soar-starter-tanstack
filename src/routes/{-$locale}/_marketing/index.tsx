@@ -9,8 +9,13 @@ import { LogoCloud } from "#/components/home/LogoCloud";
 import { PriceSection } from "#/components/home/PriceSection";
 import { StaticSection } from "#/components/home/StaticSection";
 import { Testimonials } from "#/components/home/Testimonials";
+import { buildSeoMeta } from "#/lib/seo";
 
 export const Route = createFileRoute("/{-$locale}/_marketing/")({
+	head: () =>
+		buildSeoMeta({
+			path: "/",
+		}),
 	component: HomePage,
 });
 

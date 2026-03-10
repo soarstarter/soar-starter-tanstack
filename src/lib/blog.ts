@@ -208,6 +208,12 @@ export async function getBlogPostBySlug(
 	return toPageData(entry.path, post);
 }
 
+export async function getAllBlogPostPages(): Promise<BlogPostPageData[]> {
+	const posts = await loadAllBlogPosts();
+
+	return posts.map((post) => toPageData(post.path, post.module));
+}
+
 function getAllTagsFromPosts(posts: LoadedBlogPost[]) {
 	const counts = new Map<string, number>();
 

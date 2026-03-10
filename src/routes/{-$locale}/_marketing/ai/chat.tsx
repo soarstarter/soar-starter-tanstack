@@ -1,21 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AIPageShell } from "#/components/ai/AIPageShell";
 import { ChatBot } from "#/components/ai/ChatBot";
-import { websiteConfig } from "#/config/website-config";
+import { buildSeoMeta } from "#/lib/seo";
 
 export const Route = createFileRoute("/{-$locale}/_marketing/ai/chat")({
-	head: () => ({
-		meta: [
-			{
-				title: `AI Chat | ${websiteConfig.name}`,
-			},
-			{
-				name: "description",
-				content:
-					"Streaming AI chat with file attachments and optional live web search.",
-			},
-		],
-	}),
+	head: () =>
+		buildSeoMeta({
+			title: "AI Chat",
+			description:
+				"Streaming AI chat with file attachments and optional live web search.",
+			path: "/ai/chat",
+		}),
 	component: AIChatPage,
 });
 

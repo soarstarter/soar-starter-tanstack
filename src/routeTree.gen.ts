@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as Char123LocaleChar125RouteImport } from './routes/{-$locale}'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as Char123LocaleChar125AuthRouteImport } from './routes/{-$locale}/auth'
 import { Route as Char123LocaleChar125MarketingRouteImport } from './routes/{-$locale}/_marketing'
 import { Route as Char123LocaleChar125DocsRouteImport } from './routes/{-$locale}/_docs'
@@ -62,6 +63,11 @@ import { Route as Char123LocaleChar125DashboardAccountOrderIndexRouteImport } fr
 const Char123LocaleChar125Route = Char123LocaleChar125RouteImport.update({
   id: '/{-$locale}',
   path: '/{-$locale}',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Char123LocaleChar125AuthRoute =
@@ -333,6 +339,7 @@ const Char123LocaleChar125DashboardAccountOrderIndexRoute =
   } as any)
 
 export interface FileRoutesByFullPath {
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$locale}': typeof Char123LocaleChar125MarketingRouteWithChildren
   '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
@@ -381,6 +388,7 @@ export interface FileRoutesByFullPath {
   '/{-$locale}/setting/security/': typeof Char123LocaleChar125DashboardSettingSecurityIndexRoute
 }
 export interface FileRoutesByTo {
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$locale}': typeof Char123LocaleChar125MarketingIndexRoute
   '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
@@ -429,6 +437,7 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$locale}': typeof Char123LocaleChar125RouteWithChildren
   '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
@@ -482,6 +491,7 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/sitemap.xml'
     | '/{-$locale}'
     | '/api/chat'
     | '/api/contact'
@@ -530,6 +540,7 @@ export interface FileRouteTypes {
     | '/{-$locale}/setting/security/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/sitemap.xml'
     | '/{-$locale}'
     | '/api/chat'
     | '/api/contact'
@@ -577,6 +588,7 @@ export interface FileRouteTypes {
     | '/{-$locale}/setting/security'
   id:
     | '__root__'
+    | '/sitemap.xml'
     | '/{-$locale}'
     | '/api/chat'
     | '/api/contact'
@@ -629,6 +641,7 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   Char123LocaleChar125Route: typeof Char123LocaleChar125RouteWithChildren
   ApiChatRoute: typeof ApiChatRoute
   ApiContactRoute: typeof ApiContactRoute
@@ -654,6 +667,13 @@ declare module '@tanstack/react-router' {
       path: '/{-$locale}'
       fullPath: '/{-$locale}'
       preLoaderRoute: typeof Char123LocaleChar125RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/{-$locale}/auth': {
@@ -1175,6 +1195,7 @@ const ApiAiVideoRouteWithChildren = ApiAiVideoRoute._addFileChildren(
 )
 
 const rootRouteChildren: RootRouteChildren = {
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   Char123LocaleChar125Route: Char123LocaleChar125RouteWithChildren,
   ApiChatRoute: ApiChatRoute,
   ApiContactRoute: ApiContactRoute,

@@ -318,10 +318,10 @@ Already configured via `components.json`. Install as needed:
 
 ## Step 17. SEO & Metadata
 
-- [ ] **[NEEDS RESEARCH]** TanStack Start head/meta management
+- [x] **[RESOLVED]** TanStack Start head/meta management
   - Currently uses `head()` in route definitions — extend for per-page SEO
-  - Open Graph, Twitter cards, canonical URLs
-  - Sitemap generation (Next.js uses `next-sitemap` or app router metadata)
+  - Open Graph, Twitter cards, canonical URLs, and locale alternates
+  - Sitemap generation via `src/routes/sitemap[.]xml.ts`
 
 ## Step 18. Hooks
 

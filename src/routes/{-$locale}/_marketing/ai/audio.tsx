@@ -1,21 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AIPageShell } from "#/components/ai/AIPageShell";
 import { AudioGenerator } from "#/components/ai/AudioGenerator";
-import { websiteConfig } from "#/config/website-config";
+import { buildSeoMeta } from "#/lib/seo";
 
 export const Route = createFileRoute("/{-$locale}/_marketing/ai/audio")({
-	head: () => ({
-		meta: [
-			{
-				title: `AI Audio | ${websiteConfig.name}`,
-			},
-			{
-				name: "description",
-				content:
-					"Turn scripts into speech or clone a reference voice with Replicate-backed audio generation.",
-			},
-		],
-	}),
+	head: () =>
+		buildSeoMeta({
+			title: "AI Audio",
+			description:
+				"Turn scripts into speech or clone a reference voice with Replicate-backed audio generation.",
+			path: "/ai/audio",
+		}),
 	component: AIAudioPage,
 });
 

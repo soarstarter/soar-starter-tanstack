@@ -2,8 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { Button } from "#/components/ui/button";
 import { LocaleLink } from "#/i18n/routing";
+import { buildSeoMeta } from "#/lib/seo";
 
 export const Route = createFileRoute("/{-$locale}/_marketing/about")({
+	head: () =>
+		buildSeoMeta({
+			title: "About",
+			description:
+				"Learn how Soar Starter helps teams launch production-ready SaaS products with TanStack Start, Better Auth, and a reusable growth stack.",
+			path: "/about",
+		}),
 	component: AboutPage,
 });
 

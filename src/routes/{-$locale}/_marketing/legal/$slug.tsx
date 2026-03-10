@@ -3,13 +3,13 @@ import { createClientLoader } from "fumadocs-mdx/runtime/browser";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { ArrowLeft, CalendarDays } from "lucide-react";
 import { BlogToc } from "#/components/blog/BlogToc";
-import { websiteConfig } from "#/config/website-config";
 import { LocaleLink, useCurrentLocale } from "#/i18n/routing";
 import {
 	formatLegalDate,
 	getLegalPageBySlug,
 	legalEntries,
 } from "#/lib/legal";
+import { buildSeoMeta } from "#/lib/seo";
 
 const legalContentLoader = createClientLoader(legalEntries, {
 	component: (loaded) => {
@@ -31,15 +31,13 @@ export const Route = createFileRoute("/{-$locale}/_marketing/legal/$slug")({
 		return page;
 	},
 	head: ({ loaderData }) => ({
-		meta: [
-			{
-				title: `${loaderData.title} | ${websiteConfig.name}`,
-			},
-			{
-				name: "description",
-				content: loaderData.description ?? websiteConfig.description,
-			},
-		],
+		...buildSeoMeta({
+			title: loaderData.title,
+			description: loaderData.description,
+			path: `/legal/${loaderData.slug}`,
+			type: "article",
+			modifiedTime: loaderData.date,
+		}),
 	}),
 	component: LegalPage,
 });

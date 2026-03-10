@@ -1,21 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AIPageShell } from "#/components/ai/AIPageShell";
 import { VideoGenerator } from "#/components/ai/VideoGenerator";
-import { websiteConfig } from "#/config/website-config";
+import { buildSeoMeta } from "#/lib/seo";
 
 export const Route = createFileRoute("/{-$locale}/_marketing/ai/video")({
-	head: () => ({
-		meta: [
-			{
-				title: `AI Video | ${websiteConfig.name}`,
-			},
-			{
-				name: "description",
-				content:
-					"Generate videos from text prompts, still images, or source clips with Replicate-backed models.",
-			},
-		],
-	}),
+	head: () =>
+		buildSeoMeta({
+			title: "AI Video",
+			description:
+				"Generate videos from text prompts, still images, or source clips with Replicate-backed models.",
+			path: "/ai/video",
+		}),
 	component: AIVideoPage,
 });
 

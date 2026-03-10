@@ -1,21 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AIPageShell } from "#/components/ai/AIPageShell";
 import { ImageGenerator } from "#/components/ai/ImageGenerator";
-import { websiteConfig } from "#/config/website-config";
+import { buildSeoMeta } from "#/lib/seo";
 
 export const Route = createFileRoute("/{-$locale}/_marketing/ai/image")({
-	head: () => ({
-		meta: [
-			{
-				title: `AI Image | ${websiteConfig.name}`,
-			},
-			{
-				name: "description",
-				content:
-					"Generate images from prompts or transform uploaded references with Replicate models.",
-			},
-		],
-	}),
+	head: () =>
+		buildSeoMeta({
+			title: "AI Image",
+			description:
+				"Generate images from prompts or transform uploaded references with Replicate models.",
+			path: "/ai/image",
+		}),
 	component: AIImagePage,
 });
 

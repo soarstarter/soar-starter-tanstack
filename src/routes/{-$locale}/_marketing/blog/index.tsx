@@ -4,8 +4,8 @@ import { BlogCard } from "#/components/blog/BlogCard";
 import { BlogFilter } from "#/components/blog/BlogFilter";
 import { BlogPagination } from "#/components/blog/BlogPagination";
 import { Badge } from "#/components/ui/badge";
-import { websiteConfig } from "#/config/website-config";
 import { getBlogPageData } from "#/lib/blog";
+import { buildSeoMeta } from "#/lib/seo";
 
 function parsePageParam(value: unknown) {
 	const page = Number(value);
@@ -14,17 +14,12 @@ function parsePageParam(value: unknown) {
 }
 
 export const Route = createFileRoute("/{-$locale}/_marketing/blog/")({
-	head: () => ({
-		meta: [
-			{
-				title: `Blog | ${websiteConfig.name}`,
-			},
-			{
-				name: "description",
-				content: "Latest articles and tutorials from the Soar Starter team.",
-			},
-		],
-	}),
+	head: () =>
+		buildSeoMeta({
+			title: "Blog",
+			description: "Latest articles and tutorials from the Soar Starter team.",
+			path: "/blog",
+		}),
 	validateSearch: (search: Record<string, unknown>) => ({
 		tag:
 			typeof search.tag === "string" && search.tag.length > 0

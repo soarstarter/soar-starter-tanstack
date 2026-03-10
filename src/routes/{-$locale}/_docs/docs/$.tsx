@@ -11,8 +11,8 @@ import {
 } from "fumadocs-ui/page";
 import type { ComponentType } from "react";
 import { docsCommonConfig } from "#/config/docs-common-config";
-import { websiteConfig } from "#/config/website-config";
 import { defaultLocale, type Locale } from "#/i18n";
+import { buildSeoMeta } from "#/lib/seo";
 
 type DocsModule = {
 	default: ComponentType<Record<string, unknown>>;
@@ -89,15 +89,15 @@ export const Route = createFileRoute("/{-$locale}/_docs/docs/$")({
 		return page;
 	},
 	head: ({ loaderData }) => ({
-		meta: [
-			{
-				title: `${loaderData.title} | ${websiteConfig.name}`,
-			},
-			{
-				name: "description",
-				content: loaderData.description ?? docsCommonConfig.description,
-			},
-		],
+		...buildSeoMeta({
+			title: loaderData.title,
+			description: loaderData.description ?? docsCommonConfig.description,
+			path:
+				loaderData.slugs.length > 0
+					? `/docs/${loaderData.slugs.join("/")}`
+					: "/docs",
+			locale: (loaderData.locale as Locale | undefined) ?? defaultLocale,
+		}),
 	}),
 	component: DocsContentPage,
 });

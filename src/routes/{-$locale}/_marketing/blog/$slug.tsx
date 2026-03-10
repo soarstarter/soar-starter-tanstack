@@ -5,9 +5,9 @@ import { ArrowLeft, CalendarDays, UserRound } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { BlogToc } from "#/components/blog/BlogToc";
 import { Badge } from "#/components/ui/badge";
-import { websiteConfig } from "#/config/website-config";
 import { LocaleLink, useCurrentLocale } from "#/i18n/routing";
 import { blogEntries, formatBlogDate, getBlogPostBySlug } from "#/lib/blog";
+import { buildSeoMeta } from "#/lib/seo";
 
 const blogContentLoader = createClientLoader(blogEntries, {
 	component: (loaded) => {
@@ -28,15 +28,16 @@ export const Route = createFileRoute("/{-$locale}/_marketing/blog/$slug")({
 		return post;
 	},
 	head: ({ loaderData }) => ({
-		meta: [
-			{
-				title: `${loaderData.title} | ${websiteConfig.name}`,
-			},
-			{
-				name: "description",
-				content: loaderData.description ?? websiteConfig.description,
-			},
-		],
+		...buildSeoMeta({
+			title: loaderData.title,
+			description: loaderData.description,
+			path: `/blog/${loaderData.slug}`,
+			image: loaderData.image,
+			type: "article",
+			publishedTime: loaderData.date,
+			modifiedTime: loaderData.date,
+			tags: loaderData.tags,
+		}),
 	}),
 	component: BlogPostPage,
 });

@@ -133,6 +133,17 @@ export async function getLegalPageBySlug(
 	return pageData;
 }
 
+export async function getAllPublishedLegalPages(): Promise<LegalPageData[]> {
+	const pages = await Promise.all(
+		Object.entries(legalEntries).map(async ([path, loadPage]) => {
+			const page = await loadPage();
+			return toPageData(path, page);
+		}),
+	);
+
+	return pages.filter((page) => page.published);
+}
+
 export function formatLegalDate(date: string | Date, locale: Locale) {
 	return new Intl.DateTimeFormat(locale === "zh" ? "zh-CN" : "en-US", {
 		year: "numeric",

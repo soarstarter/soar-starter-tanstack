@@ -2,6 +2,7 @@ import { source as createSource, loader } from "fumadocs-core/source";
 import type { TOCItemType } from "fumadocs-core/toc";
 import { isValidElement, type ReactNode } from "react";
 import { defaultLocale, type Locale, supportedLocales } from "#/i18n";
+import { localizePath } from "#/i18n/routing";
 
 type DocsModule = {
 	frontmatter: {
@@ -98,6 +99,12 @@ export type DocsPageData = {
 	toc: DocsTocItem[];
 };
 
+export type DocsSitemapPage = {
+	locale: Locale;
+	path: string;
+	lastModified?: string;
+};
+
 function toSerializableToc(items: TOCItemType[] = []): DocsTocItem[] {
 	return items.map((item) => ({
 		depth: item.depth,
@@ -168,4 +175,30 @@ export function getDocsPageData(
 		toc: toSerializableToc(data.toc),
 		url: page.url,
 	};
+}
+
+export function getAllDocsPages(): DocsSitemapPage[] {
+	return Object.keys(rawDocPages).map((path) => {
+		const contentPath = toContentPath(path);
+		const withoutExtension = contentPath.replace(/\.mdx?$/, "");
+		const localeMatch = supportedLocales.find((locale) =>
+			withoutExtension.endsWith(`.${locale}`),
+		);
+		const locale = localeMatch ?? defaultLocale;
+		const localizedPath = localeMatch
+			? withoutExtension.slice(0, -(localeMatch.length + 1))
+			: withoutExtension;
+		const segments = localizedPath.split("/").filter(Boolean);
+
+		if (segments.at(-1) === "index") {
+			segments.pop();
+		}
+
+		const docsPath = segments.length > 0 ? `/docs/${segments.join("/")}` : "/docs";
+
+		return {
+			locale,
+			path: localizePath(docsPath, locale),
+		};
+	});
 }

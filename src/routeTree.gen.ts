@@ -41,6 +41,7 @@ import { Route as ApiAiAudioRouteImport } from './routes/api/ai/audio'
 import { Route as ApiAdminUsersRouteImport } from './routes/api/admin/users'
 import { Route as Char123LocaleChar125MarketingBlogIndexRouteImport } from './routes/{-$locale}/_marketing/blog/index'
 import { Route as Char123LocaleChar125DashboardDashboardIndexRouteImport } from './routes/{-$locale}/_dashboard/dashboard/index'
+import { Route as Char123LocaleChar125MarketingLegalSlugRouteImport } from './routes/{-$locale}/_marketing/legal/$slug'
 import { Route as Char123LocaleChar125MarketingBlogSlugRouteImport } from './routes/{-$locale}/_marketing/blog/$slug'
 import { Route as Char123LocaleChar125MarketingAiVideoRouteImport } from './routes/{-$locale}/_marketing/ai/video'
 import { Route as Char123LocaleChar125MarketingAiImageRouteImport } from './routes/{-$locale}/_marketing/ai/image'
@@ -232,6 +233,12 @@ const Char123LocaleChar125DashboardDashboardIndexRoute =
     path: '/dashboard/',
     getParentRoute: () => Char123LocaleChar125DashboardRoute,
   } as any)
+const Char123LocaleChar125MarketingLegalSlugRoute =
+  Char123LocaleChar125MarketingLegalSlugRouteImport.update({
+    id: '/legal/$slug',
+    path: '/legal/$slug',
+    getParentRoute: () => Char123LocaleChar125MarketingRoute,
+  } as any)
 const Char123LocaleChar125MarketingBlogSlugRoute =
   Char123LocaleChar125MarketingBlogSlugRouteImport.update({
     id: '/blog/$slug',
@@ -363,6 +370,7 @@ export interface FileRoutesByFullPath {
   '/{-$locale}/ai/image': typeof Char123LocaleChar125MarketingAiImageRoute
   '/{-$locale}/ai/video': typeof Char123LocaleChar125MarketingAiVideoRoute
   '/{-$locale}/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
+  '/{-$locale}/legal/$slug': typeof Char123LocaleChar125MarketingLegalSlugRoute
   '/{-$locale}/dashboard/': typeof Char123LocaleChar125DashboardDashboardIndexRoute
   '/{-$locale}/blog/': typeof Char123LocaleChar125MarketingBlogIndexRoute
   '/{-$locale}/account/order/': typeof Char123LocaleChar125DashboardAccountOrderIndexRoute
@@ -409,6 +417,7 @@ export interface FileRoutesByTo {
   '/{-$locale}/ai/image': typeof Char123LocaleChar125MarketingAiImageRoute
   '/{-$locale}/ai/video': typeof Char123LocaleChar125MarketingAiVideoRoute
   '/{-$locale}/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
+  '/{-$locale}/legal/$slug': typeof Char123LocaleChar125MarketingLegalSlugRoute
   '/{-$locale}/dashboard': typeof Char123LocaleChar125DashboardDashboardIndexRoute
   '/{-$locale}/blog': typeof Char123LocaleChar125MarketingBlogIndexRoute
   '/{-$locale}/account/order': typeof Char123LocaleChar125DashboardAccountOrderIndexRoute
@@ -460,6 +469,7 @@ export interface FileRoutesById {
   '/{-$locale}/_marketing/ai/image': typeof Char123LocaleChar125MarketingAiImageRoute
   '/{-$locale}/_marketing/ai/video': typeof Char123LocaleChar125MarketingAiVideoRoute
   '/{-$locale}/_marketing/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
+  '/{-$locale}/_marketing/legal/$slug': typeof Char123LocaleChar125MarketingLegalSlugRoute
   '/{-$locale}/_dashboard/dashboard/': typeof Char123LocaleChar125DashboardDashboardIndexRoute
   '/{-$locale}/_marketing/blog/': typeof Char123LocaleChar125MarketingBlogIndexRoute
   '/{-$locale}/_dashboard/account/order/': typeof Char123LocaleChar125DashboardAccountOrderIndexRoute
@@ -509,6 +519,7 @@ export interface FileRouteTypes {
     | '/{-$locale}/ai/image'
     | '/{-$locale}/ai/video'
     | '/{-$locale}/blog/$slug'
+    | '/{-$locale}/legal/$slug'
     | '/{-$locale}/dashboard/'
     | '/{-$locale}/blog/'
     | '/{-$locale}/account/order/'
@@ -555,6 +566,7 @@ export interface FileRouteTypes {
     | '/{-$locale}/ai/image'
     | '/{-$locale}/ai/video'
     | '/{-$locale}/blog/$slug'
+    | '/{-$locale}/legal/$slug'
     | '/{-$locale}/dashboard'
     | '/{-$locale}/blog'
     | '/{-$locale}/account/order'
@@ -605,6 +617,7 @@ export interface FileRouteTypes {
     | '/{-$locale}/_marketing/ai/image'
     | '/{-$locale}/_marketing/ai/video'
     | '/{-$locale}/_marketing/blog/$slug'
+    | '/{-$locale}/_marketing/legal/$slug'
     | '/{-$locale}/_dashboard/dashboard/'
     | '/{-$locale}/_marketing/blog/'
     | '/{-$locale}/_dashboard/account/order/'
@@ -860,6 +873,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LocaleChar125DashboardDashboardIndexRouteImport
       parentRoute: typeof Char123LocaleChar125DashboardRoute
     }
+    '/{-$locale}/_marketing/legal/$slug': {
+      id: '/{-$locale}/_marketing/legal/$slug'
+      path: '/legal/$slug'
+      fullPath: '/{-$locale}/legal/$slug'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingLegalSlugRouteImport
+      parentRoute: typeof Char123LocaleChar125MarketingRoute
+    }
     '/{-$locale}/_marketing/blog/$slug': {
       id: '/{-$locale}/_marketing/blog/$slug'
       path: '/blog/$slug'
@@ -1033,6 +1053,7 @@ interface Char123LocaleChar125MarketingRouteChildren {
   Char123LocaleChar125MarketingAiImageRoute: typeof Char123LocaleChar125MarketingAiImageRoute
   Char123LocaleChar125MarketingAiVideoRoute: typeof Char123LocaleChar125MarketingAiVideoRoute
   Char123LocaleChar125MarketingBlogSlugRoute: typeof Char123LocaleChar125MarketingBlogSlugRoute
+  Char123LocaleChar125MarketingLegalSlugRoute: typeof Char123LocaleChar125MarketingLegalSlugRoute
   Char123LocaleChar125MarketingBlogIndexRoute: typeof Char123LocaleChar125MarketingBlogIndexRoute
 }
 
@@ -1056,6 +1077,8 @@ const Char123LocaleChar125MarketingRouteChildren: Char123LocaleChar125MarketingR
       Char123LocaleChar125MarketingAiVideoRoute,
     Char123LocaleChar125MarketingBlogSlugRoute:
       Char123LocaleChar125MarketingBlogSlugRoute,
+    Char123LocaleChar125MarketingLegalSlugRoute:
+      Char123LocaleChar125MarketingLegalSlugRoute,
     Char123LocaleChar125MarketingBlogIndexRoute:
       Char123LocaleChar125MarketingBlogIndexRoute,
   }

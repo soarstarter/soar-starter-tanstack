@@ -22,4 +22,19 @@ export const blog = defineCollections({
 	}),
 });
 
+export const legal = defineCollections({
+	type: "doc",
+	dir: "content/legal",
+	schema: z.object({
+		title: z.string(),
+		description: z.string().optional(),
+		date: z
+			.string()
+			.date()
+			.or(z.date())
+			.transform((value) => new Date(value)),
+		published: z.boolean().optional().default(true),
+	}),
+});
+
 export default defineConfig();

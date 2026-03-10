@@ -309,12 +309,12 @@ Already configured via `components.json`. Install as needed:
 
 ## Step 16. Legal Content
 
-- [ ] Create `content/legal/` directory with MDX files:
-  - [ ] `cookie-policy.mdx`
-  - [ ] `privacy-policy.mdx`
-  - [ ] `terms-of-service.mdx`
-- [ ] Set up fumadocs collection for legal content
-- [ ] Dynamic legal page route: `src/routes/_marketing/legal/$slug.tsx`
+- [x] Create `content/legal/` directory with MDX files:
+  - [x] `cookie-policy.mdx`
+  - [x] `privacy-policy.mdx`
+  - [x] `terms-of-service.mdx`
+- [x] Set up fumadocs collection for legal content
+- [x] Dynamic legal page route: `src/routes/_marketing/legal/$slug.tsx`
 
 ## Step 17. SEO & Metadata
 

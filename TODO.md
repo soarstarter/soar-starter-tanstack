@@ -274,33 +274,33 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 Already configured via `components.json`. Install as needed:
 
-- [ ] `button`, `card`, `input`, `label`, `form`, `textarea`
-- [ ] `dialog`, `sheet`, `popover`, `dropdown-menu`, `command`
-- [ ] `avatar`, `badge`, `separator`, `skeleton`, `spinner`
-- [ ] `tabs`, `accordion`, `collapsible`
-- [ ] `table`, `pagination`, `scroll-area`, `select`, `checkbox`, `switch`
-- [ ] `sidebar`, `breadcrumb`, `navigation-menu`
-- [ ] `tooltip`, `hover-card`, `alert`, `progress`
-- [ ] `sonner` (toast notifications)
-- [ ] `chart` (recharts wrapper)
-- [ ] `button-group`, `input-group`
+- [x] `button`, `card`, `input`, `label`, `form`, `textarea`
+- [x] `dialog`, `sheet`, `popover`, `dropdown-menu`, `command`
+- [x] `avatar`, `badge`, `separator`, `skeleton`, `spinner`
+- [x] `tabs`, `accordion`, `collapsible`
+- [x] `table`, `pagination`, `scroll-area`, `select`, `checkbox`, `switch`
+- [x] `sidebar`, `breadcrumb`, `navigation-menu`
+- [x] `tooltip`, `hover-card`, `alert`, `progress`
+- [x] `sonner` (toast notifications)
+- [x] `chart` (recharts wrapper)
+- [x] `button-group`, `input-group`
 
 ### Motion / Animation Components
 
-- [ ] Install `motion` (framer-motion)
-- [ ] `src/components/motion/AnimatedGroup.tsx`
-- [ ] `src/components/motion/AnimatedList.tsx`
-- [ ] `src/components/motion/AuroraBackground.tsx`
-- [ ] `src/components/motion/backgrounds/interactive-grid-pattern.tsx`
-- [ ] `src/components/motion/special-effects/border-beam.tsx`
-- [ ] `src/components/motion/text/aurora-text.tsx`
+- [x] Install `motion` (framer-motion)
+- [x] `src/components/motion/AnimatedGroup.tsx`
+- [x] `src/components/motion/AnimatedList.tsx`
+- [x] `src/components/motion/AuroraBackground.tsx`
+- [x] `src/components/motion/backgrounds/interactive-grid-pattern.tsx`
+- [x] `src/components/motion/special-effects/border-beam.tsx`
+- [x] `src/components/motion/text/aurora-text.tsx`
 
 ### Common Components
 
-- [ ] `src/components/Logo.tsx`
-- [ ] `src/components/common/ThemeToggle.tsx` — already exists, may need update
-- [ ] `src/components/common/LanguageToggle.tsx`
-- [ ] `src/components/theme-provider.tsx` — **[NEEDS RESEARCH]** TanStack Start equivalent of `next-themes`; current project uses inline script approach — may use a context-based provider instead
+- [x] `src/components/Logo.tsx`
+- [x] `src/components/common/ThemeToggle.tsx` — updated to use the shared provider
+- [x] `src/components/common/LanguageToggle.tsx`
+- [x] `src/components/theme-provider.tsx` — TanStack Start uses a shared `next-themes` provider with the existing inline hydration script
 
 ## Step 15. Form Handling
 
@@ -370,3 +370,4 @@ Already configured via `components.json`. Install as needed:
 16. **Storage** — file upload (Step 13)
 17. **SEO** — metadata, sitemap (Step 17)
 18. **Cleanup** — remove demos, final polish (Step 19)
+

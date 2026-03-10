@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LoginFormDialog } from "#/components/auth/LoginFormDialog";
 import { LanguageToggle } from "#/components/common/LanguageToggle";
+import { Logo } from "#/components/Logo";
 import { AppMobileMenu } from "#/components/layout/app/AppMobileMenu";
 import { AppNavMenu } from "#/components/layout/app/AppNavMenu";
 import { UserPopover } from "#/components/layout/app/UserPopover";
@@ -33,10 +34,10 @@ export function AppHeader() {
 			}`}
 		>
 			<div className="container mx-auto max-w-7xl px-4">
-				{/* Desktop navigation */}
 				<nav className="hidden items-center justify-between lg:flex">
 					<div className="flex items-center">
 						<LocaleLink href="/" className="flex items-center space-x-2">
+							<Logo />
 							<span className="text-xl font-semibold">
 								{t("common.appNameDemo")}
 							</span>
@@ -69,9 +70,9 @@ export function AppHeader() {
 						<LanguageToggle />
 					</div>
 				</nav>
-				{/* Mobile navigation */}
 				<div className="flex items-center justify-between lg:hidden">
 					<LocaleLink href="/" className="flex items-center gap-2">
+						<Logo className="size-8" />
 						<span className="text-xl font-semibold">{t("common.appName")}</span>
 					</LocaleLink>
 					<AppMobileMenu />

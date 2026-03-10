@@ -1,0 +1,56 @@
+---
+title: Type Table
+description: Display type/prop documentation tables.
+icon: Settings2
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Usage
+
+<TypeTable
+  type={{
+    name: {
+      description: 'The name of the field',
+      type: 'string',
+    },
+    type: {
+      description: 'The type of the field',
+      type: 'string',
+    },
+    defaultValue: {
+      description: 'Default value',
+      type: 'string',
+      default: 'undefined',
+    },
+    required: {
+      description: 'Whether the field is required',
+      type: 'boolean',
+      default: 'false',
+    },
+  }}
+/>
+
+```mdx
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+<TypeTable
+  type={{
+    name: {
+      description: 'The name of the field',
+      type: 'string',
+    },
+    required: {
+      description: 'Whether the field is required',
+      type: 'boolean',
+      default: 'false',
+    },
+  }}
+/>
+```
+
+## Props
+
+| Prop | Type                                              | Default |
+| ---- | ------------------------------------------------- | ------- |
+| type | `Record<string, { type: string; description?: string; default?: string }>` | -       |

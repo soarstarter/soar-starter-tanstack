@@ -1,0 +1,83 @@
+---
+title: Card
+description: Display content in a card layout.
+icon: Square
+---
+
+import { Card, Cards } from 'fumadocs-ui/components/card';
+
+## Usage
+
+<Card title="Card Title" description="Card description with details." />
+
+```mdx
+import { Card, Cards } from 'fumadocs-ui/components/card';
+
+<Card title="Card Title" description="Card description with details." />
+```
+
+### With Link
+
+<Card
+  title="Link Card"
+  description="Beautifully designed documentation template. Customizable. Compatible. Open Source."
+  href="https://github.com"
+/>
+
+```mdx
+<Card
+  title="Link Card"
+  description="Click to navigate."
+  href="https://github.com"
+/>
+```
+
+### Card Group
+
+<Cards>
+  <Card
+    title="Components"
+    description="Explore built-in components for pages, layouts, and more."
+    href="/docs/components/callout"
+  />
+  <Card
+    title="Essentials"
+    description="Discover essential writing features for your documentation."
+    href="/docs/essentials/markdown"
+  />
+  <Card
+    title="Quick Start"
+    description="Get started with the documentation system."
+    href="/docs/introduction/quick-start"
+  />
+  <Card
+    title="Code Blocks"
+    description="Learn about code block variants and features."
+    href="/docs/essentials/code-blocks"
+  />
+</Cards>
+
+```mdx
+<Cards>
+  <Card title="Components" description="..." href="/docs/components/callout" />
+  <Card title="Essentials" description="..." href="/docs/essentials/markdown" />
+</Cards>
+```
+
+## Props
+
+### Card
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| title       | `string` | -       |
+| description | `string` | -       |
+| href        | `string` | -       |
+| icon        | `ReactNode` | -    |
+| external    | `boolean` | -      |
+
+### Cards
+
+| Prop | Type     | Default |
+| ---- | -------- | ------- |
+| children | `ReactNode` | -  |

@@ -1,0 +1,27 @@
+---
+title: Image Zoom
+description: Zoomable images for documentation.
+icon: ZoomIn
+---
+
+## Usage
+
+Images in fumadocs support click-to-zoom functionality. This is enabled by default for all images in MDX content.
+
+```mdx
+![My Image](/path/to/image.png)
+```
+
+When a user clicks on an image, it will zoom in to show the full-size version.
+
+## Disabling Zoom
+
+You can use standard HTML img tags if you need to disable zoom for specific images:
+
+```html
+<img src="/path/to/image.png" alt="No zoom" />
+```
+
+## Configuration
+
+Image zoom can be configured globally in the fumadocs configuration.

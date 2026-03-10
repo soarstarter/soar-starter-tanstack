@@ -1,0 +1,71 @@
+---
+title: Quick Start
+description: Learn about the documentation system built with TanStack Start and fumadocs.
+icon: Rocket
+---
+
+## Documentation System Overview
+
+This project's documentation system is built on **TanStack Start** and **fumadocs**. TanStack Start handles routing and SSR, while fumadocs provides the MDX content model and docs UI primitives.
+
+## fumadocs
+
+[fumadocs](https://fumadocs.dev) makes content creation effortless with file-based MDX, generated page trees, and polished docs layouts.
+
+### Key Features
+
+- **MDX-First**: Write content in MDX with full React component support
+- **File-Based**: Organize content as simple files in your project
+- **Type-Safe**: Automatic TypeScript types generation from your content
+- **Search**: Full-text search capabilities out of the box
+- **Code Highlighting**: Built-in syntax highlighting for code blocks
+
+### Why fumadocs?
+
+fumadocs eliminates the need for a separate CMS or database. Your documentation lives alongside your code, making it easy to version, review, and maintain. The file-based approach means you can use your favorite editor and Git workflow.
+
+## Getting Started
+
+### Install Dependencies
+
+```bash
+pnpm add fumadocs-core fumadocs-ui fumadocs-mdx
+```
+
+### Create Content
+
+Create MDX files in the `content/docs/` directory:
+
+```mdx
+---
+title: My Page
+description: A documentation page
+---
+
+# My Page
+
+Write your content here using MDX syntax.
+```
+
+### Configure Navigation
+
+Use `meta.json` files to control sidebar navigation:
+
+```json
+{
+  "title": "Section Title",
+  "pages": ["page-one", "page-two"]
+}
+```
+
+### Wire the Docs Source
+
+In this starter, the docs runtime is connected through `source.config.ts`, `src/lib/source.ts`, and a catch-all route at `src/routes/{-$locale}/_docs/docs/$.tsx`.
+
+## Who's Using
+
+- [unovue/inspira-ui](https://github.com/unovue/inspira-ui) 3.1K stars
+- [unjs/magic-regexp](https://github.com/unjs/magic-regexp) 4K stars
+- [nuxt-monaco-editor](https://github.com/e-chan1007/nuxt-monaco-editor)
+- [nuxt-umami](https://github.com/ijkml/nuxt-umami)
+- [Msty](https://docs.msty.app/getting-started/onboarding)

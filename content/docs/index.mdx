@@ -1,0 +1,96 @@
+---
+title: Documentation
+description: Learn about the documentation system built with TanStack Start and fumadocs.
+icon: Rocket
+---
+
+## Documentation System Overview
+
+This project's documentation system is built on two foundations: **TanStack Start** for routing and rendering, and **fumadocs** for MDX-powered content. Together, they provide a modern, flexible documentation experience that fits naturally into the rest of the app.
+
+## fumadocs
+
+[fumadocs](https://fumadocs.dev) is a documentation framework for React applications that makes MDX content authoring straightforward.
+
+### Key Features
+
+- **MDX-First**: Write content in MDX with full React component support
+- **File-Based**: Organize content as simple files in your project
+- **Type-Safe**: Automatic TypeScript types generation from your content
+- **Search**: Full-text search capabilities out of the box
+- **Code Highlighting**: Built-in syntax highlighting for code blocks
+
+### Why fumadocs?
+
+fumadocs eliminates the need for a separate CMS or database. Your documentation lives alongside your code, making it easy to version, review, and maintain. The file-based approach means you can use your favorite editor and Git workflow.
+
+## TanStack Start Integration
+
+The docs in this starter are mounted through TanStack file routes and locale-aware loaders:
+
+- **Catch-All Routing**: `/docs/$` resolves nested MDX pages without extra route boilerplate
+- **Locale-Aware**: the docs source respects the app's `en` and `zh` locales
+- **Shared Shell**: docs pages use the same routing, theme, and auth-ready application foundation as the rest of the starter
+
+## shadcn/ui Integration
+
+The UI components are built on top of [shadcn/ui](https://ui.shadcn.com/), providing beautiful, accessible UI components.
+
+### Key Features
+
+- **Beautiful Design**: Modern, clean interface inspired by shadcn-ui
+- **Accessible**: Built with accessibility in mind, following WAI-ARIA guidelines
+- **Customizable**: Fully customizable components that you own and control
+- **Dark Mode**: Built-in dark mode support
+- **Responsive**: Mobile-first design that works on all devices
+
+## Ease of Use
+
+The combination of fumadocs and shadcn/ui makes documentation creation incredibly simple:
+
+### Simple Content Creation
+
+```mdx
+---
+title: My Article
+description: A simple example
+---
+
+# My Article
+
+Write your content in MDX, and it just works!
+```
+
+### Rich Components
+
+Use React components directly in your MDX:
+
+```tsx
+<Callout>
+  This is a custom callout component!
+</Callout>
+```
+
+### Zero Configuration
+
+Get started quickly with sensible defaults, then customize as needed.
+
+## Extensibility
+
+The documentation system is designed to be highly extensible:
+
+- **Custom Components**: Add your own React components to enhance content
+- **Flexible Structure**: Organize content however you want
+- **Theming**: Customize colors, fonts, and styles
+
+## Getting Started
+
+Ready to start documenting? Check out the next sections to learn how to:
+
+- Create your first documentation page
+- Use components in your content
+- Customize the documentation theme
+
+## License
+
+[MIT](https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/LICENSE)

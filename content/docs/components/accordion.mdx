@@ -1,0 +1,52 @@
+---
+title: Accordion
+description: Collapsible content sections.
+icon: LayoutList
+---
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+## Usage
+
+<Accordions>
+  <Accordion title="Is it accessible?">
+    Yes. It adheres to the WAI-ARIA design pattern.
+  </Accordion>
+  <Accordion title="Is it unstyled?">
+    Yes. It's unstyled by default, giving you freedom over the look and feel.
+  </Accordion>
+  <Accordion title="Can it be animated?">
+    Yes! You can use the transition prop to configure the animation.
+  </Accordion>
+</Accordions>
+
+```mdx
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Accordions>
+  <Accordion title="Is it accessible?">
+    Yes. It adheres to the WAI-ARIA design pattern.
+  </Accordion>
+  <Accordion title="Is it unstyled?">
+    Yes. It's unstyled by default, giving you freedom over the look and feel.
+  </Accordion>
+  <Accordion title="Can it be animated?">
+    Yes! You can use the transition prop to configure the animation.
+  </Accordion>
+</Accordions>
+```
+
+## Props
+
+### Accordions
+
+| Prop        | Type                        | Default    |
+| ----------- | --------------------------- | ---------- |
+| type        | `'single' \| 'multiple'`    | `'single'` |
+| collapsible | `boolean`                   | `true`     |
+
+### Accordion
+
+| Prop    | Type     | Default |
+| ------- | -------- | ------- |
+| title   | `string` | -       |

@@ -200,17 +200,17 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ## Step 10. Documentation System
 
-- [ ] **[NEEDS RESEARCH]** Set up fumadocs docs with TanStack Start
-  - Need fumadocs TanStack adapter for docs (similar to blog)
-  - Requires fumadocs-mdx collections setup
-- [ ] Create docs content directory (`content/docs/`) — can copy from Next.js project
-- [ ] Create docs source/loader — `src/lib/source.ts` (fumadocs loader with i18n)
-- [ ] Docs config:
-  - [ ] `src/config/docs-common-config.ts`
-  - [ ] `src/config/docs-sidebar-config.ts`
-- [ ] Docs routes:
-  - [ ] Docs layout route with sidebar navigation
-  - [ ] `src/routes/_docs/docs/$slug.tsx` — doc page (catch-all slug)
+- [x] **[RESOLVED]** Set up fumadocs docs with TanStack Start
+  - Reused `fumadocs-ui` TanStack provider already configured in `__root.tsx`
+  - Added `defineDocs()` collection setup and TanStack `docs/$` catch-all routing
+- [x] Create docs content directory (`content/docs/`) — copied from Next.js project and adapted entry pages
+- [x] Create docs source/loader — `src/lib/source.ts` (fumadocs loader with i18n)
+- [x] Docs config:
+  - [x] `src/config/docs-common-config.ts`
+  - [x] `src/config/docs-sidebar-config.ts`
+- [x] Docs routes:
+  - [x] Docs layout route with sidebar navigation
+  - [x] `src/routes/{-$locale}/_docs/docs/$.tsx` — doc page (catch-all slug)
 
 ## Step 11. Dashboard Pages (under dashboard layout)
 

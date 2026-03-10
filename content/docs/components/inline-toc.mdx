@@ -1,0 +1,27 @@
+---
+title: Inline TOC
+description: Display a table of contents inline within the page.
+icon: List
+---
+
+import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
+
+## Usage
+
+The Inline TOC component renders a table of contents directly within the page content, rather than in the sidebar.
+
+```mdx
+import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
+
+<InlineTOC items={toc} />
+```
+
+This is useful for:
+
+- Pages without a sidebar TOC
+- Long-form content where users need quick navigation
+- Blog posts or articles
+
+## Configuration
+
+The TOC is automatically generated from headings in your MDX content. By default, it includes h2 and h3 headings.

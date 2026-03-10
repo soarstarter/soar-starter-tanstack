@@ -1,0 +1,71 @@
+---
+title: 快速开始
+description: 了解基于 TanStack Start 和 fumadocs 构建的文档系统。
+icon: Rocket
+---
+
+## 文档系统概述
+
+本项目的文档系统建立在 **TanStack Start** 与 **fumadocs** 之上。TanStack Start 负责路由与 SSR，fumadocs 负责 MDX 内容模型与文档 UI。
+
+## fumadocs
+
+[fumadocs](https://fumadocs.dev) 让基于 MDX 的文档写作、页面树生成和文档界面搭建都变得很直接。
+
+### 核心特性
+
+- **MDX 优先**：使用 MDX 编写内容，完整支持 React 组件
+- **基于文件**：将内容作为项目中的简单文件进行组织
+- **类型安全**：从内容自动生成 TypeScript 类型
+- **全文搜索**：开箱即用的全文搜索能力
+- **代码高亮**：内置代码块语法高亮
+
+### 为什么选择 fumadocs？
+
+fumadocs 无需单独的 CMS 或数据库。文档与代码并存，便于版本管理、审查和维护。基于文件的方式意味着你可以使用自己喜欢的编辑器和 Git 工作流。
+
+## 开始使用
+
+### 安装依赖
+
+```bash
+pnpm add fumadocs-core fumadocs-ui fumadocs-mdx
+```
+
+### 创建内容
+
+在 `content/docs/` 目录下创建 MDX 文件：
+
+```mdx
+---
+title: 我的页面
+description: 一个文档页面
+---
+
+# 我的页面
+
+在这里使用 MDX 语法编写内容。
+```
+
+### 配置导航
+
+使用 `meta.json` 文件控制侧边栏导航：
+
+```json
+{
+  "title": "章节标题",
+  "pages": ["page-one", "page-two"]
+}
+```
+
+### 连接文档数据源
+
+在这个 starter 中，文档系统通过 `source.config.ts`、`src/lib/source.ts` 与 `src/routes/{-$locale}/_docs/docs/$.tsx` 这条 catch-all 路由接入应用。
+
+## 谁在使用
+
+- [unovue/inspira-ui](https://github.com/unovue/inspira-ui) 3.1K stars
+- [unjs/magic-regexp](https://github.com/unjs/magic-regexp) 4K stars
+- [nuxt-monaco-editor](https://github.com/e-chan1007/nuxt-monaco-editor)
+- [nuxt-umami](https://github.com/ijkml/nuxt-umami)
+- [Msty](https://docs.msty.app/getting-started/onboarding)

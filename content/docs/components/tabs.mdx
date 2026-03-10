@@ -1,0 +1,90 @@
+---
+title: Tabs
+description: Tabbed content panels.
+icon: Table2
+---
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+## Usage
+
+<Tabs items={['PostgreSQL', 'MySQL', 'SQLite']}>
+  <Tab value="PostgreSQL">
+    ### PostgreSQL column types
+
+    ```ts
+    import { integer, pgTable } from 'drizzle-orm/pg-core';
+
+    export const table = pgTable('table', {
+      int: integer('int')
+    });
+    ```
+  </Tab>
+  <Tab value="MySQL">
+    ### MySQL column types
+
+    ```ts
+    import { int, mysqlTable } from 'drizzle-orm/mysql-core';
+
+    const table = mysqlTable('table', {
+      int: int('int')
+    });
+    ```
+  </Tab>
+  <Tab value="SQLite">
+    ### SQLite column types
+
+    ```ts
+    import { integer, sqliteTable } from 'drizzle-orm/sqlite-core';
+
+    const table = sqliteTable('table', {
+      id: integer('id')
+    });
+    ```
+  </Tab>
+</Tabs>
+
+```mdx
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['PostgreSQL', 'MySQL', 'SQLite']}>
+  <Tab value="PostgreSQL">
+    PostgreSQL content here
+  </Tab>
+  <Tab value="MySQL">
+    MySQL content here
+  </Tab>
+  <Tab value="SQLite">
+    SQLite content here
+  </Tab>
+</Tabs>
+```
+
+### Persistent Tabs
+
+You can persist the tab selection across pages using the `persist` prop and an `id`:
+
+```mdx
+<Tabs items={['npm', 'pnpm', 'yarn']} persist id="package-manager">
+  <Tab value="npm">npm install</Tab>
+  <Tab value="pnpm">pnpm add</Tab>
+  <Tab value="yarn">yarn add</Tab>
+</Tabs>
+```
+
+## Props
+
+### Tabs
+
+| Prop     | Type       | Default |
+| -------- | ---------- | ------- |
+| items    | `string[]` | -       |
+| persist  | `boolean`  | -       |
+| id       | `string`   | -       |
+| defaultIndex | `number` | `0`   |
+
+### Tab
+
+| Prop  | Type     | Default |
+| ----- | -------- | ------- |
+| value | `string` | -       |

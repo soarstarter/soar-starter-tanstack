@@ -1,0 +1,68 @@
+---
+title: Callout
+description: Display important messages and alerts.
+icon: TriangleAlert
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+## Usage
+
+<Callout>
+  A **default** callout with `code` and a [link](/).
+</Callout>
+
+```mdx
+import { Callout } from 'fumadocs-ui/components/callout';
+
+<Callout>
+  A **default** callout with `code` and a [link](/).
+</Callout>
+```
+
+### With Title
+
+<Callout title="Important Note">
+  A callout with a custom title.
+</Callout>
+
+```mdx
+<Callout title="Important Note">
+  A callout with a custom title.
+</Callout>
+```
+
+### Variants
+
+<Callout type="info">
+  An **info** callout with `code` and a [link](/).
+</Callout>
+
+<Callout type="warn">
+  A **warning** callout with `code` and a [link](/).
+</Callout>
+
+<Callout type="error">
+  An **error** callout with `code` and a [link](/).
+</Callout>
+
+```mdx
+<Callout type="info">
+  An **info** callout.
+</Callout>
+
+<Callout type="warn">
+  A **warning** callout.
+</Callout>
+
+<Callout type="error">
+  An **error** callout.
+</Callout>
+```
+
+## Props
+
+| Prop   | Type                                    | Default     |
+| ------ | --------------------------------------- | ----------- |
+| title  | `string`                                | -           |
+| type   | `'info' \| 'warn' \| 'error'`          | `'info'`    |

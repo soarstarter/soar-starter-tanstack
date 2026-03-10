@@ -1,0 +1,102 @@
+---
+title: File Tree
+description: Display directory structures.
+icon: FolderTree
+---
+
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+## Usage
+
+<Files>
+  <Folder name="app" defaultOpen>
+    <Folder name="components">
+      <File name="Header.tsx" />
+      <File name="Footer.tsx" />
+    </Folder>
+    <Folder name="composables">
+      <File name="useErrorHandler.ts" />
+    </Folder>
+    <File name="app.vue" />
+  </Folder>
+  <Folder name="docs">
+    <File name="index.md" />
+  </Folder>
+</Files>
+
+```mdx
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+<Files>
+  <Folder name="app" defaultOpen>
+    <Folder name="components">
+      <File name="Header.tsx" />
+      <File name="Footer.tsx" />
+    </Folder>
+    <Folder name="composables">
+      <File name="useErrorHandler.ts" />
+    </Folder>
+    <File name="app.vue" />
+  </Folder>
+  <Folder name="docs">
+    <File name="index.md" />
+  </Folder>
+</Files>
+```
+
+### Project Structure Example
+
+<Files>
+  <Folder name="src" defaultOpen>
+    <Folder name="app" defaultOpen>
+      <Folder name="(docs)">
+        <Folder name="docs">
+          <Folder name="[[...slug]]">
+            <File name="page.tsx" />
+          </Folder>
+        </Folder>
+        <File name="layout.tsx" />
+      </Folder>
+      <Folder name="(marketing)">
+        <File name="page.tsx" />
+        <File name="layout.tsx" />
+      </Folder>
+      <File name="layout.tsx" />
+      <File name="globals.css" />
+    </Folder>
+    <Folder name="lib">
+      <File name="source.ts" />
+      <File name="utils.ts" />
+    </Folder>
+    <Folder name="components">
+      <Folder name="ui" />
+    </Folder>
+  </Folder>
+  <Folder name="content" defaultOpen>
+    <Folder name="docs" />
+    <Folder name="blog" />
+    <Folder name="legal" />
+  </Folder>
+  <File name="source.config.ts" />
+  <File name="next.config.mjs" />
+  <File name="package.json" />
+</Files>
+
+## Props
+
+### Files
+
+The container for file tree items.
+
+### Folder
+
+| Prop        | Type      | Default |
+| ----------- | --------- | ------- |
+| name        | `string`  | -       |
+| defaultOpen | `boolean` | `false` |
+
+### File
+
+| Prop | Type     | Default |
+| ---- | -------- | ------- |
+| name | `string` | -       |

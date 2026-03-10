@@ -1,0 +1,16 @@
+{
+  "title": "Components",
+  "pages": [
+    "callout",
+    "card",
+    "accordion",
+    "tabs",
+    "steps",
+    "file-tree",
+    "type-table",
+    "heading",
+    "inline-toc",
+    "image-zoom",
+    "banner"
+  ]
+}

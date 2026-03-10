@@ -1,0 +1,47 @@
+---
+title: Steps
+description: Step-by-step guide visualization.
+icon: ArrowDown01
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+## Usage
+
+<Steps>
+  <Step>
+    ### Get Starter Template
+
+    ```bash
+    pnpm create next-app my-docs
+    ```
+  </Step>
+  <Step>
+    ### Install Dependencies
+
+    ```bash
+    pnpm add fumadocs-core fumadocs-ui fumadocs-mdx
+    ```
+  </Step>
+  <Step>
+    ### Development Server
+
+    ```bash
+    pnpm dev
+    ```
+  </Step>
+</Steps>
+
+````mdx
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Steps>
+  <Step>
+    ### Get Starter Template
+
+    ```bash
+    pnpm create next-app my-docs
+    ```
+  </Step>
+</Steps>
+````

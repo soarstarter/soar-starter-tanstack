@@ -24,10 +24,10 @@ export function AppNavMenu() {
 	];
 
 	const aiToolsItems = [
-		{ name: t("menu.aiChat"), href: localePath("/ai/chat") },
-		{ name: t("menu.aiImage"), href: localePath("/ai/image") },
-		{ name: t("menu.aiVideo"), href: localePath("/ai/video") },
-		{ name: t("menu.aiAudio"), href: localePath("/ai/audio") },
+		{ name: t("menu.aiChat"), href: localePath(Routes.AiChat) },
+		{ name: t("menu.aiImage"), href: localePath(Routes.AiImage) },
+		{ name: t("menu.aiVideo"), href: localePath(Routes.AiVideo) },
+		{ name: t("menu.aiAudio"), href: localePath(Routes.AiAudio) },
 	];
 
 	const isActive = (href: string) => {
@@ -43,7 +43,7 @@ export function AppNavMenu() {
 				<NavigationMenuList className="flex items-center gap-1">
 					{menuItems.map((item) => (
 						<NavigationMenuItem key={item.name}>
-								<NavigationMenuLink asChild active={isActive(item.href)}>
+							<NavigationMenuLink asChild active={isActive(item.href)}>
 								<LocaleLink
 									href={item.href}
 									className="flex h-9 items-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"

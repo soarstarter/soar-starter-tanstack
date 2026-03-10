@@ -238,30 +238,30 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ## Step 12. AI Features
 
-- [ ] Install `ai` (Vercel AI SDK) and `@ai-sdk/openai`
-- [ ] Create AI lib modules:
-  - [ ] `src/lib/ai/index.ts` — shared AI config
-  - [ ] `src/lib/ai/image/` — image generation (Replicate provider)
-  - [ ] `src/lib/ai/audio/` — audio generation (Replicate provider)
-  - [ ] `src/lib/ai/video/` — video generation (Replicate provider)
-- [ ] Install `replicate` SDK
-- [ ] AI API routes:
-  - [ ] `src/routes/api/chat.ts` — chat completion (streaming)
-  - [ ] `src/routes/api/ai/image.ts` + `src/routes/api/ai/image/query.ts`
-  - [ ] `src/routes/api/ai/audio.ts` + `src/routes/api/ai/audio/query.ts`
-  - [ ] `src/routes/api/ai/video.ts` + `src/routes/api/ai/video/query.ts`
-- [ ] AI pages (under marketing layout):
-  - [ ] `src/routes/_marketing/ai/chat.tsx`
-  - [ ] `src/routes/_marketing/ai/image.tsx`
-  - [ ] `src/routes/_marketing/ai/audio.tsx`
-  - [ ] `src/routes/_marketing/ai/video.tsx`
-- [ ] AI components:
-  - [ ] `src/components/ai/ChatBot.tsx`
-  - [ ] `src/components/ai/ImageGenerator.tsx`
-  - [ ] `src/components/ai/AudioGenerator.tsx`
-  - [ ] `src/components/ai/VideoGenerator.tsx`
-  - [ ] `src/components/ai-elements/` — shared UI (message, prompt-input, conversation, attachments, reasoning, shimmer, sources)
-- [ ] Install chat UI dependencies: `@ai-sdk/react`, `react-markdown`, `remark-gfm`, `streamdown` + plugins, `use-stick-to-bottom`
+- [x] Install `ai` (Vercel AI SDK) and `@ai-sdk/openai`
+- [x] Create AI lib modules:
+  - [x] `src/lib/ai/index.ts` — shared AI config
+  - [x] `src/lib/ai/image/` — image generation (Replicate provider)
+  - [x] `src/lib/ai/audio/` — audio generation (Replicate provider)
+  - [x] `src/lib/ai/video/` — video generation (Replicate provider)
+- [x] Install `replicate` SDK
+- [x] AI API routes:
+  - [x] `src/routes/api/chat.ts` — chat completion (streaming)
+  - [x] `src/routes/api/ai/image.ts` + `src/routes/api/ai/image/query.ts`
+  - [x] `src/routes/api/ai/audio.ts` + `src/routes/api/ai/audio/query.ts`
+  - [x] `src/routes/api/ai/video.ts` + `src/routes/api/ai/video/query.ts`
+- [x] AI pages (under marketing layout):
+  - [x] `src/routes/_marketing/ai/chat.tsx`
+  - [x] `src/routes/_marketing/ai/image.tsx`
+  - [x] `src/routes/_marketing/ai/audio.tsx`
+  - [x] `src/routes/_marketing/ai/video.tsx`
+- [x] AI components:
+  - [x] `src/components/ai/ChatBot.tsx`
+  - [x] `src/components/ai/ImageGenerator.tsx`
+  - [x] `src/components/ai/AudioGenerator.tsx`
+  - [x] `src/components/ai/VideoGenerator.tsx`
+  - [x] `src/components/ai-elements/` — shared UI (message, prompt-input, conversation, attachments, reasoning, shimmer, sources)
+- [x] Install chat UI dependencies: `@ai-sdk/react`, `react-markdown`, `remark-gfm`, `streamdown` + plugins, `use-stick-to-bottom`
 
 ## Step 13. Storage
 

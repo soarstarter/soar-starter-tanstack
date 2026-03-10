@@ -31,10 +31,10 @@ export function AppMobileMenu() {
 		{
 			label: t("menu.aiTools"),
 			sub: [
-				{ label: t("menu.aiChat"), href: localePath("/ai/chat") },
-				{ label: t("menu.aiImage"), href: localePath("/ai/image") },
-				{ label: t("menu.aiVideo"), href: localePath("/ai/video") },
-				{ label: t("menu.aiAudio"), href: localePath("/ai/audio") },
+				{ label: t("menu.aiChat"), href: localePath(Routes.AiChat) },
+				{ label: t("menu.aiImage"), href: localePath(Routes.AiImage) },
+				{ label: t("menu.aiVideo"), href: localePath(Routes.AiVideo) },
+				{ label: t("menu.aiAudio"), href: localePath(Routes.AiAudio) },
 			],
 		},
 	];

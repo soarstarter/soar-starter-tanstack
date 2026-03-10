@@ -15,6 +15,7 @@ import { Route as Char123LocaleChar125MarketingRouteImport } from './routes/{-$l
 import { Route as Char123LocaleChar125DocsRouteImport } from './routes/{-$locale}/_docs'
 import { Route as Char123LocaleChar125DashboardRouteImport } from './routes/{-$locale}/_dashboard'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as Char123LocaleChar125MarketingIndexRouteImport } from './routes/{-$locale}/_marketing/index'
 import { Route as Char123LocaleChar125DemoBetterAuthRouteImport } from './routes/{-$locale}/demo/better-auth'
 import { Route as Char123LocaleChar125AuthResetPasswordRouteImport } from './routes/{-$locale}/auth/reset-password'
@@ -33,12 +34,22 @@ import { Route as ApiUserBillingRouteImport } from './routes/api/user/billing'
 import { Route as ApiPaymentQueryRouteImport } from './routes/api/payment/query'
 import { Route as ApiPaymentCreateRouteImport } from './routes/api/payment/create'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as ApiAiVideoRouteImport } from './routes/api/ai/video'
+import { Route as ApiAiImageRouteImport } from './routes/api/ai/image'
+import { Route as ApiAiAudioRouteImport } from './routes/api/ai/audio'
 import { Route as ApiAdminUsersRouteImport } from './routes/api/admin/users'
 import { Route as Char123LocaleChar125MarketingBlogIndexRouteImport } from './routes/{-$locale}/_marketing/blog/index'
 import { Route as Char123LocaleChar125DashboardDashboardIndexRouteImport } from './routes/{-$locale}/_dashboard/dashboard/index'
 import { Route as Char123LocaleChar125MarketingBlogSlugRouteImport } from './routes/{-$locale}/_marketing/blog/$slug'
+import { Route as Char123LocaleChar125MarketingAiVideoRouteImport } from './routes/{-$locale}/_marketing/ai/video'
+import { Route as Char123LocaleChar125MarketingAiImageRouteImport } from './routes/{-$locale}/_marketing/ai/image'
+import { Route as Char123LocaleChar125MarketingAiChatRouteImport } from './routes/{-$locale}/_marketing/ai/chat'
+import { Route as Char123LocaleChar125MarketingAiAudioRouteImport } from './routes/{-$locale}/_marketing/ai/audio'
 import { Route as Char123LocaleChar125DocsDocsSplatRouteImport } from './routes/{-$locale}/_docs/docs/$'
 import { Route as ApiPaymentNotifyCreemRouteImport } from './routes/api/payment/notify/creem'
+import { Route as ApiAiVideoQueryRouteImport } from './routes/api/ai/video/query'
+import { Route as ApiAiImageQueryRouteImport } from './routes/api/ai/image/query'
+import { Route as ApiAiAudioQueryRouteImport } from './routes/api/ai/audio/query'
 import { Route as Char123LocaleChar125DashboardSettingSecurityIndexRouteImport } from './routes/{-$locale}/_dashboard/setting/security/index'
 import { Route as Char123LocaleChar125DashboardSettingProfileIndexRouteImport } from './routes/{-$locale}/_dashboard/setting/profile/index'
 import { Route as Char123LocaleChar125DashboardSettingBillingIndexRouteImport } from './routes/{-$locale}/_dashboard/setting/billing/index'
@@ -75,6 +86,11 @@ const Char123LocaleChar125DashboardRoute =
 const ApiContactRoute = ApiContactRouteImport.update({
   id: '/api/contact',
   path: '/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Char123LocaleChar125MarketingIndexRoute =
@@ -178,6 +194,21 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAiVideoRoute = ApiAiVideoRouteImport.update({
+  id: '/api/ai/video',
+  path: '/api/ai/video',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiImageRoute = ApiAiImageRouteImport.update({
+  id: '/api/ai/image',
+  path: '/api/ai/image',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiAudioRoute = ApiAiAudioRouteImport.update({
+  id: '/api/ai/audio',
+  path: '/api/ai/audio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAdminUsersRoute = ApiAdminUsersRouteImport.update({
   id: '/api/admin/users',
   path: '/api/admin/users',
@@ -201,6 +232,30 @@ const Char123LocaleChar125MarketingBlogSlugRoute =
     path: '/blog/$slug',
     getParentRoute: () => Char123LocaleChar125MarketingRoute,
   } as any)
+const Char123LocaleChar125MarketingAiVideoRoute =
+  Char123LocaleChar125MarketingAiVideoRouteImport.update({
+    id: '/ai/video',
+    path: '/ai/video',
+    getParentRoute: () => Char123LocaleChar125MarketingRoute,
+  } as any)
+const Char123LocaleChar125MarketingAiImageRoute =
+  Char123LocaleChar125MarketingAiImageRouteImport.update({
+    id: '/ai/image',
+    path: '/ai/image',
+    getParentRoute: () => Char123LocaleChar125MarketingRoute,
+  } as any)
+const Char123LocaleChar125MarketingAiChatRoute =
+  Char123LocaleChar125MarketingAiChatRouteImport.update({
+    id: '/ai/chat',
+    path: '/ai/chat',
+    getParentRoute: () => Char123LocaleChar125MarketingRoute,
+  } as any)
+const Char123LocaleChar125MarketingAiAudioRoute =
+  Char123LocaleChar125MarketingAiAudioRouteImport.update({
+    id: '/ai/audio',
+    path: '/ai/audio',
+    getParentRoute: () => Char123LocaleChar125MarketingRoute,
+  } as any)
 const Char123LocaleChar125DocsDocsSplatRoute =
   Char123LocaleChar125DocsDocsSplatRouteImport.update({
     id: '/docs/$',
@@ -211,6 +266,21 @@ const ApiPaymentNotifyCreemRoute = ApiPaymentNotifyCreemRouteImport.update({
   id: '/api/payment/notify/creem',
   path: '/api/payment/notify/creem',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiVideoQueryRoute = ApiAiVideoQueryRouteImport.update({
+  id: '/query',
+  path: '/query',
+  getParentRoute: () => ApiAiVideoRoute,
+} as any)
+const ApiAiImageQueryRoute = ApiAiImageQueryRouteImport.update({
+  id: '/query',
+  path: '/query',
+  getParentRoute: () => ApiAiImageRoute,
+} as any)
+const ApiAiAudioQueryRoute = ApiAiAudioQueryRouteImport.update({
+  id: '/query',
+  path: '/query',
+  getParentRoute: () => ApiAiAudioRoute,
 } as any)
 const Char123LocaleChar125DashboardSettingSecurityIndexRoute =
   Char123LocaleChar125DashboardSettingSecurityIndexRouteImport.update({
@@ -251,9 +321,13 @@ const Char123LocaleChar125DashboardAccountOrderIndexRoute =
 
 export interface FileRoutesByFullPath {
   '/{-$locale}': typeof Char123LocaleChar125MarketingRouteWithChildren
+  '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
   '/{-$locale}/auth': typeof Char123LocaleChar125AuthRouteWithChildren
   '/api/admin/users': typeof ApiAdminUsersRoute
+  '/api/ai/audio': typeof ApiAiAudioRouteWithChildren
+  '/api/ai/image': typeof ApiAiImageRouteWithChildren
+  '/api/ai/video': typeof ApiAiVideoRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/payment/create': typeof ApiPaymentCreateRoute
   '/api/payment/query': typeof ApiPaymentQueryRoute
@@ -272,8 +346,15 @@ export interface FileRoutesByFullPath {
   '/{-$locale}/auth/reset-password': typeof Char123LocaleChar125AuthResetPasswordRoute
   '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
   '/{-$locale}/': typeof Char123LocaleChar125MarketingIndexRoute
+  '/api/ai/audio/query': typeof ApiAiAudioQueryRoute
+  '/api/ai/image/query': typeof ApiAiImageQueryRoute
+  '/api/ai/video/query': typeof ApiAiVideoQueryRoute
   '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
   '/{-$locale}/docs/$': typeof Char123LocaleChar125DocsDocsSplatRoute
+  '/{-$locale}/ai/audio': typeof Char123LocaleChar125MarketingAiAudioRoute
+  '/{-$locale}/ai/chat': typeof Char123LocaleChar125MarketingAiChatRoute
+  '/{-$locale}/ai/image': typeof Char123LocaleChar125MarketingAiImageRoute
+  '/{-$locale}/ai/video': typeof Char123LocaleChar125MarketingAiVideoRoute
   '/{-$locale}/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
   '/{-$locale}/dashboard/': typeof Char123LocaleChar125DashboardDashboardIndexRoute
   '/{-$locale}/blog/': typeof Char123LocaleChar125MarketingBlogIndexRoute
@@ -286,9 +367,13 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/{-$locale}': typeof Char123LocaleChar125MarketingIndexRoute
+  '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
   '/{-$locale}/auth': typeof Char123LocaleChar125AuthRouteWithChildren
   '/api/admin/users': typeof ApiAdminUsersRoute
+  '/api/ai/audio': typeof ApiAiAudioRouteWithChildren
+  '/api/ai/image': typeof ApiAiImageRouteWithChildren
+  '/api/ai/video': typeof ApiAiVideoRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/payment/create': typeof ApiPaymentCreateRoute
   '/api/payment/query': typeof ApiPaymentQueryRoute
@@ -306,8 +391,15 @@ export interface FileRoutesByTo {
   '/{-$locale}/auth/register-success': typeof Char123LocaleChar125AuthRegisterSuccessRoute
   '/{-$locale}/auth/reset-password': typeof Char123LocaleChar125AuthResetPasswordRoute
   '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
+  '/api/ai/audio/query': typeof ApiAiAudioQueryRoute
+  '/api/ai/image/query': typeof ApiAiImageQueryRoute
+  '/api/ai/video/query': typeof ApiAiVideoQueryRoute
   '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
   '/{-$locale}/docs/$': typeof Char123LocaleChar125DocsDocsSplatRoute
+  '/{-$locale}/ai/audio': typeof Char123LocaleChar125MarketingAiAudioRoute
+  '/{-$locale}/ai/chat': typeof Char123LocaleChar125MarketingAiChatRoute
+  '/{-$locale}/ai/image': typeof Char123LocaleChar125MarketingAiImageRoute
+  '/{-$locale}/ai/video': typeof Char123LocaleChar125MarketingAiVideoRoute
   '/{-$locale}/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
   '/{-$locale}/dashboard': typeof Char123LocaleChar125DashboardDashboardIndexRoute
   '/{-$locale}/blog': typeof Char123LocaleChar125MarketingBlogIndexRoute
@@ -321,12 +413,16 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/{-$locale}': typeof Char123LocaleChar125RouteWithChildren
+  '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
   '/{-$locale}/_dashboard': typeof Char123LocaleChar125DashboardRouteWithChildren
   '/{-$locale}/_docs': typeof Char123LocaleChar125DocsRouteWithChildren
   '/{-$locale}/_marketing': typeof Char123LocaleChar125MarketingRouteWithChildren
   '/{-$locale}/auth': typeof Char123LocaleChar125AuthRouteWithChildren
   '/api/admin/users': typeof ApiAdminUsersRoute
+  '/api/ai/audio': typeof ApiAiAudioRouteWithChildren
+  '/api/ai/image': typeof ApiAiImageRouteWithChildren
+  '/api/ai/video': typeof ApiAiVideoRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/payment/create': typeof ApiPaymentCreateRoute
   '/api/payment/query': typeof ApiPaymentQueryRoute
@@ -345,8 +441,15 @@ export interface FileRoutesById {
   '/{-$locale}/auth/reset-password': typeof Char123LocaleChar125AuthResetPasswordRoute
   '/{-$locale}/demo/better-auth': typeof Char123LocaleChar125DemoBetterAuthRoute
   '/{-$locale}/_marketing/': typeof Char123LocaleChar125MarketingIndexRoute
+  '/api/ai/audio/query': typeof ApiAiAudioQueryRoute
+  '/api/ai/image/query': typeof ApiAiImageQueryRoute
+  '/api/ai/video/query': typeof ApiAiVideoQueryRoute
   '/api/payment/notify/creem': typeof ApiPaymentNotifyCreemRoute
   '/{-$locale}/_docs/docs/$': typeof Char123LocaleChar125DocsDocsSplatRoute
+  '/{-$locale}/_marketing/ai/audio': typeof Char123LocaleChar125MarketingAiAudioRoute
+  '/{-$locale}/_marketing/ai/chat': typeof Char123LocaleChar125MarketingAiChatRoute
+  '/{-$locale}/_marketing/ai/image': typeof Char123LocaleChar125MarketingAiImageRoute
+  '/{-$locale}/_marketing/ai/video': typeof Char123LocaleChar125MarketingAiVideoRoute
   '/{-$locale}/_marketing/blog/$slug': typeof Char123LocaleChar125MarketingBlogSlugRoute
   '/{-$locale}/_dashboard/dashboard/': typeof Char123LocaleChar125DashboardDashboardIndexRoute
   '/{-$locale}/_marketing/blog/': typeof Char123LocaleChar125MarketingBlogIndexRoute
@@ -361,9 +464,13 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/{-$locale}'
+    | '/api/chat'
     | '/api/contact'
     | '/{-$locale}/auth'
     | '/api/admin/users'
+    | '/api/ai/audio'
+    | '/api/ai/image'
+    | '/api/ai/video'
     | '/api/auth/$'
     | '/api/payment/create'
     | '/api/payment/query'
@@ -382,8 +489,15 @@ export interface FileRouteTypes {
     | '/{-$locale}/auth/reset-password'
     | '/{-$locale}/demo/better-auth'
     | '/{-$locale}/'
+    | '/api/ai/audio/query'
+    | '/api/ai/image/query'
+    | '/api/ai/video/query'
     | '/api/payment/notify/creem'
     | '/{-$locale}/docs/$'
+    | '/{-$locale}/ai/audio'
+    | '/{-$locale}/ai/chat'
+    | '/{-$locale}/ai/image'
+    | '/{-$locale}/ai/video'
     | '/{-$locale}/blog/$slug'
     | '/{-$locale}/dashboard/'
     | '/{-$locale}/blog/'
@@ -396,9 +510,13 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/{-$locale}'
+    | '/api/chat'
     | '/api/contact'
     | '/{-$locale}/auth'
     | '/api/admin/users'
+    | '/api/ai/audio'
+    | '/api/ai/image'
+    | '/api/ai/video'
     | '/api/auth/$'
     | '/api/payment/create'
     | '/api/payment/query'
@@ -416,8 +534,15 @@ export interface FileRouteTypes {
     | '/{-$locale}/auth/register-success'
     | '/{-$locale}/auth/reset-password'
     | '/{-$locale}/demo/better-auth'
+    | '/api/ai/audio/query'
+    | '/api/ai/image/query'
+    | '/api/ai/video/query'
     | '/api/payment/notify/creem'
     | '/{-$locale}/docs/$'
+    | '/{-$locale}/ai/audio'
+    | '/{-$locale}/ai/chat'
+    | '/{-$locale}/ai/image'
+    | '/{-$locale}/ai/video'
     | '/{-$locale}/blog/$slug'
     | '/{-$locale}/dashboard'
     | '/{-$locale}/blog'
@@ -430,12 +555,16 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/{-$locale}'
+    | '/api/chat'
     | '/api/contact'
     | '/{-$locale}/_dashboard'
     | '/{-$locale}/_docs'
     | '/{-$locale}/_marketing'
     | '/{-$locale}/auth'
     | '/api/admin/users'
+    | '/api/ai/audio'
+    | '/api/ai/image'
+    | '/api/ai/video'
     | '/api/auth/$'
     | '/api/payment/create'
     | '/api/payment/query'
@@ -454,8 +583,15 @@ export interface FileRouteTypes {
     | '/{-$locale}/auth/reset-password'
     | '/{-$locale}/demo/better-auth'
     | '/{-$locale}/_marketing/'
+    | '/api/ai/audio/query'
+    | '/api/ai/image/query'
+    | '/api/ai/video/query'
     | '/api/payment/notify/creem'
     | '/{-$locale}/_docs/docs/$'
+    | '/{-$locale}/_marketing/ai/audio'
+    | '/{-$locale}/_marketing/ai/chat'
+    | '/{-$locale}/_marketing/ai/image'
+    | '/{-$locale}/_marketing/ai/video'
     | '/{-$locale}/_marketing/blog/$slug'
     | '/{-$locale}/_dashboard/dashboard/'
     | '/{-$locale}/_marketing/blog/'
@@ -469,8 +605,12 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   Char123LocaleChar125Route: typeof Char123LocaleChar125RouteWithChildren
+  ApiChatRoute: typeof ApiChatRoute
   ApiContactRoute: typeof ApiContactRoute
   ApiAdminUsersRoute: typeof ApiAdminUsersRoute
+  ApiAiAudioRoute: typeof ApiAiAudioRouteWithChildren
+  ApiAiImageRoute: typeof ApiAiImageRouteWithChildren
+  ApiAiVideoRoute: typeof ApiAiVideoRouteWithChildren
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiPaymentCreateRoute: typeof ApiPaymentCreateRoute
   ApiPaymentQueryRoute: typeof ApiPaymentQueryRoute
@@ -523,6 +663,13 @@ declare module '@tanstack/react-router' {
       path: '/api/contact'
       fullPath: '/api/contact'
       preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/{-$locale}/_marketing/': {
@@ -651,6 +798,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAuthSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/ai/video': {
+      id: '/api/ai/video'
+      path: '/api/ai/video'
+      fullPath: '/api/ai/video'
+      preLoaderRoute: typeof ApiAiVideoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/image': {
+      id: '/api/ai/image'
+      path: '/api/ai/image'
+      fullPath: '/api/ai/image'
+      preLoaderRoute: typeof ApiAiImageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/audio': {
+      id: '/api/ai/audio'
+      path: '/api/ai/audio'
+      fullPath: '/api/ai/audio'
+      preLoaderRoute: typeof ApiAiAudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/admin/users': {
       id: '/api/admin/users'
       path: '/api/admin/users'
@@ -679,6 +847,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LocaleChar125MarketingBlogSlugRouteImport
       parentRoute: typeof Char123LocaleChar125MarketingRoute
     }
+    '/{-$locale}/_marketing/ai/video': {
+      id: '/{-$locale}/_marketing/ai/video'
+      path: '/ai/video'
+      fullPath: '/{-$locale}/ai/video'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingAiVideoRouteImport
+      parentRoute: typeof Char123LocaleChar125MarketingRoute
+    }
+    '/{-$locale}/_marketing/ai/image': {
+      id: '/{-$locale}/_marketing/ai/image'
+      path: '/ai/image'
+      fullPath: '/{-$locale}/ai/image'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingAiImageRouteImport
+      parentRoute: typeof Char123LocaleChar125MarketingRoute
+    }
+    '/{-$locale}/_marketing/ai/chat': {
+      id: '/{-$locale}/_marketing/ai/chat'
+      path: '/ai/chat'
+      fullPath: '/{-$locale}/ai/chat'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingAiChatRouteImport
+      parentRoute: typeof Char123LocaleChar125MarketingRoute
+    }
+    '/{-$locale}/_marketing/ai/audio': {
+      id: '/{-$locale}/_marketing/ai/audio'
+      path: '/ai/audio'
+      fullPath: '/{-$locale}/ai/audio'
+      preLoaderRoute: typeof Char123LocaleChar125MarketingAiAudioRouteImport
+      parentRoute: typeof Char123LocaleChar125MarketingRoute
+    }
     '/{-$locale}/_docs/docs/$': {
       id: '/{-$locale}/_docs/docs/$'
       path: '/docs/$'
@@ -692,6 +888,27 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/payment/notify/creem'
       preLoaderRoute: typeof ApiPaymentNotifyCreemRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/video/query': {
+      id: '/api/ai/video/query'
+      path: '/query'
+      fullPath: '/api/ai/video/query'
+      preLoaderRoute: typeof ApiAiVideoQueryRouteImport
+      parentRoute: typeof ApiAiVideoRoute
+    }
+    '/api/ai/image/query': {
+      id: '/api/ai/image/query'
+      path: '/query'
+      fullPath: '/api/ai/image/query'
+      preLoaderRoute: typeof ApiAiImageQueryRouteImport
+      parentRoute: typeof ApiAiImageRoute
+    }
+    '/api/ai/audio/query': {
+      id: '/api/ai/audio/query'
+      path: '/query'
+      fullPath: '/api/ai/audio/query'
+      preLoaderRoute: typeof ApiAiAudioQueryRouteImport
+      parentRoute: typeof ApiAiAudioRoute
     }
     '/{-$locale}/_dashboard/setting/security/': {
       id: '/{-$locale}/_dashboard/setting/security/'
@@ -791,6 +1008,10 @@ interface Char123LocaleChar125MarketingRouteChildren {
   Char123LocaleChar125MarketingContactRoute: typeof Char123LocaleChar125MarketingContactRoute
   Char123LocaleChar125MarketingPaySuccessRoute: typeof Char123LocaleChar125MarketingPaySuccessRoute
   Char123LocaleChar125MarketingIndexRoute: typeof Char123LocaleChar125MarketingIndexRoute
+  Char123LocaleChar125MarketingAiAudioRoute: typeof Char123LocaleChar125MarketingAiAudioRoute
+  Char123LocaleChar125MarketingAiChatRoute: typeof Char123LocaleChar125MarketingAiChatRoute
+  Char123LocaleChar125MarketingAiImageRoute: typeof Char123LocaleChar125MarketingAiImageRoute
+  Char123LocaleChar125MarketingAiVideoRoute: typeof Char123LocaleChar125MarketingAiVideoRoute
   Char123LocaleChar125MarketingBlogSlugRoute: typeof Char123LocaleChar125MarketingBlogSlugRoute
   Char123LocaleChar125MarketingBlogIndexRoute: typeof Char123LocaleChar125MarketingBlogIndexRoute
 }
@@ -805,6 +1026,14 @@ const Char123LocaleChar125MarketingRouteChildren: Char123LocaleChar125MarketingR
       Char123LocaleChar125MarketingPaySuccessRoute,
     Char123LocaleChar125MarketingIndexRoute:
       Char123LocaleChar125MarketingIndexRoute,
+    Char123LocaleChar125MarketingAiAudioRoute:
+      Char123LocaleChar125MarketingAiAudioRoute,
+    Char123LocaleChar125MarketingAiChatRoute:
+      Char123LocaleChar125MarketingAiChatRoute,
+    Char123LocaleChar125MarketingAiImageRoute:
+      Char123LocaleChar125MarketingAiImageRoute,
+    Char123LocaleChar125MarketingAiVideoRoute:
+      Char123LocaleChar125MarketingAiVideoRoute,
     Char123LocaleChar125MarketingBlogSlugRoute:
       Char123LocaleChar125MarketingBlogSlugRoute,
     Char123LocaleChar125MarketingBlogIndexRoute:
@@ -866,10 +1095,50 @@ const Char123LocaleChar125RouteChildren: Char123LocaleChar125RouteChildren = {
 const Char123LocaleChar125RouteWithChildren =
   Char123LocaleChar125Route._addFileChildren(Char123LocaleChar125RouteChildren)
 
+interface ApiAiAudioRouteChildren {
+  ApiAiAudioQueryRoute: typeof ApiAiAudioQueryRoute
+}
+
+const ApiAiAudioRouteChildren: ApiAiAudioRouteChildren = {
+  ApiAiAudioQueryRoute: ApiAiAudioQueryRoute,
+}
+
+const ApiAiAudioRouteWithChildren = ApiAiAudioRoute._addFileChildren(
+  ApiAiAudioRouteChildren,
+)
+
+interface ApiAiImageRouteChildren {
+  ApiAiImageQueryRoute: typeof ApiAiImageQueryRoute
+}
+
+const ApiAiImageRouteChildren: ApiAiImageRouteChildren = {
+  ApiAiImageQueryRoute: ApiAiImageQueryRoute,
+}
+
+const ApiAiImageRouteWithChildren = ApiAiImageRoute._addFileChildren(
+  ApiAiImageRouteChildren,
+)
+
+interface ApiAiVideoRouteChildren {
+  ApiAiVideoQueryRoute: typeof ApiAiVideoQueryRoute
+}
+
+const ApiAiVideoRouteChildren: ApiAiVideoRouteChildren = {
+  ApiAiVideoQueryRoute: ApiAiVideoQueryRoute,
+}
+
+const ApiAiVideoRouteWithChildren = ApiAiVideoRoute._addFileChildren(
+  ApiAiVideoRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   Char123LocaleChar125Route: Char123LocaleChar125RouteWithChildren,
+  ApiChatRoute: ApiChatRoute,
   ApiContactRoute: ApiContactRoute,
   ApiAdminUsersRoute: ApiAdminUsersRoute,
+  ApiAiAudioRoute: ApiAiAudioRouteWithChildren,
+  ApiAiImageRoute: ApiAiImageRouteWithChildren,
+  ApiAiVideoRoute: ApiAiVideoRouteWithChildren,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiPaymentCreateRoute: ApiPaymentCreateRoute,
   ApiPaymentQueryRoute: ApiPaymentQueryRoute,

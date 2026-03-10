@@ -31,6 +31,7 @@ import { Route as ApiUserSubscriptionRouteImport } from './routes/api/user/subsc
 import { Route as ApiUserSettingsRouteImport } from './routes/api/user/settings'
 import { Route as ApiUserProfileRouteImport } from './routes/api/user/profile'
 import { Route as ApiUserBillingRouteImport } from './routes/api/user/billing'
+import { Route as ApiStorageUploadImageRouteImport } from './routes/api/storage/upload-image'
 import { Route as ApiPaymentQueryRouteImport } from './routes/api/payment/query'
 import { Route as ApiPaymentCreateRouteImport } from './routes/api/payment/create'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
@@ -177,6 +178,11 @@ const ApiUserProfileRoute = ApiUserProfileRouteImport.update({
 const ApiUserBillingRoute = ApiUserBillingRouteImport.update({
   id: '/api/user/billing',
   path: '/api/user/billing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiStorageUploadImageRoute = ApiStorageUploadImageRouteImport.update({
+  id: '/api/storage/upload-image',
+  path: '/api/storage/upload-image',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPaymentQueryRoute = ApiPaymentQueryRouteImport.update({
@@ -331,6 +337,7 @@ export interface FileRoutesByFullPath {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/payment/create': typeof ApiPaymentCreateRoute
   '/api/payment/query': typeof ApiPaymentQueryRoute
+  '/api/storage/upload-image': typeof ApiStorageUploadImageRoute
   '/api/user/billing': typeof ApiUserBillingRoute
   '/api/user/profile': typeof ApiUserProfileRoute
   '/api/user/settings': typeof ApiUserSettingsRoute
@@ -377,6 +384,7 @@ export interface FileRoutesByTo {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/payment/create': typeof ApiPaymentCreateRoute
   '/api/payment/query': typeof ApiPaymentQueryRoute
+  '/api/storage/upload-image': typeof ApiStorageUploadImageRoute
   '/api/user/billing': typeof ApiUserBillingRoute
   '/api/user/profile': typeof ApiUserProfileRoute
   '/api/user/settings': typeof ApiUserSettingsRoute
@@ -426,6 +434,7 @@ export interface FileRoutesById {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/payment/create': typeof ApiPaymentCreateRoute
   '/api/payment/query': typeof ApiPaymentQueryRoute
+  '/api/storage/upload-image': typeof ApiStorageUploadImageRoute
   '/api/user/billing': typeof ApiUserBillingRoute
   '/api/user/profile': typeof ApiUserProfileRoute
   '/api/user/settings': typeof ApiUserSettingsRoute
@@ -474,6 +483,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/payment/create'
     | '/api/payment/query'
+    | '/api/storage/upload-image'
     | '/api/user/billing'
     | '/api/user/profile'
     | '/api/user/settings'
@@ -520,6 +530,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/payment/create'
     | '/api/payment/query'
+    | '/api/storage/upload-image'
     | '/api/user/billing'
     | '/api/user/profile'
     | '/api/user/settings'
@@ -568,6 +579,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/payment/create'
     | '/api/payment/query'
+    | '/api/storage/upload-image'
     | '/api/user/billing'
     | '/api/user/profile'
     | '/api/user/settings'
@@ -614,6 +626,7 @@ export interface RootRouteChildren {
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiPaymentCreateRoute: typeof ApiPaymentCreateRoute
   ApiPaymentQueryRoute: typeof ApiPaymentQueryRoute
+  ApiStorageUploadImageRoute: typeof ApiStorageUploadImageRoute
   ApiUserBillingRoute: typeof ApiUserBillingRoute
   ApiUserProfileRoute: typeof ApiUserProfileRoute
   ApiUserSettingsRoute: typeof ApiUserSettingsRoute
@@ -775,6 +788,13 @@ declare module '@tanstack/react-router' {
       path: '/api/user/billing'
       fullPath: '/api/user/billing'
       preLoaderRoute: typeof ApiUserBillingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/storage/upload-image': {
+      id: '/api/storage/upload-image'
+      path: '/api/storage/upload-image'
+      fullPath: '/api/storage/upload-image'
+      preLoaderRoute: typeof ApiStorageUploadImageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/payment/query': {
@@ -1142,6 +1162,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiPaymentCreateRoute: ApiPaymentCreateRoute,
   ApiPaymentQueryRoute: ApiPaymentQueryRoute,
+  ApiStorageUploadImageRoute: ApiStorageUploadImageRoute,
   ApiUserBillingRoute: ApiUserBillingRoute,
   ApiUserProfileRoute: ApiUserProfileRoute,
   ApiUserSettingsRoute: ApiUserSettingsRoute,

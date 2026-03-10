@@ -265,8 +265,8 @@ This project aims to build a production-ready SaaS starter template powered by *
 
 ## Step 13. Storage
 
-- [ ] `src/routes/api/storage/upload-image.ts` — image upload API route
-- [ ] **[NEEDS RESEARCH]** Decide storage provider (S3, Cloudflare R2, etc.) — check what Next.js project uses
+- [x] `src/routes/api/storage/upload-image.ts` — image upload API route
+- [x] **[RESOLVED]** Storage provider decision — use local filesystem storage under `public/uploads`, matching the Next.js reference project
 
 ## Step 14. UI Components & Libraries
 
@@ -346,7 +346,6 @@ Already configured via `components.json`. Install as needed:
 | fumadocs + TanStack | Verify fumadocs TanStack Start adapter setup for blog + docs |
 | Theme provider | Context-based theme vs current inline script approach |
 | SEO / sitemap | TanStack Start head management + sitemap generation |
-| Storage provider | Which cloud storage to use for file uploads |
 | Streaming / SSE | Verify Vercel AI SDK streaming works with TanStack Start / Nitro |
 
 ---

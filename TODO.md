@@ -1,10 +1,10 @@
 # TanStack Start SaaS Template — TODO
 
-Reference project: `D:\project\webstorm\soar-next-cc` (Next.js SaaS starter)
+Reference project: `D:\project\webstorm\soar-starter-next` (Next.js SaaS starter)
 
 ## Background
 
-This project aims to build a production-ready SaaS starter template powered by **TanStack Start** (full-stack SSR React framework), mirroring the feature set of an existing **Next.js SaaS starter** (`soar-next-cc`). The Next.js version is a complete template with authentication, payments, dashboards, AI features, blog/docs, i18n, and marketing pages. This TanStack project starts from a base scaffold (TanStack Start + Better Auth + Tailwind CSS v4 + shadcn/ui) and needs to be built out to feature parity.
+This project aims to build a production-ready SaaS starter template powered by **TanStack Start** (full-stack SSR React framework), mirroring the feature set of an existing **Next.js SaaS starter** (`soar-starter-next`). The Next.js version is a complete template with authentication, payments, dashboards, AI features, blog/docs, i18n, and marketing pages. This TanStack project starts from a base scaffold (TanStack Start + Better Auth + Tailwind CSS v4 + shadcn/ui) and needs to be built out to feature parity.
 
 **Core principle:** Since both frameworks use React, most UI components, hooks, and client-side libraries can be directly reused. The main migration work is in framework-specific areas — routing (file-based layouts, route groups, middleware), server-side APIs (Next.js route handlers → TanStack server handlers), data loading patterns, and meta/head management. Some Next.js-specific packages (e.g. `next-intl`, `next-themes`) need TanStack-compatible alternatives.
 、

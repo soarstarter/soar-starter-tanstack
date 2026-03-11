@@ -32,7 +32,7 @@ function PaySuccessPage() {
 				)}
 				<div className="flex flex-wrap justify-center gap-4">
 					<Button asChild>
-						<LocaleLink href="/dashboard">
+						<LocaleLink href="/dashboard" preload={false}>
 							{t("payment.success.viewOrders")}
 						</LocaleLink>
 					</Button>

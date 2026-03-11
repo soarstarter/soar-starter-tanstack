@@ -1,5 +1,4 @@
 import { Check, X } from "lucide-react";
-import { useState } from "react";
 import { Badge } from "#/components/ui/badge";
 import { Button } from "#/components/ui/button";
 import {
@@ -15,11 +14,16 @@ import type { PlanInterval, PricePlan } from "#/types";
 interface PricingCardProps {
 	plan: PricePlan;
 	interval: PlanInterval;
+	isLoading?: boolean;
+	onGetStarted: (plan: PricePlan) => void;
 }
 
-export function PricingCard({ plan, interval }: PricingCardProps) {
-	const [loading, setLoading] = useState(false);
-
+export function PricingCard({
+	plan,
+	interval,
+	isLoading = false,
+	onGetStarted,
+}: PricingCardProps) {
 	const price = plan.isFree
 		? null
 		: plan.isLifetime
@@ -27,24 +31,6 @@ export function PricingCard({ plan, interval }: PricingCardProps) {
 			: plan.prices.find((p) => p.interval === interval);
 
 	const displayAmount = price ? price.amount : 0;
-
-	async function handleSubscribe() {
-		if (plan.isFree) return;
-		setLoading(true);
-		try {
-			const res = await fetch("/api/payment/create", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ productId: price?.productId }),
-			});
-			const data = await res.json();
-			if (data.url) {
-				window.location.href = data.url;
-			}
-		} finally {
-			setLoading(false);
-		}
-	}
 
 	return (
 		<Card
@@ -92,10 +78,10 @@ export function PricingCard({ plan, interval }: PricingCardProps) {
 				<Button
 					className="w-full"
 					variant={plan.popular ? "default" : "outline"}
-					disabled={plan.isFree || loading}
-					onClick={handleSubscribe}
+					disabled={plan.isFree || isLoading}
+					onClick={() => onGetStarted(plan)}
 				>
-					{loading
+					{isLoading
 						? "Processing..."
 						: plan.isFree
 							? "Current Plan"

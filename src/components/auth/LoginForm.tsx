@@ -26,7 +26,12 @@ const loginSchema = z.object({
 
 type LoginFormValues = z.infer<typeof loginSchema>;
 
-export function LoginForm() {
+interface LoginFormProps {
+	callbackUrl?: string;
+	onSuccess?: () => void;
+}
+
+export function LoginForm({ callbackUrl, onSuccess }: LoginFormProps = {}) {
 	const navigate = useNavigate();
 	const locale = useCurrentLocale();
 	const [showPassword, setShowPassword] = useState(false);
@@ -54,7 +59,11 @@ export function LoginForm() {
 			setError(authError.message ?? "Login failed. Please try again.");
 			return;
 		}
-		void navigate({ href: localizePath(Routes.Dashboard, locale) });
+
+		onSuccess?.();
+		void navigate({
+			href: callbackUrl ?? localizePath(Routes.Dashboard, locale),
+		});
 	};
 
 	return (
@@ -145,7 +154,9 @@ export function LoginForm() {
 				</span>
 			</div>
 
-			<OAuthButtons />
+			<OAuthButtons
+				callbackURL={callbackUrl ?? localizePath(Routes.Dashboard, locale)}
+			/>
 
 			<p className="text-center text-sm text-muted-foreground">
 				Don&apos;t have an account?{" "}

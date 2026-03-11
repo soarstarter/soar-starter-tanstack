@@ -1,4 +1,3 @@
-import { useRouter } from "@tanstack/react-router";
 import { CreditCard, LogOut, Settings2, User } from "lucide-react";
 import {
 	Popover,
@@ -17,7 +16,6 @@ interface UserPopoverProps {
 }
 
 export function UserPopover({ user }: UserPopoverProps) {
-	const router = useRouter();
 	const localeRouter = useLocaleRouter();
 
 	const handleLogout = async () => {
@@ -52,6 +50,7 @@ export function UserPopover({ user }: UserPopoverProps) {
 				<Separator />
 				<LocaleLink
 					href="/setting/billing"
+					preload={false}
 					className="flex cursor-pointer items-center space-x-2.5 p-2 hover:bg-accent hover:text-accent-foreground"
 				>
 					<CreditCard className="size-4 shrink-0" />
@@ -59,6 +58,7 @@ export function UserPopover({ user }: UserPopoverProps) {
 				</LocaleLink>
 				<LocaleLink
 					href="/setting/profile"
+					preload={false}
 					className="flex cursor-pointer items-center space-x-2.5 p-2 hover:bg-accent hover:text-accent-foreground"
 				>
 					<Settings2 className="size-4 shrink-0" />

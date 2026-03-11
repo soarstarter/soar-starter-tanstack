@@ -5,20 +5,15 @@ import {
 	localizePath,
 	stripLocalePrefix,
 } from "#/i18n/routing";
+import { authClient } from "#/lib/auth-client";
 
 const protectedPaths = ["/dashboard", "/admin", "/setting", "/account"];
 
 /**
- * Check if the current request has a valid session cookie.
+ * Check if the current request has a valid session.
  * Use in `beforeLoad` of protected layout routes.
  */
-export function requireAuth({
-	context,
-	location,
-}: {
-	context: Record<string, unknown>;
-	location: { pathname: string };
-}) {
+export function requireAuth({ location }: { location: { pathname: string } }) {
 	const normalizedPathname = stripLocalePrefix(location.pathname);
 	const isProtected = protectedPaths.some(
 		(path) =>
@@ -27,14 +22,12 @@ export function requireAuth({
 
 	if (!isProtected) return;
 
-	// On the server, check cookies from the request headers
-	// On the client, the session check is handled by Better Auth's useSession
-	if (typeof document !== "undefined") {
-		const hasCookie =
-			document.cookie.includes("better-auth.session_token") ||
-			document.cookie.includes("__Secure-better-auth.session_token");
+	// Better Auth may store session cookies as HttpOnly, so client-side cookie
+	// string inspection is not reliable for route protection.
+	if (typeof window !== "undefined") {
+		return authClient.getSession().then(({ data }) => {
+			if (data) return;
 
-		if (!hasCookie) {
 			const callbackUrl = localizePath(
 				location.pathname,
 				getLocaleFromPath(location.pathname),
@@ -48,6 +41,6 @@ export function requireAuth({
 			throw redirect({
 				href: `${loginHref}?${search}`,
 			});
-		}
+		});
 	}
 }
